@@ -118,7 +118,7 @@ def audit_story(story: dict, root: Path = ROOT, audio_base: str = "assets/n5/aud
             numbers.append(int(number))
         if not word or not meaning:
             found.append(issue("内容错误", "VOCAB_VALUE_EMPTY", f"词汇 {number or row_index} 的单词或释义为空", story, "vocab"))
-        if kana and not re.fullmatch(r"[ぁ-ゖー・／～\s]+", kana):
+        if kana and not re.fullmatch(r"[ぁ-ゖァ-ヺー・／～\s]+", kana):
             found.append(issue("字段异常", "VOCAB_KANA_INVALID", f"假名疑似错误：{kana}", story, "vocab"))
         if pos not in ALLOWED_POS or re.search(r"[A-Za-z]", pos):
             found.append(issue("字段异常", "VOCAB_POS_INVALID", f"词性不符合 N3 中文缩写风格：{pos}", story, "vocab"))

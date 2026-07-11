@@ -1,18 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：30
-- 问题总数：1727
+- 已校对：40
+- 问题总数：1620
 
-## 阻断发布（303）
+## 阻断发布（296）
 
-- `NATURALCHINESE_EMPTY` T31 / Topic 5 / p.34 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T31 / Topic 5 / p.34 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T32 / Topic 5 / p.35 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T32 / Topic 5 / p.35 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T34 / Topic 5 / p.36 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T35 / Topic 5 / p.36 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T40 / Topic 5 / p.38 `vocab`：结构化词汇为空
 - `JAPANESE_EMPTY` T41 / Topic 6 / p.40 `japanese`：日文为空
 - `NATURALCHINESE_EMPTY` T41 / Topic 6 / p.40 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T41 / Topic 6 / p.40 `originalChinese`：originalChinese 为空
@@ -310,56 +303,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（508）
+## 内容错误（460）
 
-- `TITLE_INVALID` T31 / Topic 5 / p.34 `title`：标题不是完整中文场景标题：50 五+ ごじゅう
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 8 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 13 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 14 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 15 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 16 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 17 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 18 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 19 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 20 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 80 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 86 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 88 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T31 / Topic 5 / p.34 `vocab`：词汇 89 的单词或释义为空
-- `TITLE_INVALID` T32 / Topic 5 / p.35 `title`：标题不是完整中文场景标题：百万 ひゃくまん
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 2 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 3 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 4 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 5 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 6 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 7 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 8 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 9 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 10 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 12 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 19 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 100 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 110 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 113 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 114 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 115 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 118 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 120 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 122 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T32 / Topic 5 / p.35 `vocab`：词汇 123 的单词或释义为空
-- `TITLE_INVALID` T33 / Topic 5 / p.36 `title`：标题不是完整中文场景标题：いくらですか。
-- `TITLE_INVALID` T34 / Topic 5 / p.36 `title`：标题不是完整中文场景标题：これ、いくらですか。
-- `TITLE_INVALID` T35 / Topic 5 / p.36 `title`：标题不是完整中文场景标题：あのー、それ、いくらですか。
-- `TITLE_INVALID` T36 / Topic 5 / p.37 `title`：标题不是完整中文场景标题：すみません。あれ、ください。
-- `TITLE_INVALID` T37 / Topic 5 / p.37 `title`：标题不是完整中文场景标题：このぎっしをください。
-- `VOCAB_VALUE_EMPTY` T37 / Topic 5 / p.37 `vocab`：词汇 8 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T37 / Topic 5 / p.37 `vocab`：词汇 90 的单词或释义为空
-- `TITLE_INVALID` T38 / Topic 5 / p.37 `title`：标题不是完整中文场景标题：その
-- `VOCAB_VALUE_EMPTY` T38 / Topic 5 / p.37 `vocab`：词汇 15 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T38 / Topic 5 / p.37 `vocab`：词汇 133 的单词或释义为空
-- `TITLE_INVALID` T39 / Topic 5 / p.38 `title`：标题不是完整中文场景标题：あのえはいくらですか。
-- `TITLE_INVALID` T40 / Topic 5 / p.38 `title`：标题不是完整中文场景标题：これとこれと
 - `VOCAB_VALUE_EMPTY` T41 / Topic 6 / p.40 `vocab`：词汇 2 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T41 / Topic 6 / p.40 `vocab`：词汇 3 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T41 / Topic 6 / p.40 `vocab`：词汇 4 的单词或释义为空
@@ -821,60 +766,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（915）
+## 字段异常（863）
 
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T31 / Topic 5 / p.34 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T32 / Topic 5 / p.35 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T33 / Topic 5 / p.36 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T33 / Topic 5 / p.36 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T34 / Topic 5 / p.36 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T35 / Topic 5 / p.36 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T36 / Topic 5 / p.37 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T36 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：N
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T37 / Topic 5 / p.37 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T37 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T37 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T37 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：Adnom
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T38 / Topic 5 / p.37 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T38 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T38 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：Adnom
-- `VOCAB_POS_INVALID` T38 / Topic 5 / p.37 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T39 / Topic 5 / p.38 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T39 / Topic 5 / p.38 `vocab`：词性不符合 N3 中文缩写风格：Adnom
-- `VOCAB_POS_INVALID` T39 / Topic 5 / p.38 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T40 / Topic 5 / p.38 `japanese`：对话人物标记不完整
 - `VOCAB_POS_INVALID` T41 / Topic 6 / p.40 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T41 / Topic 6 / p.40 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T41 / Topic 6 / p.40 `vocab`：词性不符合 N3 中文缩写风格：
