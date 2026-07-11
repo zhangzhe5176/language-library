@@ -63,6 +63,11 @@ class N5SampleTests(unittest.TestCase):
         final_tablet_rule = text.rsplit("@media (max-width: 980px)", 1)[1]
         self.assertIn(".studyShell { grid-template-columns: 1fr; }", final_tablet_rule)
 
+    def test_theme_has_one_editable_token_block(self):
+        text = (ROOT / "styles.css").read_text(encoding="utf-8")
+        self.assertEqual(text.count(":root {"), 1)
+        self.assertIn("--font-sans:", text)
+
 
 if __name__ == "__main__":
     unittest.main()

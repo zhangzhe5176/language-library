@@ -1,19 +1,20 @@
 :root {
   color-scheme: light;
-  --page: #f5f7f6;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans GB", "Hiragino Kaku Gothic ProN", "Noto Sans CJK SC", "Yu Gothic", sans-serif;
+  --page: #f5f5f7;
   --panel: #ffffff;
-  --panel-soft: #f9fbfa;
-  --ink: #1e2726;
-  --muted: #64706f;
-  --line: #d9e0dd;
-  --accent: #cf4d3f;
-  --accent-strong: #9f3329;
-  --accent-soft: #fff0ed;
-  --green: #2f7d68;
-  --green-soft: #e8f4ef;
-  --gold: #8f6a1d;
-  --gold-soft: #fff5dd;
-  --shadow: 0 12px 30px rgba(29, 42, 38, 0.08);
+  --panel-soft: #fbfbfd;
+  --ink: #1d1d1f;
+  --muted: rgba(29, 29, 31, 0.68);
+  --line: rgba(0, 0, 0, 0.08);
+  --accent: #0071e3;
+  --accent-strong: #0066cc;
+  --accent-soft: rgba(0, 113, 227, 0.1);
+  --green: #248a3d;
+  --green-soft: rgba(52, 199, 89, 0.12);
+  --gold: #9a6d00;
+  --gold-soft: rgba(255, 204, 0, 0.16);
+  --shadow: 3px 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -24,7 +25,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans GB", "Hiragino Kaku Gothic ProN", "Noto Sans CJK SC", "Yu Gothic", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.5;
 }
 
@@ -831,29 +832,11 @@ h3 {
 
 
 /* Apple-inspired refinement layer: quiet chrome, focused learning rhythm */
-:root {
-  color-scheme: light;
-  --page: #f5f5f7;
-  --panel: #ffffff;
-  --panel-soft: #fbfbfd;
-  --ink: #1d1d1f;
-  --muted: rgba(29, 29, 31, 0.68);
-  --line: rgba(0, 0, 0, 0.08);
-  --accent: #0071e3;
-  --accent-strong: #0066cc;
-  --accent-soft: rgba(0, 113, 227, 0.1);
-  --green: #248a3d;
-  --green-soft: rgba(52, 199, 89, 0.12);
-  --gold: #9a6d00;
-  --gold-soft: rgba(255, 204, 0, 0.16);
-  --shadow: 3px 8px 30px rgba(0, 0, 0, 0.08);
-}
-
 html { scroll-behavior: smooth; }
 body {
   background: var(--page);
   color: var(--ink);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans GB", "Hiragino Kaku Gothic ProN", "Noto Sans CJK SC", "Yu Gothic", sans-serif;
+  font-family: var(--font-sans);
   letter-spacing: -0.374px;
 }
 

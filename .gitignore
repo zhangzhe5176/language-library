@@ -5,3 +5,4 @@ tools/__pycache__/
 tools/ocr_vision
 *.zip
 .env
+.build/
