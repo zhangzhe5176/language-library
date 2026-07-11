@@ -1,19 +1,24 @@
-const data = window.N3_DATA || { topics: [], stories: [] };
+const level = document.body.dataset.level || "n3";
+const data = window.LEVEL_DATA || window.N3_DATA || { topics: [], stories: [] };
 const topics = data.topics;
 const stories = data.stories;
 const basePath = document.body.dataset.base || ".";
 const page = document.body.dataset.page || "levels";
+const levelLabel = data.label || level.toUpperCase();
+const audioBase = data.audioBase || "assets/audio";
+const learnedStorageKey = `${level}Learned`;
+const starredStorageKey = `${level}Starred`;
 
 const state = {
   query: "",
   filter: "all",
   hideChinese: true,
-  learned: new Set(JSON.parse(localStorage.getItem("n3Learned") || "[]")),
-  starred: new Set(JSON.parse(localStorage.getItem("n3Starred") || "[]")),
+  learned: new Set(JSON.parse(localStorage.getItem(learnedStorageKey) || "[]")),
+  starred: new Set(JSON.parse(localStorage.getItem(starredStorageKey) || "[]")),
 };
 
 function topicUrl(topicId) {
-  return `${basePath}/levels/n3/topic-${String(topicId).padStart(2, "0")}.html`;
+  return `${basePath}/levels/${level}/topic-${String(topicId).padStart(2, "0")}.html`;
 }
 
 function topicFor(story) {
@@ -53,8 +58,8 @@ function progressMarkup(progress, label = "学习进度") {
 }
 
 function saveState() {
-  localStorage.setItem("n3Learned", JSON.stringify([...state.learned]));
-  localStorage.setItem("n3Starred", JSON.stringify([...state.starred]));
+  localStorage.setItem(learnedStorageKey, JSON.stringify([...state.learned]));
+  localStorage.setItem(starredStorageKey, JSON.stringify([...state.starred]));
 }
 
 function escapeHtml(value) {
@@ -140,15 +145,15 @@ function renderLevels() {
   if (activeCard) activeCard.textContent = `${n3Count} 段`;
 }
 
-function renderN3Home() {
+function renderLevelHome() {
   const activeTopics = topics.filter((topic) => topicStories(topic.id).length > 0);
   const progress = progressFor(stories);
   shell(`
     <section class="heroPanel compact productHero">
       <div>
-        <p class="eyebrow">JLPT N3 · Study Library</p>
-        <h1>N3 迷你故事学习</h1>
-        <p class="lead">像 Apple 产品页一样减少干扰：先听音频，再读日文，需要时再展开中文、词汇和原图。共 ${stories.length} 段，所有进度只保存在本地浏览器。</p>
+        <p class="eyebrow">JLPT ${escapeHtml(levelLabel)} · Study Library</p>
+        <h1>${escapeHtml(levelLabel)} 迷你故事学习</h1>
+        <p class="lead">先听音频，再读日文，需要时再展开中文、词汇和原图。当前收录 ${stories.length} 段，所有进度只保存在本地浏览器。</p>
         ${progressMarkup(progress, "总体进度")}
       </div>
       <a class="primaryLink" href="./topics.html">进入目录</a>
@@ -171,7 +176,7 @@ function renderN3Home() {
 function renderTopicsPage() {
   shell(`
     <section class="pageTitle">
-      <p class="eyebrow">N3 Contents</p>
+      <p class="eyebrow">${escapeHtml(levelLabel)} Contents</p>
       <h1>Topic 目录</h1>
       <p>完整版按原书 Topic 和小喇叭编号顺序排列。点击 Topic 进入对应章节。</p>
     </section>
@@ -209,7 +214,7 @@ function renderTopicPage() {
   shell(`
     <aside class="chapterNav" aria-label="章节导航">
       <a class="backLink" href="./topics.html">返回目录</a>
-      <h2>N3</h2>
+      <h2>${escapeHtml(levelLabel)}</h2>
       ${progressMarkup(progress, "本章进度")}
       <div class="chapterLinks">${topics
         .map((item) => {
@@ -378,7 +383,7 @@ function renderStoryCard(story) {
 
       <div class="audioBlock">
         <span>Step 1 · Listen</span>
-        <audio controls preload="metadata" src="${basePath}/assets/audio/${story.audio}"></audio>
+        <audio controls preload="metadata" src="${basePath}/${audioBase}/${story.audio}"></audio>
       </div>
 
       <section class="japaneseBlock" aria-label="日文原文">
@@ -429,6 +434,6 @@ function rawVocab(lines) {
 }
 
 if (page === "levels") renderLevels();
-if (page === "n3-home") renderN3Home();
+if (page === "n3-home" || page === "level-home") renderLevelHome();
 if (page === "topics") renderTopicsPage();
 if (page === "topic") renderTopicPage();

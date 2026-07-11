@@ -1257,6 +1257,7 @@ h3 { color: var(--muted); font-weight: 600; }
   .toolbarInline { grid-template-columns: minmax(260px, 1fr) auto auto; }
 }
 @media (max-width: 980px) {
+  .studyShell { grid-template-columns: 1fr; }
   .chapterNav { max-height: none; }
   .chapterLinks {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
