@@ -16,17 +16,37 @@ def load_level_data(path: Path) -> dict:
 
 
 class N5SampleTests(unittest.TestCase):
-    def test_topic_one_contains_eight_checked_dialogues(self):
-        data = load_level_data(ROOT / "data" / "n5-data.js")
-        self.assertEqual(data["level"], "n5")
-        self.assertEqual(len(data["topics"]), 1)
-        self.assertEqual(data["topics"][0]["title"], "あいさつ1")
-        self.assertEqual(len(data["stories"]), 8)
-        self.assertTrue(all(story["reviewStatus"] == "已校对" for story in data["stories"]))
+    REQUIRED_STORY_FIELDS = {
+        "id", "topicId", "page", "type", "audio", "images", "japanese",
+        "naturalChinese", "originalChinese", "vocab", "reviewStatus",
+    }
 
-    def test_topic_one_covers_vocab_one_through_thirteen(self):
+    def assert_level_is_complete(self, level, topic_count, track_count):
+        data = load_level_data(ROOT / "data" / f"{level}-data.js")
+        self.assertEqual(len(data["topics"]), topic_count)
+        self.assertEqual(len(data["stories"]), track_count)
+        self.assertEqual([story["id"] for story in data["stories"]], list(range(1, track_count + 1)))
+        self.assertEqual(
+            {story["topicId"] for story in data["stories"]},
+            set(range(1, topic_count + 1)),
+        )
+        for story in data["stories"]:
+            self.assertTrue(self.REQUIRED_STORY_FIELDS <= story.keys())
+            self.assertTrue((ROOT / data["audioBase"] / story["audio"]).is_file())
+            self.assertTrue(story["images"])
+            for image in story["images"]:
+                self.assertTrue((ROOT / image).is_file())
+        return data
+
+    def test_n5_contains_all_tracks_and_topics(self):
+        data = self.assert_level_is_complete("n5", 24, 373)
+        self.assertEqual(data["level"], "n5")
+        self.assertEqual(data["topics"][0]["title"], "あいさつ1")
+        self.assertTrue(all(story["reviewStatus"] == "已校对" for story in data["stories"][:8]))
+
+    def test_reviewed_sample_covers_vocab_one_through_thirteen(self):
         data = load_level_data(ROOT / "data" / "n5-data.js")
-        vocab_numbers = [int(row[0]) for story in data["stories"] for row in story["vocab"]]
+        vocab_numbers = [int(row[0]) for story in data["stories"][:8] for row in story["vocab"]]
         self.assertEqual(vocab_numbers, list(range(1, 14)))
 
     def test_topic_one_assets_exist(self):
@@ -48,9 +68,16 @@ class N5SampleTests(unittest.TestCase):
             self.assertIn("../../app.js", text)
             self.assertIn('rel="icon" href="data:,"', text)
 
+    def test_n4_contains_all_tracks_and_topics(self):
+        data = self.assert_level_is_complete("n4", 13, 262)
+        self.assertEqual(data["level"], "n4")
+        for relative_path in ["levels/n4/index.html", "levels/n4/topics.html", "levels/n4/topic-13.html"]:
+            self.assertTrue((ROOT / relative_path).is_file())
+
     def test_portal_links_to_n5(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn("./levels/n5/index.html", text)
+        self.assertIn("./levels/n4/index.html", text)
 
     def test_app_uses_level_specific_paths_and_storage(self):
         text = (ROOT / "app.js").read_text(encoding="utf-8")

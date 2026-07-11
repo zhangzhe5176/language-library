@@ -510,6 +510,7 @@ def write_site_files(data: dict) -> None:
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>日本语学习站</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body data-page="levels" data-base=".">
@@ -555,6 +556,7 @@ def page_html(page: str, base: str, title: str, topic_id: int | None = None) -> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="{base}/styles.css" />
   </head>
   <body data-page="{page}"{topic_attr} data-base="{base}">

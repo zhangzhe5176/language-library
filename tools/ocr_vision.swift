@@ -22,6 +22,7 @@ if CommandLine.arguments.count < 2 {
 
 let encoder = JSONEncoder()
 encoder.outputFormatting = [.withoutEscapingSlashes]
+let literalMode = ProcessInfo.processInfo.environment["OCR_LITERAL"] == "1"
 
 for path in CommandLine.arguments.dropFirst() {
     let url = URL(fileURLWithPath: path)
@@ -51,7 +52,7 @@ for path in CommandLine.arguments.dropFirst() {
     }
 
     request.recognitionLevel = .accurate
-    request.usesLanguageCorrection = true
+    request.usesLanguageCorrection = !literalMode
     request.recognitionLanguages = ["ja-JP", "zh-Hans", "en-US"]
 
     do {

@@ -34,6 +34,7 @@ function typeLabel(type) {
 }
 
 function statusLabel(status) {
+  if (status === "OCR已整理") return "OCR已整理";
   return isCheckedStatus(status) ? "已校对" : "OCR未校对";
 }
 

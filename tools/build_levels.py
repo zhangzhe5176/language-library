@@ -36,6 +36,7 @@ class Book:
     audio_url: str
     track_count: int
     word_count: int
+    numbered_word_count: int
     content_first_pdf_page: int
     content_last_pdf_page: int
     printed_page_offset: int
@@ -54,6 +55,7 @@ BOOKS = {
         audio_url="https://bookclub2.japantimes.co.jp/download/files/Best_Vocab_N5.zip",
         track_count=373,
         word_count=1000,
+        numbered_word_count=1010,
         content_first_pdf_page=18,
         content_last_pdf_page=229,
         printed_page_offset=2,
@@ -100,6 +102,7 @@ BOOKS = {
         audio_url="https://bookclub2.japantimes.co.jp/download/files/Best_Vocab_N4.zip",
         track_count=262,
         word_count=1200,
+        numbered_word_count=1035,
         content_first_pdf_page=18,
         content_last_pdf_page=186,
         printed_page_offset=2,
@@ -360,6 +363,7 @@ def prepare(book: Book) -> None:
         "level": book.level,
         "trackCount": book.track_count,
         "wordCount": book.word_count,
+        "numberedWordCount": book.numbered_word_count,
         "starts": starts,
         "images": images_by_track,
     }
@@ -368,13 +372,285 @@ def prepare(book: Book) -> None:
     print(f"{book.level}: prepared {len(starts)} tracks and {len(set(s['pdfPage'] for s in starts))} source pages")
 
 
+def line_top(line: dict) -> int:
+    return int((1 - line["y"] - line["height"]) * 1980)
+
+
+def segment_lines(pages_ocr: dict[int, dict], starts: list[dict], index: int) -> list[dict]:
+    start = starts[index]
+    next_start = starts[index + 1] if index + 1 < len(starts) else None
+    end_y = next_start["y"] if next_start and next_start["pdfPage"] == start["pdfPage"] else 1740
+    lines = []
+    for line in pages_ocr[start["pdfPage"]].get("lines", []):
+        top = line_top(line)
+        if start["y"] <= top < end_y:
+            item = dict(line)
+            item["top"] = top
+            item["text"] = re.sub(r"\s+", " ", item["text"]).strip()
+            if item["text"]:
+                lines.append(item)
+    return sorted(lines, key=lambda item: (item["top"], item["x"]))
+
+
+def has_japanese(text: str) -> bool:
+    return bool(re.search(r"[ぁ-ゖァ-ヺ一-龯]", text))
+
+
+def has_kana(text: str) -> bool:
+    return bool(re.search(r"[ぁ-ゖァ-ヺ]", text))
+
+
+def has_han(text: str) -> bool:
+    return bool(re.search(r"[一-龯]", text))
+
+
+def extract_japanese(lines: list[dict]) -> list[dict]:
+    output: list[dict] = []
+    for line in lines:
+        text = line["text"]
+        if "/" in text or re.match(r"^\d{1,4}(?:\s|$)", text):
+            continue
+        speaker = re.match(r"^([ABＡＢ])\s*[:：]\s*(.+)$", text)
+        if speaker and has_japanese(speaker.group(2)):
+            output.append({"speaker": speaker.group(1).translate(str.maketrans("ＡＢ", "AB")), "text": speaker.group(2)})
+        elif output and has_japanese(text) and len(text) >= 4 and line["top"] - lines[0]["top"] < 260:
+            output.append({"text": text})
+        if len(output) >= 8:
+            break
+    if output:
+        return output
+    for line in lines:
+        text = line["text"]
+        if "/" not in text and has_kana(text) and len(text) >= 8:
+            return [{"text": text}]
+    return []
+
+
+def chinese_segment(text: str) -> str:
+    candidates = []
+    for part in re.split(r"/+", text):
+        part = part.strip(" ，。,:：")
+        if has_han(part) and not has_kana(part):
+            candidates.append(part)
+    return max(candidates, key=len) if candidates else ""
+
+
+def extract_original_chinese(lines: list[dict]) -> list[str]:
+    candidates = []
+    for line in lines:
+        text = line["text"]
+        if "/" not in text:
+            continue
+        chinese = chinese_segment(text)
+        if len(chinese) >= 6:
+            candidates.append((len(text), chinese))
+    if not candidates:
+        return []
+    candidates.sort(reverse=True)
+    return [candidates[0][1]]
+
+
+def extract_vocab_with_top(lines: list[dict], word_count: int) -> list[tuple[int, list[str]]]:
+    vocab: list[tuple[int, list[str]]] = []
+    for index, line in enumerate(lines):
+        if line["x"] > 0.42:
+            continue
+        match = re.match(r"^(\d{1,4})\s*(.*)$", line["text"])
+        if not match:
+            continue
+        number = int(match.group(1))
+        if not 1 <= number <= word_count:
+            continue
+        word = match.group(2).strip()
+        nearby = [item for item in lines[index + 1 :] if item["top"] - line["top"] <= 115]
+        if not word or not has_japanese(word):
+            for item in nearby:
+                if "/" not in item["text"] and has_japanese(item["text"]) and not re.match(r"^[ABＡＢ][:：]", item["text"]):
+                    word = item["text"]
+                    break
+        gloss = next((item["text"] for item in nearby if "/" in item["text"]), "")
+        meaning = chinese_segment(gloss)
+        kind_match = re.search(r"\b(Phr|Adv|Adj|Intj|Conj|Adnom|Suf|N|V[123](?:-[IT])?)\b", gloss, re.IGNORECASE)
+        kind = kind_match.group(1) if kind_match else ""
+        if word:
+            vocab.append((line["top"], [str(number), word, "", kind, meaning]))
+    unique: dict[int, tuple[int, list[str]]] = {}
+    for top, row in vocab:
+        unique.setdefault(int(row[0]), (top, row))
+    return [unique[number] for number in sorted(unique)]
+
+
+def extract_vocab(lines: list[dict], word_count: int) -> list[list[str]]:
+    return [row for _, row in extract_vocab_with_top(lines, word_count)]
+
+
+def story_title(track: int, japanese: list[dict]) -> str:
+    if not japanese:
+        return f"词汇记忆 {track}"
+    text = japanese[0]["text"].strip()
+    return text[:18] + ("…" if len(text) > 18 else "")
+
+
+def load_existing_reviewed_sample() -> dict[int, dict]:
+    path = ROOT / "data" / "n5-data.js"
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    match = re.fullmatch(r"window\.LEVEL_DATA\s*=\s*(\{.*\});\s*", text, re.DOTALL)
+    if not match:
+        return {}
+    data = json.loads(match.group(1))
+    return {story["id"]: story for story in data.get("stories", []) if story.get("reviewStatus") == "已校对"}
+
+
+def build_data(book: Book) -> dict:
+    manifest = json.loads((work_dir(book) / "manifest.json").read_text(encoding="utf-8"))
+    starts = manifest["starts"]
+    pages_ocr = run_page_ocr(book)
+    reviewed = load_existing_reviewed_sample() if book.level == "n5" else {}
+    stories = []
+    for index, start in enumerate(starts):
+        track = start["id"]
+        if track in reviewed:
+            story = dict(reviewed[track])
+            story["topicId"] = start["topicId"]
+            story["page"] = start["printedPage"]
+            story["images"] = manifest["images"][str(track)] if str(track) in manifest["images"] else manifest["images"][track]
+            stories.append(story)
+            continue
+        lines = segment_lines(pages_ocr, starts, index)
+        japanese = extract_japanese(lines)
+        original_chinese = extract_original_chinese(lines)
+        vocab = extract_vocab(lines, book.word_count)
+        raw = [line["text"] for line in lines]
+        story_type = "dialogue" if any(line.get("speaker") for line in japanese) else "short"
+        stories.append({
+            "id": track,
+            "topicId": start["topicId"],
+            "page": start["printedPage"],
+            "type": story_type,
+            "title": story_title(track, japanese),
+            "audio": f"T{track}.mp3",
+            "images": manifest["images"].get(str(track), manifest["images"].get(track, [])),
+            "japanese": japanese,
+            "focus": [],
+            "naturalChinese": original_chinese,
+            "originalChinese": original_chinese,
+            "vocab": vocab,
+            "vocabRaw": raw[:80],
+            "ocrText": "\n".join(raw),
+            "reviewStatus": "OCR已整理",
+        })
+
+    # Supplement segment OCR with page-wide anchors. This recovers vocabulary numbers
+    # that sit just above a detected audio marker or on rotated memorization charts.
+    seen_numbers = {int(row[0]) for story in stories for row in story["vocab"]}
+    starts_by_page: dict[int, list[dict]] = {}
+    for start in starts:
+        starts_by_page.setdefault(start["pdfPage"], []).append(start)
+    story_by_id = {story["id"]: story for story in stories}
+    for pdf_page, obj in pages_ocr.items():
+        page_lines = []
+        for line in obj.get("lines", []):
+            item = dict(line)
+            item["top"] = line_top(line)
+            item["text"] = re.sub(r"\s+", " ", item["text"]).strip()
+            if item["text"]:
+                page_lines.append(item)
+        page_lines.sort(key=lambda item: (item["top"], item["x"]))
+        page_starts = sorted(starts_by_page.get(pdf_page, []), key=lambda item: item["y"])
+        if not page_starts:
+            continue
+        for top, row in extract_vocab_with_top(page_lines, book.word_count):
+            number = int(row[0])
+            if number in seen_numbers:
+                continue
+            owner = page_starts[0]
+            for candidate in page_starts:
+                if candidate["y"] <= top:
+                    owner = candidate
+                else:
+                    break
+            story_by_id[owner["id"]]["vocab"].append(row)
+            story_by_id[owner["id"]]["vocab"].sort(key=lambda item: int(item[0]))
+            seen_numbers.add(number)
+    return {
+        "level": book.level,
+        "label": book.level.upper(),
+        "audioBase": f"assets/{book.level}/audio",
+        "wordCount": book.word_count,
+        "numberedWordCount": book.numbered_word_count,
+        "reviewSummary": {
+            "reviewed": sum(story["reviewStatus"] == "已校对" for story in stories),
+            "ocrOrganized": sum(story["reviewStatus"] == "OCR已整理" for story in stories),
+        },
+        "topics": [topic.__dict__ for topic in book.topics],
+        "stories": stories,
+    }
+
+
+def level_page_html(book: Book, page: str, title: str, topic_id: int | None = None) -> str:
+    topic_attr = f' data-topic="{topic_id}"' if topic_id is not None else ""
+    return f'''<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body data-page="{page}"{topic_attr} data-level="{book.level}" data-base="../..">
+    <header class="siteHeader">
+      <a class="brand" href="../../index.html"><span>日本语学习站</span><strong>JLPT Library</strong></a>
+      <nav class="topNav" aria-label="主导航">
+        <a href="../../index.html">等级</a>
+        <a href="../../levels/{book.level}/index.html">{book.level.upper()}</a>
+        <a href="../../levels/{book.level}/topics.html">目录</a>
+      </nav>
+    </header>
+    <main id="app"></main>
+    <script src="../../data/{book.level}-data.js"></script>
+    <script src="../../app.js?v=20260711-2"></script>
+  </body>
+</html>
+'''
+
+
+def write_site(book: Book) -> None:
+    data = build_data(book)
+    data_path = ROOT / "data" / f"{book.level}-data.js"
+    data_path.write_text(
+        "window.LEVEL_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n",
+        encoding="utf-8",
+    )
+    level_dir = ROOT / "levels" / book.level
+    level_dir.mkdir(parents=True, exist_ok=True)
+    (level_dir / "index.html").write_text(
+        level_page_html(book, "level-home", f"{book.level.upper()} 首页 - 日本语学习站"), encoding="utf-8"
+    )
+    (level_dir / "topics.html").write_text(
+        level_page_html(book, "topics", f"{book.level.upper()} 目录 - 日本语学习站"), encoding="utf-8"
+    )
+    for topic in book.topics:
+        (level_dir / f"topic-{topic.id:02d}.html").write_text(
+            level_page_html(book, "topic", f"Topic {topic.id} {topic.title} - {book.level.upper()}", topic.id),
+            encoding="utf-8",
+        )
+    print(f"{book.level}: wrote {len(data['stories'])} stories and {len(book.topics)} topic pages")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build N4/N5 scanned-book assets and OCR caches")
     parser.add_argument("level", choices=[*BOOKS, "all"])
+    parser.add_argument("--write-site", action="store_true")
     args = parser.parse_args()
     selected = BOOKS.values() if args.level == "all" else [BOOKS[args.level]]
     for book in selected:
-        prepare(book)
+        if args.write_site:
+            write_site(book)
+        else:
+            prepare(book)
 
 
 if __name__ == "__main__":
