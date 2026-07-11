@@ -1,228 +1,30 @@
 {
   "level": "n5",
   "story_count": 373,
-  "reviewed_count": 8,
-  "issue_count": 1877,
+  "reviewed_count": 16,
+  "issue_count": 1855,
   "severity_counts": {
-    "阻断发布": 323,
-    "内容错误": 571,
-    "字段异常": 982,
+    "阻断发布": 317,
+    "内容错误": 563,
+    "字段异常": 974,
     "格式问题": 0,
     "可选优化": 1
   },
   "code_counts": {
     "CHINESE_GARBLED": 34,
-    "DIALOGUE_SPEAKERS_INCOMPLETE": 267,
+    "DIALOGUE_SPEAKERS_INCOMPLETE": 263,
     "JAPANESE_EMPTY": 30,
     "JAPANESE_OCR_GLYPH": 1,
-    "NATURALCHINESE_EMPTY": 90,
-    "ORIGINALCHINESE_EMPTY": 90,
-    "TITLE_INVALID": 328,
-    "VOCAB_EMPTY": 113,
+    "NATURALCHINESE_EMPTY": 89,
+    "ORIGINALCHINESE_EMPTY": 89,
+    "TITLE_INVALID": 320,
+    "VOCAB_EMPTY": 109,
     "VOCAB_MEANING_GARBLED": 1,
     "VOCAB_MEANING_MULTIPLE": 1,
-    "VOCAB_POS_INVALID": 715,
+    "VOCAB_POS_INVALID": 711,
     "VOCAB_VALUE_EMPTY": 207
   },
   "issues": [
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 9,
-      "topic_id": 2,
-      "page": 20,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：どうぞ。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 9,
-      "topic_id": 2,
-      "page": 20,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格：Adv"
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 10,
-      "topic_id": 2,
-      "page": 20,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 10,
-      "topic_id": 2,
-      "page": 20,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：あっ、すみません！"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "VOCAB_EMPTY",
-      "story_id": 10,
-      "topic_id": 2,
-      "page": 20,
-      "field": "vocab",
-      "message": "结构化词汇为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 11,
-      "topic_id": 2,
-      "page": 20,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "NATURALCHINESE_EMPTY",
-      "story_id": 11,
-      "topic_id": 2,
-      "page": 20,
-      "field": "naturalChinese",
-      "message": "naturalChinese 为空"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "ORIGINALCHINESE_EMPTY",
-      "story_id": 11,
-      "topic_id": 2,
-      "page": 20,
-      "field": "originalChinese",
-      "message": "originalChinese 为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 11,
-      "topic_id": 2,
-      "page": 20,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：ありがとうございます。"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "VOCAB_EMPTY",
-      "story_id": 11,
-      "topic_id": 2,
-      "page": 20,
-      "field": "vocab",
-      "message": "结构化词汇为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 12,
-      "topic_id": 2,
-      "page": 21,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：どうぞ。"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "VOCAB_EMPTY",
-      "story_id": 12,
-      "topic_id": 2,
-      "page": 21,
-      "field": "vocab",
-      "message": "结构化词汇为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 13,
-      "topic_id": 2,
-      "page": 21,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：ごめんなさい。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 13,
-      "topic_id": 2,
-      "page": 21,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 14,
-      "topic_id": 2,
-      "page": 22,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 14,
-      "topic_id": 2,
-      "page": 22,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：しつれいします。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 14,
-      "topic_id": 2,
-      "page": 22,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 15,
-      "topic_id": 2,
-      "page": 22,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：もしもし。"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "VOCAB_EMPTY",
-      "story_id": 15,
-      "topic_id": 2,
-      "page": 22,
-      "field": "vocab",
-      "message": "结构化词汇为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 16,
-      "topic_id": 2,
-      "page": 22,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 16,
-      "topic_id": 2,
-      "page": 22,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：おひさしぶりです。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 16,
-      "topic_id": 2,
-      "page": 22,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格：Phr"
-    },
     {
       "severity": "字段异常",
       "code": "DIALOGUE_SPEAKERS_INCOMPLETE",

@@ -1,17 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：8
-- 问题总数：1877
+- 已校对：16
+- 问题总数：1855
 
-## 阻断发布（323）
+## 阻断发布（317）
 
-- `VOCAB_EMPTY` T10 / Topic 2 / p.20 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T11 / Topic 2 / p.20 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T11 / Topic 2 / p.20 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T11 / Topic 2 / p.20 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T12 / Topic 2 / p.21 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T15 / Topic 2 / p.22 `vocab`：结构化词汇为空
 - `VOCAB_EMPTY` T17 / Topic 3 / p.24 `vocab`：结构化词汇为空
 - `VOCAB_EMPTY` T18 / Topic 3 / p.24 `vocab`：结构化词汇为空
 - `NATURALCHINESE_EMPTY` T20 / Topic 3 / p.24 `naturalChinese`：naturalChinese 为空
@@ -330,16 +324,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（571）
+## 内容错误（563）
 
-- `TITLE_INVALID` T9 / Topic 2 / p.20 `title`：标题不是完整中文场景标题：どうぞ。
-- `TITLE_INVALID` T10 / Topic 2 / p.20 `title`：标题不是完整中文场景标题：あっ、すみません！
-- `TITLE_INVALID` T11 / Topic 2 / p.20 `title`：标题不是完整中文场景标题：ありがとうございます。
-- `TITLE_INVALID` T12 / Topic 2 / p.21 `title`：标题不是完整中文场景标题：どうぞ。
-- `TITLE_INVALID` T13 / Topic 2 / p.21 `title`：标题不是完整中文场景标题：ごめんなさい。
-- `TITLE_INVALID` T14 / Topic 2 / p.22 `title`：标题不是完整中文场景标题：しつれいします。
-- `TITLE_INVALID` T15 / Topic 2 / p.22 `title`：标题不是完整中文场景标题：もしもし。
-- `TITLE_INVALID` T16 / Topic 2 / p.22 `title`：标题不是完整中文场景标题：おひさしぶりです。
 - `TITLE_INVALID` T17 / Topic 3 / p.24 `title`：标题不是完整中文场景标题：いらっしゃいませ。
 - `TITLE_INVALID` T18 / Topic 3 / p.24 `title`：标题不是完整中文场景标题：すみません。
 - `TITLE_INVALID` T19 / Topic 3 / p.24 `title`：标题不是完整中文场景标题：コーヒニ、ください。
@@ -904,16 +890,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（982）
+## 字段异常（974）
 
-- `VOCAB_POS_INVALID` T9 / Topic 2 / p.20 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T10 / Topic 2 / p.20 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T11 / Topic 2 / p.20 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T13 / Topic 2 / p.21 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T14 / Topic 2 / p.22 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T14 / Topic 2 / p.22 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T16 / Topic 2 / p.22 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T16 / Topic 2 / p.22 `vocab`：词性不符合 N3 中文缩写风格：Phr
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T17 / Topic 3 / p.24 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T18 / Topic 3 / p.24 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T19 / Topic 3 / p.24 `japanese`：对话人物标记不完整
