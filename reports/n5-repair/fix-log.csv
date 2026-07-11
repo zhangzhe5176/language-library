@@ -1,0 +1,114 @@
+level,story_id,topic_id,page,field,before,after,reason,source,reviewed_at
+n5,1,1,16,title,初次见面,初次见面问候,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,1,1,16,originalChinese,"[""A：初次见面，我是安。"",""B：啊，我是健人。初次见面。""]","[""A：初次见面，我是Anne。"",""B：啊，我是Kento。初次见面。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,1,1,16,vocab,"[[""1"",""はじめまして"","""",""固定表达"",""初次见面""]]","[[""1"",""はじめまして"","""",""句"",""初次见面""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,1,1,16,vocabRaw,None,"[""A：はじめまして。アンです。"",""B：あ、けんとです。はじめまして。"",""はじめまして"",""Phr, nice to meet you （meeting for the first time）/初次面 / xin chao （danh cho lan"",""dau gap mat）"",""A： Nice to meet you. Im Anne. B： Oh， Im Kento. Nice to meet you， too. / A：初次面、我"",""是Anne。B：啊，我是Kento。初次面。/A:Xin chao. Minh la An. B： A， to la Kento. Xin""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,1,1,16,ocrText,None,"A：はじめまして。アンです。
+B：あ、けんとです。はじめまして。
+はじめまして
+Phr, nice to meet you （meeting for the first time）/初次面 / xin chao （danh cho lan
+dau gap mat）
+A： Nice to meet you. Im Anne. B： Oh， Im Kento. Nice to meet you， too. / A：初次面、我
+是Anne。B：啊，我是Kento。初次面。/A:Xin chao. Minh la An. B： A， to la Kento. Xin",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,2,1,16,title,请多关照,互相请多关照,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,2,1,16,vocab,"[[""2"",""よろしくおねがいします"","""",""固定表达"",""请多关照""],[""3"",""こちらこそ"","""",""副词"",""彼此彼此；我才要……""]]","[[""2"",""よろしくおねがいします"","""",""句"",""请多关照""],[""3"",""こちらこそ"","""",""句"",""我才要请你多关照""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,2,1,16,vocabRaw,None,"[""192"",""A：よろしくおねがいします。"",""B：こちらこそ、どうぞよろしくおねがいします。"",""よろしくおねがいします"",""glad to meet you / 清多照/Rat vui duioc gap ban"",""Phr."",""こちらこそ"",""Phr."",""same here / 哪里哪里（我オ～）/Toi， Minh cing vay"",""A： Glad to meet youl. B： Oh， same here. Glad to meet you. / A： 清多照。B：哪里哪里、清"",""多照。/A： Rat vui dugc gap ban. B： To ciing vay. Rat vui duigc gap ban.""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,2,1,16,ocrText,None,"192
+A：よろしくおねがいします。
+B：こちらこそ、どうぞよろしくおねがいします。
+よろしくおねがいします
+glad to meet you / 清多照/Rat vui duioc gap ban
+Phr.
+こちらこそ
+Phr.
+same here / 哪里哪里（我オ～）/Toi， Minh cing vay
+A： Glad to meet youl. B： Oh， same here. Glad to meet you. / A： 清多照。B：哪里哪里、清
+多照。/A： Rat vui dugc gap ban. B： To ciing vay. Rat vui duigc gap ban.",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,title,早上好,早晨见面问候,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,naturalChinese,"[""A：早上好。"",""B：安，早上好。""]","[""A：早上好。"",""B：安小姐，早上好。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,originalChinese,"[""A：早上好。"",""B：安小姐，早上好。""]","[""A：早上好。"",""B：Anne小姐，早上好。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,vocab,"[[""4"",""おはようございます"","""",""固定表达"",""早上好""],[""5"",""～さん"","""",""接尾词"",""对他人的礼貌称呼""]]","[[""4"",""おはようございます"","""",""感"",""早上好""],[""5"",""～さん"","""",""接尾"",""礼貌称呼""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,vocabRaw,None,"[""4） 3"",""A： おはようございます。"",""B：アンさん。おはようございます。"",""おはようございます"",""4"",""Intio"",""good morning / 早上好 / Xin chao, Chao （budi sang）"",""～さん"",""5"",""Suf."",""~san （honorific title）/〜小姐、先生/anh， chi， ban,co， chi， bac， Ong,ba~"",""16""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,3,1,16,ocrText,None,"4） 3
+A： おはようございます。
+B：アンさん。おはようございます。
+おはようございます
+4
+Intio
+good morning / 早上好 / Xin chao, Chao （budi sang）
+～さん
+5
+Suf.
+~san （honorific title）/〜小姐、先生/anh， chi， ban,co， chi， bac， Ong,ba~
+16",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,4,1,17,title,白天问候,白天见面问候,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,4,1,17,vocab,"[[""6"",""こんにちは"","""",""固定表达"",""你好；午安""]]","[[""6"",""こんにちは"","""",""感"",""你好""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,4,1,17,vocabRaw,None,"[""4）4"",""A：こんにちは。"",""B：こんにちは。"",""こんにちは"",""6"",""hello / 午安（在白天河候吋也可以用好）/Xin chao， chao （buoitruia）"",""A： Hello. B： Hello. / A： 好。B：你好。/A:Chao ban. B： Chao ban.""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,4,1,17,ocrText,None,"4）4
+A：こんにちは。
+B：こんにちは。
+こんにちは
+6
+hello / 午安（在白天河候吋也可以用好）/Xin chao， chao （buoitruia）
+A： Hello. B： Hello. / A： 好。B：你好。/A:Chao ban. B： Chao ban.",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,5,1,17,title,晚上好,晚上见面问候,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,5,1,17,vocab,"[[""7"",""こんばんは"","""",""固定表达"",""晚上好""]]","[[""7"",""こんばんは"","""",""感"",""晚上好""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,5,1,17,vocabRaw,None,"[""A：こんばんは。"",""B：こんばんは。"",""こんばんは"",""good evening / 晚上好/ Xin chao, chao （buoitoi）"",""A： Good evening. B： Good evening/A： 晩上好。B：晩上好。/A： Em chao co. B： Chao em.""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,5,1,17,ocrText,None,"A：こんばんは。
+B：こんばんは。
+こんばんは
+good evening / 晚上好/ Xin chao, chao （buoitoi）
+A： Good evening. B： Good evening/A： 晩上好。B：晩上好。/A： Em chao co. B： Chao em.",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,title,明天见,约好明天再见,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,japanese,"[{""speaker"":""A"",""text"":""じゃ、また。""},{""speaker"":""B"",""text"":""またあした。""}]","[{""speaker"":""A"",""text"":""じゃ、また。""},{""speaker"":""B"",""text"":""また明日。""}]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,focus,"[""じゃ、また"",""またあした""]","[""じゃ、また"",""また明日""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,naturalChinese,"[""A：那回头见。"",""B：明天见。""]","[""A：那，再见。"",""B：明天见。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,originalChinese,"[""A：那，再见。"",""B：明天见。""]","[""A：那再见了。"",""B：明天见。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,vocab,"[[""8"",""じゃ、また"","""",""固定表达"",""回头见；再见""],[""9"",""またあした"","""",""固定表达"",""明天见""]]","[[""8"",""じゃ、また"","""",""句"",""再见""],[""9"",""また明日"",""またあした"",""句"",""明天见""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,vocabRaw,None,"[""ッ"",""6"",""A： じや、また。"",""B：また明日。"",""あした"",""じゃ、また"",""8"",""Phr. see you/那，再ア / Vay hen gap lai"",""またあしたまた明日"",""Phr, see you tomorrow / 明天児/ Gap lai vao ngay mai nhe"",""A： See you. B： See you tomorrow. / A： 那再了。B：明天。/A： Vay hen gip lai B： Gap"",""lai vao ngay mai nhe."",""17""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,6,1,17,ocrText,None,"ッ
+6
+A： じや、また。
+B：また明日。
+あした
+じゃ、また
+8
+Phr. see you/那，再ア / Vay hen gap lai
+またあしたまた明日
+Phr, see you tomorrow / 明天児/ Gap lai vao ngay mai nhe
+A： See you. B： See you tomorrow. / A： 那再了。B：明天。/A： Vay hen gip lai B： Gap
+lai vao ngay mai nhe.
+17",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,title,晚安,道别时说晚安,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,naturalChinese,"[""A：那回头见。"",""B：好的，晚安。""]","[""A：那，再见。"",""B：好的，晚安。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,originalChinese,"[""A：那，再见。"",""B：好的，晚安。""]","[""A：那，再见了。"",""B：好的。晚安。""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,vocab,"[[""10"",""はい"","""",""感叹词"",""是；好的""],[""11"",""おやすみなさい"","""",""固定表达"",""晚安""]]","[[""10"",""はい"","""",""感"",""好的""],[""11"",""おやすみなさい"","""",""句"",""晚安""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,vocabRaw,None,"[""497"",""A：じゃ、また。"",""B：はい。おやすみなさい。"",""はい"",""10"",""Intj"",""yeah, yes/ 好的/vang, da, ii"",""おやすみなさい"",""good night /晩安 / Chiic ngi ngon"",""Phr."",""A： See you. B： Yeah. Good night. / A： 那，再了。B：好的。晩安。/A： Hen gip lai. B： U，"",""ngi ngon nhe.""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,7,1,18,ocrText,None,"497
+A：じゃ、また。
+B：はい。おやすみなさい。
+はい
+10
+Intj
+yeah, yes/ 好的/vang, da, ii
+おやすみなさい
+good night /晩安 / Chiic ngi ngon
+Phr.
+A： See you. B： Yeah. Good night. / A： 那，再了。B：好的。晩安。/A： Hen gip lai. B： U，
+ngi ngon nhe.",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,8,1,18,title,告辞,离开时告辞,对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,8,1,18,vocab,"[[""12"",""しつれいします"","""",""固定表达"",""告辞；先走一步""],[""13"",""さようなら"","""",""固定表达"",""再见""]]","[[""12"",""しつれいします①"","""",""句"",""告辞""],[""13"",""さようなら"","""",""感"",""再见""]]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,8,1,18,vocabRaw,None,"[""④））8"",""A：しつれいします。"",""B：さようなら。"",""しつれいします↓"",""12"",""Phr."",""T'm heading home/ 告辞了/Toixin phep （lam viec gido truidc ai）"",""さようなら"",""13"",""Intij. goodbye/再/ Tam biet"",""A:I'm heading home. B： Goodbye. / A： 告了。B：再。/A： Minh ve truidc nhe. B： Tam"",""biet."",""18""]",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
+n5,8,1,18,ocrText,None,"④））8
+A：しつれいします。
+B：さようなら。
+しつれいします↓
+12
+Phr.
+T'm heading home/ 告辞了/Toixin phep （lam viec gido truidc ai）
+さようなら
+13
+Intij. goodbye/再/ Tam biet
+A:I'm heading home. B： Goodbye. / A： 告了。B：再。/A： Minh ve truidc nhe. B： Tam
+biet.
+18",对照原书修正并统一为 N3 字段风格,N5 PDF pages 18-20 (printed pages 16-18),2026-07-11T00:00:00+09:00
