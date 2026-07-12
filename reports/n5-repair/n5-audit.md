@@ -1,23 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：78
-- 问题总数：1443
+- 已校对：90
+- 问题总数：1373
 
-## 阻断发布（261）
+## 阻断发布（249）
 
-- `NATURALCHINESE_EMPTY` T80 / Topic 9 / p.65 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T80 / Topic 9 / p.65 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T82 / Topic 9 / p.66 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T83 / Topic 9 / p.66 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T83 / Topic 9 / p.66 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T84 / Topic 9 / p.67 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T84 / Topic 9 / p.67 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T85 / Topic 9 / p.68 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T86 / Topic 9 / p.68 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T88 / Topic 9 / p.69 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T90 / Topic 9 / p.70 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T90 / Topic 9 / p.70 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T91 / Topic 10 / p.73 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T91 / Topic 10 / p.73 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T97 / Topic 10 / p.76 `vocab`：结构化词汇为空
@@ -268,26 +256,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（416）
+## 内容错误（398）
 
-- `TITLE_INVALID` T79 / Topic 9 / p.65 `title`：标题不是完整中文场景标题：269あさごはん
-- `VOCAB_VALUE_EMPTY` T79 / Topic 9 / p.65 `vocab`：词汇 8 的单词或释义为空
-- `TITLE_INVALID` T80 / Topic 9 / p.65 `title`：标题不是完整中文场景标题：2310ぎゅうにゅう
-- `TITLE_INVALID` T81 / Topic 9 / p.66 `title`：标题不是完整中文场景标题：、何時に
-- `VOCAB_VALUE_EMPTY` T81 / Topic 9 / p.66 `vocab`：词汇 7 的单词或释义为空
-- `TITLE_INVALID` T82 / Topic 9 / p.66 `title`：标题不是完整中文场景标题：よるは
-- `TITLE_INVALID` T83 / Topic 9 / p.66 `title`：标题不是完整中文场景标题：まいばん何時間 ねますか。
-- `VOCAB_VALUE_EMPTY` T83 / Topic 9 / p.66 `vocab`：词汇 6 的单词或释义为空
-- `TITLE_INVALID` T84 / Topic 9 / p.67 `title`：标题不是完整中文场景标题：繋ご飯を食べましたか。
-- `TITLE_INVALID` T85 / Topic 9 / p.68 `title`：标题不是完整中文场景标题：ゆうべ、ばんご飯は何を食べましたか。
-- `TITLE_INVALID` T86 / Topic 9 / p.68 `title`：标题不是完整中文场景标题：けさ、無か
-- `TITLE_INVALID` T87 / Topic 9 / p.69 `title`：标题不是完整中文场景标题：ぎゅうにゅうをくみますか。
-- `VOCAB_VALUE_EMPTY` T87 / Topic 9 / p.69 `vocab`：词汇 2 的单词或释义为空
-- `TITLE_INVALID` T88 / Topic 9 / p.69 `title`：标题不是完整中文场景标题：おさけを飲みますか。
-- `TITLE_INVALID` T89 / Topic 9 / p.70 `title`：标题不是完整中文场景标题：たばこを
-- `VOCAB_VALUE_EMPTY` T89 / Topic 9 / p.70 `vocab`：词汇 5 的单词或释义为空
-- `TITLE_INVALID` T90 / Topic 9 / p.70 `title`：标题不是完整中文场景标题：この
-- `VOCAB_VALUE_EMPTY` T90 / Topic 9 / p.70 `vocab`：词汇 299 的单词或释义为空
 - `TITLE_INVALID` T91 / Topic 10 / p.73 `title`：标题不是完整中文场景标题：スーパー（マーケット）
 - `TITLE_INVALID` T92 / Topic 10 / p.74 `title`：标题不是完整中文场景标题：いつも
 - `TITLE_INVALID` T93 / Topic 10 / p.74 `title`：标题不是完整中文场景标题：けんとさんは
@@ -687,48 +657,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（766）
+## 字段异常（726）
 
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T80 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T81 / Topic 9 / p.66 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T81 / Topic 9 / p.66 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T81 / Topic 9 / p.66 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T82 / Topic 9 / p.66 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T83 / Topic 9 / p.66 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T83 / Topic 9 / p.66 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T84 / Topic 9 / p.67 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T84 / Topic 9 / p.67 `vocab`：词性不符合 N3 中文缩写风格：N
-- `VOCAB_POS_INVALID` T84 / Topic 9 / p.67 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T84 / Topic 9 / p.67 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T84 / Topic 9 / p.67 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T84 / Topic 9 / p.67 `vocab`：词性不符合 N3 中文缩写风格：V2-T
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T85 / Topic 9 / p.68 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T86 / Topic 9 / p.68 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T87 / Topic 9 / p.69 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T87 / Topic 9 / p.69 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T87 / Topic 9 / p.69 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T87 / Topic 9 / p.69 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T88 / Topic 9 / p.69 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T89 / Topic 9 / p.70 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T89 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T89 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T89 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T89 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T90 / Topic 9 / p.70 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T90 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T90 / Topic 9 / p.70 `vocab`：词性不符合 N3 中文缩写风格：V1-T
 - `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
