@@ -1,21 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：133
-- 问题总数：1120
+- 已校对：145
+- 问题总数：1050
 
-## 阻断发布（209）
+## 阻断发布（199）
 
-- `NATURALCHINESE_EMPTY` T134 / Topic 13 / p.101 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T134 / Topic 13 / p.101 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T135 / Topic 13 / p.102 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T135 / Topic 13 / p.102 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T135 / Topic 13 / p.102 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T136 / Topic 13 / p.103 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T140 / Topic 13 / p.104 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T140 / Topic 13 / p.104 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T140 / Topic 13 / p.104 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T142 / Topic 13 / p.105 `vocab`：结构化词汇为空
 - `JAPANESE_EMPTY` T146 / Topic 14 / p.109 `japanese`：日文为空
 - `JAPANESE_EMPTY` T147 / Topic 14 / p.110 `japanese`：日文为空
 - `NATURALCHINESE_EMPTY` T147 / Topic 14 / p.110 `naturalChinese`：naturalChinese 为空
@@ -216,24 +206,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（325）
+## 内容错误（309）
 
-- `TITLE_INVALID` T134 / Topic 13 / p.101 `title`：标题不是完整中文场景标题：あたらしい新しい
-- `VOCAB_VALUE_EMPTY` T134 / Topic 13 / p.101 `vocab`：词汇 453 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T135 / Topic 13 / p.102 `vocab`：词汇 410 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T135 / Topic 13 / p.102 `vocab`：词汇 471 的单词或释义为空
-- `TITLE_INVALID` T136 / Topic 13 / p.103 `title`：标题不是完整中文场景标题：このカメラは憂いですね。
-- `TITLE_INVALID` T137 / Topic 13 / p.103 `title`：标题不是完整中文场景标题：あれ、新しい黒ですね。
-- `TITLE_INVALID` T138 / Topic 13 / p.104 `title`：标题不是完整中文场景标题：ここのきっさてん、ちょっとくらいです…
-- `TITLE_INVALID` T139 / Topic 13 / p.104 `title`：标题不是完整中文场景标题：今、何時ですか。
-- `TITLE_INVALID` T140 / Topic 13 / p.104 `title`：标题不是完整中文场景标题：表社にのぼりました。
-- `TITLE_INVALID` T141 / Topic 13 / p.105 `title`：标题不是完整中文场景标题：じょうぶな
-- `TITLE_INVALID` T142 / Topic 13 / p.105 `title`：标题不是完整中文场景标题：このノートパソコン、かるいですね。
-- `TITLE_INVALID` T143 / Topic 13 / p.106 `title`：标题不是完整中文场景标题：このとけい、デザインがいいですね。
-- `TITLE_INVALID` T144 / Topic 13 / p.106 `title`：标题不是完整中文场景标题：このまるいバッグ、どうですか。
-- `TITLE_INVALID` T145 / Topic 13 / p.107 `title`：标题不是完整中文场景标题：このかさは
-- `VOCAB_VALUE_EMPTY` T145 / Topic 13 / p.107 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T145 / Topic 13 / p.107 `vocab`：词汇 488 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T146 / Topic 14 / p.109 `vocab`：词汇 495 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T147 / Topic 14 / p.110 `vocab`：词汇 508 的单词或释义为空
 - `TITLE_INVALID` T148 / Topic 14 / p.111 `title`：标题不是完整中文场景标题：家は駅から
@@ -544,52 +518,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（586）
+## 字段异常（542）
 
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T134 / Topic 13 / p.101 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T135 / Topic 13 / p.102 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T136 / Topic 13 / p.103 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T137 / Topic 13 / p.103 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T137 / Topic 13 / p.103 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T138 / Topic 13 / p.104 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T138 / Topic 13 / p.104 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T139 / Topic 13 / p.104 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T139 / Topic 13 / p.104 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T140 / Topic 13 / p.104 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T141 / Topic 13 / p.105 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T141 / Topic 13 / p.105 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T143 / Topic 13 / p.106 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T143 / Topic 13 / p.106 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T143 / Topic 13 / p.106 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T144 / Topic 13 / p.106 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T144 / Topic 13 / p.106 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T144 / Topic 13 / p.106 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T145 / Topic 13 / p.107 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T145 / Topic 13 / p.107 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T145 / Topic 13 / p.107 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T146 / Topic 14 / p.109 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T146 / Topic 14 / p.109 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T146 / Topic 14 / p.109 `vocab`：词性不符合 N3 中文缩写风格：
