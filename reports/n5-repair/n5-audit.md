@@ -1,24 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：64
-- 问题总数：1503
+- 已校对：78
+- 问题总数：1443
 
-## 阻断发布（274）
+## 阻断发布（261）
 
-- `NATURALCHINESE_EMPTY` T65 / Topic 8 / p.57 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T65 / Topic 8 / p.57 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T66 / Topic 8 / p.57 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T66 / Topic 8 / p.57 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T66 / Topic 8 / p.57 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T67 / Topic 8 / p.58 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T69 / Topic 8 / p.58 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T69 / Topic 8 / p.58 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T69 / Topic 8 / p.58 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T73 / Topic 8 / p.61 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T73 / Topic 8 / p.61 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T78 / Topic 8 / p.63 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T78 / Topic 8 / p.63 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T80 / Topic 9 / p.65 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T80 / Topic 9 / p.65 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T82 / Topic 9 / p.66 `vocab`：结构化词汇为空
@@ -281,21 +268,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（429）
+## 内容错误（416）
 
-- `TITLE_INVALID` T65 / Topic 8 / p.57 `title`：标题不是完整中文场景标题：？ なんようび何曜日
-- `TITLE_INVALID` T67 / Topic 8 / p.58 `title`：标题不是完整中文场景标题：月曜日です。
-- `TITLE_INVALID` T68 / Topic 8 / p.58 `title`：标题不是完整中文场景标题：吉県も
-- `TITLE_INVALID` T69 / Topic 8 / p.58 `title`：标题不是完整中文场景标题：無念に行きますか。
-- `TITLE_INVALID` T70 / Topic 8 / p.59 `title`：标题不是完整中文场景标题：明日、何を
-- `VOCAB_VALUE_EMPTY` T70 / Topic 8 / p.59 `vocab`：词汇 242 的单词或释义为空
-- `TITLE_INVALID` T71 / Topic 8 / p.60 `title`：标题不是完整中文场景标题：何曜日に
-- `VOCAB_MEANING_GARBLED` T71 / Topic 8 / p.60 `vocab`：词义异常：演唱会 ／ budi hoa nhac, chuiong trinh ca nhac
-- `VOCAB_VALUE_EMPTY` T73 / Topic 8 / p.61 `vocab`：词汇 1 的单词或释义为空
-- `TITLE_INVALID` T74 / Topic 8 / p.61 `title`：标题不是完整中文场景标题：いつ
-- `TITLE_INVALID` T76 / Topic 8 / p.62 `title`：标题不是完整中文场景标题：今年は海に
-- `TITLE_INVALID` T77 / Topic 8 / p.63 `title`：标题不是完整中文场景标题：あさって、クラスは
-- `TITLE_INVALID` T78 / Topic 8 / p.63 `title`：标题不是完整中文场景标题：週まつ、何しましたか。
 - `TITLE_INVALID` T79 / Topic 9 / p.65 `title`：标题不是完整中文场景标题：269あさごはん
 - `VOCAB_VALUE_EMPTY` T79 / Topic 9 / p.65 `vocab`：词汇 8 的单词或释义为空
 - `TITLE_INVALID` T80 / Topic 9 / p.65 `title`：标题不是完整中文场景标题：2310ぎゅうにゅう
@@ -713,41 +687,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（799）
+## 字段异常（766）
 
-- `VOCAB_POS_INVALID` T65 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T65 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T66 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T66 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T66 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T66 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T67 / Topic 8 / p.58 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T68 / Topic 8 / p.58 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T68 / Topic 8 / p.58 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T70 / Topic 8 / p.59 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T70 / Topic 8 / p.59 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T70 / Topic 8 / p.59 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T70 / Topic 8 / p.59 `vocab`：词性不符合 N3 中文缩写风格：N
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T71 / Topic 8 / p.60 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T71 / Topic 8 / p.60 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T72 / Topic 8 / p.60 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T72 / Topic 8 / p.60 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T73 / Topic 8 / p.61 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T73 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T73 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T73 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T73 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T74 / Topic 8 / p.61 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T74 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T74 / Topic 8 / p.61 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T75 / Topic 8 / p.62 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T75 / Topic 8 / p.62 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T76 / Topic 8 / p.62 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T76 / Topic 8 / p.62 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T77 / Topic 8 / p.63 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T77 / Topic 8 / p.63 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T78 / Topic 8 / p.63 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T78 / Topic 8 / p.63 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T79 / Topic 9 / p.65 `vocab`：词性不符合 N3 中文缩写风格：
@@ -1519,6 +1460,6 @@
 
 - 无
 
-## 可选优化（1）
+## 可选优化（0）
 
-- `VOCAB_MEANING_MULTIPLE` T71 / Topic 8 / p.60 `vocab`：词义含多个释义：演唱会 ／ budi hoa nhac, chuiong trinh ca nhac
+- 无
