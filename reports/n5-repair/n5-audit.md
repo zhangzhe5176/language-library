@@ -1,16 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：90
-- 问题总数：1373
+- 已校对：103
+- 问题总数：1288
 
-## 阻断发布（249）
+## 阻断发布（244）
 
-- `NATURALCHINESE_EMPTY` T91 / Topic 10 / p.73 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T91 / Topic 10 / p.73 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T97 / Topic 10 / p.76 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T100 / Topic 10 / p.78 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T100 / Topic 10 / p.78 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T105 / Topic 11 / p.82 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T105 / Topic 11 / p.82 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T106 / Topic 11 / p.83 `naturalChinese`：naturalChinese 为空
@@ -256,35 +251,13 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（398）
+## 内容错误（360）
 
-- `TITLE_INVALID` T91 / Topic 10 / p.73 `title`：标题不是完整中文场景标题：スーパー（マーケット）
-- `TITLE_INVALID` T92 / Topic 10 / p.74 `title`：标题不是完整中文场景标题：いつも
-- `TITLE_INVALID` T93 / Topic 10 / p.74 `title`：标题不是完整中文场景标题：けんとさんは
-- `CHINESE_GARBLED` T94 / Topic 10 / p.75 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura会看？B：我不経
-- `CHINESE_GARBLED` T94 / Topic 10 / p.75 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura会看？B：我不経
-- `TITLE_INVALID` T94 / Topic 10 / p.75 `title`：标题不是完整中文场景标题：さくらさんは
-- `VOCAB_VALUE_EMPTY` T94 / Topic 10 / p.75 `vocab`：词汇 321 的单词或释义为空
-- `TITLE_INVALID` T95 / Topic 10 / p.75 `title`：标题不是完整中文场景标题：xで
-- `TITLE_INVALID` T96 / Topic 10 / p.76 `title`：标题不是完整中文场景标题：きのう、何をしましたか。
-- `TITLE_INVALID` T97 / Topic 10 / p.76 `title`：标题不是完整中文场景标题：いつもどこでひるご飯を食べますか。
-- `TITLE_INVALID` T98 / Topic 10 / p.77 `title`：标题不是完整中文场景标题：週まつ、何をしますか。
-- `TITLE_INVALID` T99 / Topic 10 / p.77 `title`：标题不是完整中文场景标题：けんとさんは
-- `TITLE_INVALID` T100 / Topic 10 / p.78 `title`：标题不是完整中文场景标题：きのうのよる、何をしましたか。
-- `CHINESE_GARBLED` T101 / Topic 10 / p.78 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Noah会看新聞？
-- `CHINESE_GARBLED` T101 / Topic 10 / p.78 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Noah会看新聞？
-- `TITLE_INVALID` T101 / Topic 10 / p.78 `title`：标题不是完整中文场景标题：ノアさんは
-- `TITLE_INVALID` T102 / Topic 10 / p.79 `title`：标题不是完整中文场景标题：明日は
-- `VOCAB_VALUE_EMPTY` T102 / Topic 10 / p.79 `vocab`：词汇 7 的单词或释义为空
-- `TITLE_INVALID` T103 / Topic 10 / p.79 `title`：标题不是完整中文场景标题：おべんとうを
-- `VOCAB_VALUE_EMPTY` T103 / Topic 10 / p.79 `vocab`：词汇 343 的单词或释义为空
 - `JAPANESE_OCR_GLYPH` T104 / Topic 11 / p.81 `japanese`：日文含 OCR 异常字符：■ ジョギングはする］
 - `TITLE_INVALID` T104 / Topic 11 / p.81 `title`：标题不是完整中文场景标题：■ ジョギングはする］
 - `VOCAB_VALUE_EMPTY` T104 / Topic 11 / p.81 `vocab`：词汇 348 的单词或释义为空
 - `TITLE_INVALID` T105 / Topic 11 / p.82 `title`：标题不是完整中文场景标题：372どうぶつえん
 - `TITLE_INVALID` T106 / Topic 11 / p.83 `title`：标题不是完整中文场景标题：しゅみは何ですか。
-- `CHINESE_GARBLED` T107 / Topic 11 / p.83 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Kento的愛好是公？B：我喜足球。Noah？A：我喜画画
-- `CHINESE_GARBLED` T107 / Topic 11 / p.83 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Kento的愛好是公？B：我喜足球。Noah？A：我喜画画
 - `TITLE_INVALID` T107 / Topic 11 / p.83 `title`：标题不是完整中文场景标题：けんとさんのしゅみは何ですか。
 - `TITLE_INVALID` T108 / Topic 11 / p.84 `title`：标题不是完整中文场景标题：どんな
 - `TITLE_INVALID` T109 / Topic 11 / p.84 `title`：标题不是完整中文场景标题：休みに何をしますか。
@@ -305,8 +278,6 @@
 - `VOCAB_VALUE_EMPTY` T123 / Topic 12 / p.94 `vocab`：词汇 420 的单词或释义为空
 - `TITLE_INVALID` T124 / Topic 12 / p.95 `title`：标题不是完整中文场景标题：かぎ、どこですか。
 - `TITLE_INVALID` T125 / Topic 12 / p.95 `title`：标题不是完整中文场景标题：あのー、ごみばこは…・・。
-- `CHINESE_GARBLED` T126 / Topic 12 / p.95 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura房同
-- `CHINESE_GARBLED` T126 / Topic 12 / p.95 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura房同
 - `TITLE_INVALID` T126 / Topic 12 / p.95 `title`：标题不是完整中文场景标题：さくらさんのへやにソファーはあります…
 - `TITLE_INVALID` T127 / Topic 12 / p.96 `title`：标题不是完整中文场景标题：これ、どこで買いましたか。
 - `TITLE_INVALID` T128 / Topic 12 / p.96 `title`：标题不是完整中文场景标题：しゃしんが
@@ -426,8 +397,6 @@
 - `TITLE_INVALID` T191 / Topic 16 / p.132 `title`：标题不是完整中文场景标题：おとうとさんも
 - `TITLE_INVALID` T192 / Topic 16 / p.133 `title`：标题不是完整中文场景标题：お答さんは何をしていますか。
 - `TITLE_INVALID` T193 / Topic 16 / p.133 `title`：标题不是完整中文场景标题：おねえさんは
-- `CHINESE_GARBLED` T194 / Topic 16 / p.134 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Noah，你貴庚？B:68年
-- `CHINESE_GARBLED` T194 / Topic 16 / p.134 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Noah，你貴庚？B:68年
 - `TITLE_INVALID` T194 / Topic 16 / p.134 `title`：标题不是完整中文场景标题：ノアさんの
 - `TITLE_INVALID` T195 / Topic 16 / p.134 `title`：标题不是完整中文场景标题：お父さんとお母さんとおばあさんですね…
 - `TITLE_INVALID` T196 / Topic 16 / p.135 `title`：标题不是完整中文场景标题：いもうとさんのしごとは
@@ -443,11 +412,7 @@
 - `TITLE_INVALID` T205 / Topic 17 / p.139 `title`：标题不是完整中文场景标题：どんなアルバイトをしていますか。
 - `TITLE_INVALID` T206 / Topic 17 / p.139 `title`：标题不是完整中文场景标题：フランスごを
 - `VOCAB_VALUE_EMPTY` T206 / Topic 17 / p.139 `vocab`：词汇 6 的单词或释义为空
-- `CHINESE_GARBLED` T207 / Topic 17 / p.140 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Noah不来耶。B：啊，我打申活他看
-- `CHINESE_GARBLED` T207 / Topic 17 / p.140 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Noah不来耶。B：啊，我打申活他看
 - `TITLE_INVALID` T207 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：ノアさん、来ませんね。
-- `CHINESE_GARBLED` T208 / Topic 17 / p.140 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： 是国的手礼，清。B：～！測。A：清把交給Sakura
-- `CHINESE_GARBLED` T208 / Topic 17 / p.140 `originalChinese`：中文含乱码、越南语字符或异常英文：A： 是国的手礼，清。B：～！測。A：清把交給Sakura
 - `TITLE_INVALID` T208 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：かんこくの
 - `TITLE_INVALID` T209 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：おきなわの本ですか。
 - `TITLE_INVALID` T210 / Topic 17 / p.141 `title`：标题不是完整中文场景标题：パーティーに
@@ -465,8 +430,6 @@
 - `TITLE_INVALID` T224 / Topic 18 / p.149 `title`：标题不是完整中文场景标题：くだものの
 - `TITLE_INVALID` T225 / Topic 18 / p.149 `title`：标题不是完整中文场景标题：とり肉とぶた肉と、どちらがいいですか…
 - `TITLE_INVALID` T226 / Topic 18 / p.150 `title`：标题不是完整中文场景标题：あまい物を
-- `CHINESE_GARBLED` T227 / Topic 18 / p.150 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Noah酒？B：喝。我
-- `CHINESE_GARBLED` T227 / Topic 18 / p.150 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Noah酒？B：喝。我
 - `TITLE_INVALID` T227 / Topic 18 / p.150 `title`：标题不是完整中文场景标题：ノアさんはおさけを飲みますか。
 - `TITLE_INVALID` T228 / Topic 18 / p.150 `title`：标题不是完整中文场景标题：おなかがすきましたね。
 - `TITLE_INVALID` T229 / Topic 18 / p.151 `title`：标题不是完整中文场景标题：いろいろな
@@ -490,8 +453,6 @@
 - `TITLE_INVALID` T245 / Topic 19 / p.159 `title`：标题不是完整中文场景标题：かぞくは
 - `VOCAB_VALUE_EMPTY` T245 / Topic 19 / p.159 `vocab`：词汇 1 的单词或释义为空
 - `TITLE_INVALID` T246 / Topic 19 / p.160 `title`：标题不是完整中文场景标题：あの
-- `CHINESE_GARBLED` T247 / Topic 19 / p.160 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura，那位是哪位？B：是森川女士的先生。A：是外国人
-- `CHINESE_GARBLED` T247 / Topic 19 / p.160 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Sakura，那位是哪位？B：是森川女士的先生。A：是外国人
 - `TITLE_INVALID` T247 / Topic 19 / p.160 `title`：标题不是完整中文场景标题：さくらさん、あのかたはどなたですか。
 - `VOCAB_VALUE_EMPTY` T247 / Topic 19 / p.160 `vocab`：词汇 720 的单词或释义为空
 - `CHINESE_GARBLED` T248 / Topic 19 / p.161 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Yota是大学
@@ -542,8 +503,6 @@
 - `TITLE_INVALID` T283 / Topic 21 / p.179 `title`：标题不是完整中文场景标题：すみません。そこのドア、しめてくださ…
 - `TITLE_INVALID` T284 / Topic 21 / p.180 `title`：标题不是完整中文场景标题：そこの
 - `TITLE_INVALID` T285 / Topic 21 / p.180 `title`：标题不是完整中文场景标题：テレビ、けしても
-- `CHINESE_GARBLED` T286 / Topic 21 / p.180 `naturalChinese`：中文含乱码、越南语字符或异常英文：A: Sakura， 清从冰箱拿
-- `CHINESE_GARBLED` T286 / Topic 21 / p.180 `originalChinese`：中文含乱码、越南语字符或异常英文：A: Sakura， 清从冰箱拿
 - `TITLE_INVALID` T286 / Topic 21 / p.180 `title`：标题不是完整中文场景标题：さくらさん、れいぞうこからバターを
 - `TITLE_INVALID` T287 / Topic 21 / p.181 `title`：标题不是完整中文场景标题：これがスイッチですか。
 - `TITLE_INVALID` T288 / Topic 21 / p.181 `title`：标题不是完整中文场景标题：あの、すみません、
@@ -637,8 +596,6 @@
 - `VOCAB_VALUE_EMPTY` T355 / Topic 24 / p.217 `vocab`：词汇 973 的单词或释义为空
 - `TITLE_INVALID` T356 / Topic 24 / p.218 `title`：标题不是完整中文场景标题：では、テストを
 - `VOCAB_VALUE_EMPTY` T356 / Topic 24 / p.218 `vocab`：词汇 18 的单词或释义为空
-- `CHINESE_GARBLED` T357 / Topic 24 / p.218 `naturalChinese`：中文含乱码、越南语字符或异常英文：A： Noah，清大声一点。B：啊
-- `CHINESE_GARBLED` T357 / Topic 24 / p.218 `originalChinese`：中文含乱码、越南语字符或异常英文：A： Noah，清大声一点。B：啊
 - `TITLE_INVALID` T357 / Topic 24 / p.218 `title`：标题不是完整中文场景标题：ノアさん、もう
 - `TITLE_INVALID` T358 / Topic 24 / p.219 `title`：标题不是完整中文场景标题：先生、しつもんしても
 - `TITLE_INVALID` T359 / Topic 24 / p.219 `title`：标题不是完整中文场景标题：みなさん、この男の人の名前を
@@ -657,50 +614,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（726）
+## 字段异常（684）
 
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T91 / Topic 10 / p.73 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T92 / Topic 10 / p.74 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T92 / Topic 10 / p.74 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T92 / Topic 10 / p.74 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T93 / Topic 10 / p.74 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T93 / Topic 10 / p.74 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T93 / Topic 10 / p.74 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T94 / Topic 10 / p.75 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T94 / Topic 10 / p.75 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T94 / Topic 10 / p.75 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T95 / Topic 10 / p.75 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T95 / Topic 10 / p.75 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `VOCAB_POS_INVALID` T95 / Topic 10 / p.75 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T96 / Topic 10 / p.76 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T97 / Topic 10 / p.76 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T98 / Topic 10 / p.77 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T98 / Topic 10 / p.77 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T98 / Topic 10 / p.77 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T99 / Topic 10 / p.77 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T99 / Topic 10 / p.77 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T99 / Topic 10 / p.77 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T99 / Topic 10 / p.77 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T100 / Topic 10 / p.78 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T100 / Topic 10 / p.78 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T100 / Topic 10 / p.78 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T101 / Topic 10 / p.78 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T101 / Topic 10 / p.78 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T102 / Topic 10 / p.79 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T102 / Topic 10 / p.79 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T103 / Topic 10 / p.79 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T103 / Topic 10 / p.79 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T103 / Topic 10 / p.79 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：

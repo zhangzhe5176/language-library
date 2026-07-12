@@ -1,631 +1,28 @@
 {
   "level": "n5",
   "story_count": 373,
-  "reviewed_count": 90,
-  "issue_count": 1373,
+  "reviewed_count": 103,
+  "issue_count": 1288,
   "severity_counts": {
-    "阻断发布": 249,
-    "内容错误": 398,
-    "字段异常": 726,
+    "阻断发布": 244,
+    "内容错误": 360,
+    "字段异常": 684,
     "格式问题": 0,
     "可选优化": 0
   },
   "code_counts": {
-    "CHINESE_GARBLED": 32,
-    "DIALOGUE_SPEAKERS_INCOMPLETE": 215,
+    "CHINESE_GARBLED": 10,
+    "DIALOGUE_SPEAKERS_INCOMPLETE": 204,
     "JAPANESE_EMPTY": 21,
     "JAPANESE_OCR_GLYPH": 1,
-    "NATURALCHINESE_EMPTY": 67,
-    "ORIGINALCHINESE_EMPTY": 67,
-    "TITLE_INVALID": 258,
-    "VOCAB_EMPTY": 94,
-    "VOCAB_POS_INVALID": 511,
-    "VOCAB_VALUE_EMPTY": 107
+    "NATURALCHINESE_EMPTY": 65,
+    "ORIGINALCHINESE_EMPTY": 65,
+    "TITLE_INVALID": 245,
+    "VOCAB_EMPTY": 93,
+    "VOCAB_POS_INVALID": 480,
+    "VOCAB_VALUE_EMPTY": 104
   },
   "issues": [
-    {
-      "severity": "阻断发布",
-      "code": "NATURALCHINESE_EMPTY",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "naturalChinese",
-      "message": "naturalChinese 为空"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "ORIGINALCHINESE_EMPTY",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "originalChinese",
-      "message": "originalChinese 为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：スーパー（マーケット）"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 91,
-      "topic_id": 10,
-      "page": 73,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 92,
-      "topic_id": 10,
-      "page": 74,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 92,
-      "topic_id": 10,
-      "page": 74,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：いつも"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 92,
-      "topic_id": 10,
-      "page": 74,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 92,
-      "topic_id": 10,
-      "page": 74,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 93,
-      "topic_id": 10,
-      "page": 74,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 93,
-      "topic_id": 10,
-      "page": 74,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：けんとさんは"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 93,
-      "topic_id": 10,
-      "page": 74,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 93,
-      "topic_id": 10,
-      "page": 74,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura会看？B：我不経"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura会看？B：我不経"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：さくらさんは"
-    },
-    {
-      "severity": "内容错误",
-      "code": "VOCAB_VALUE_EMPTY",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "vocab",
-      "message": "词汇 321 的单词或释义为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 94,
-      "topic_id": 10,
-      "page": 75,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 95,
-      "topic_id": 10,
-      "page": 75,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 95,
-      "topic_id": 10,
-      "page": 75,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：xで"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 95,
-      "topic_id": 10,
-      "page": 75,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格：Adv"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 95,
-      "topic_id": 10,
-      "page": 75,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 96,
-      "topic_id": 10,
-      "page": 76,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：きのう、何をしましたか。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 96,
-      "topic_id": 10,
-      "page": 76,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 97,
-      "topic_id": 10,
-      "page": 76,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 97,
-      "topic_id": 10,
-      "page": 76,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：いつもどこでひるご飯を食べますか。"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "VOCAB_EMPTY",
-      "story_id": 97,
-      "topic_id": 10,
-      "page": 76,
-      "field": "vocab",
-      "message": "结构化词汇为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 98,
-      "topic_id": 10,
-      "page": 77,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 98,
-      "topic_id": 10,
-      "page": 77,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：週まつ、何をしますか。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 98,
-      "topic_id": 10,
-      "page": 77,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 98,
-      "topic_id": 10,
-      "page": 77,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 99,
-      "topic_id": 10,
-      "page": 77,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 99,
-      "topic_id": 10,
-      "page": 77,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：けんとさんは"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 99,
-      "topic_id": 10,
-      "page": 77,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 99,
-      "topic_id": 10,
-      "page": 77,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 99,
-      "topic_id": 10,
-      "page": 77,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "NATURALCHINESE_EMPTY",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "naturalChinese",
-      "message": "naturalChinese 为空"
-    },
-    {
-      "severity": "阻断发布",
-      "code": "ORIGINALCHINESE_EMPTY",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "originalChinese",
-      "message": "originalChinese 为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：きのうのよる、何をしましたか。"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 100,
-      "topic_id": 10,
-      "page": 78,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 101,
-      "topic_id": 10,
-      "page": 78,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 101,
-      "topic_id": 10,
-      "page": 78,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah会看新聞？"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 101,
-      "topic_id": 10,
-      "page": 78,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah会看新聞？"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 101,
-      "topic_id": 10,
-      "page": 78,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：ノアさんは"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 101,
-      "topic_id": 10,
-      "page": 78,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 102,
-      "topic_id": 10,
-      "page": 79,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 102,
-      "topic_id": 10,
-      "page": 79,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：明日は"
-    },
-    {
-      "severity": "内容错误",
-      "code": "VOCAB_VALUE_EMPTY",
-      "story_id": 102,
-      "topic_id": 10,
-      "page": 79,
-      "field": "vocab",
-      "message": "词汇 7 的单词或释义为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 102,
-      "topic_id": 10,
-      "page": 79,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 103,
-      "topic_id": 10,
-      "page": 79,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 103,
-      "topic_id": 10,
-      "page": 79,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：おべんとうを"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 103,
-      "topic_id": 10,
-      "page": 79,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
-    {
-      "severity": "内容错误",
-      "code": "VOCAB_VALUE_EMPTY",
-      "story_id": 103,
-      "topic_id": 10,
-      "page": 79,
-      "field": "vocab",
-      "message": "词汇 343 的单词或释义为空"
-    },
-    {
-      "severity": "字段异常",
-      "code": "VOCAB_POS_INVALID",
-      "story_id": 103,
-      "topic_id": 10,
-      "page": 79,
-      "field": "vocab",
-      "message": "词性不符合 N3 中文缩写风格："
-    },
     {
       "severity": "内容错误",
       "code": "JAPANESE_OCR_GLYPH",
@@ -967,24 +364,6 @@
       "page": 83,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 107,
-      "topic_id": 11,
-      "page": 83,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Kento的愛好是公？B：我喜足球。Noah？A：我喜画画"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 107,
-      "topic_id": 11,
-      "page": 83,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Kento的愛好是公？B：我喜足球。Noah？A：我喜画画"
     },
     {
       "severity": "内容错误",
@@ -1894,24 +1273,6 @@
       "page": 95,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 126,
-      "topic_id": 12,
-      "page": 95,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura房同"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 126,
-      "topic_id": 12,
-      "page": 95,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura房同"
     },
     {
       "severity": "内容错误",
@@ -5362,24 +4723,6 @@
     },
     {
       "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 194,
-      "topic_id": 16,
-      "page": 134,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah，你貴庚？B:68年"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 194,
-      "topic_id": 16,
-      "page": 134,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah，你貴庚？B:68年"
-    },
-    {
-      "severity": "内容错误",
       "code": "TITLE_INVALID",
       "story_id": 194,
       "topic_id": 16,
@@ -5830,24 +5173,6 @@
     },
     {
       "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 207,
-      "topic_id": 17,
-      "page": 140,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah不来耶。B：啊，我打申活他看"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 207,
-      "topic_id": 17,
-      "page": 140,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah不来耶。B：啊，我打申活他看"
-    },
-    {
-      "severity": "内容错误",
       "code": "TITLE_INVALID",
       "story_id": 207,
       "topic_id": 17,
@@ -5872,24 +5197,6 @@
       "page": 140,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 208,
-      "topic_id": 17,
-      "page": 140,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： 是国的手礼，清。B：～！測。A：清把交給Sakura"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 208,
-      "topic_id": 17,
-      "page": 140,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： 是国的手礼，清。B：～！測。A：清把交給Sakura"
     },
     {
       "severity": "内容错误",
@@ -6658,24 +5965,6 @@
     },
     {
       "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 227,
-      "topic_id": 18,
-      "page": 150,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah酒？B：喝。我"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 227,
-      "topic_id": 18,
-      "page": 150,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah酒？B：喝。我"
-    },
-    {
-      "severity": "内容错误",
       "code": "TITLE_INVALID",
       "story_id": 227,
       "topic_id": 18,
@@ -7438,24 +6727,6 @@
       "page": 160,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 247,
-      "topic_id": 19,
-      "page": 160,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura，那位是哪位？B：是森川女士的先生。A：是外国人"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 247,
-      "topic_id": 19,
-      "page": 160,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Sakura，那位是哪位？B：是森川女士的先生。A：是外国人"
     },
     {
       "severity": "内容错误",
@@ -8842,24 +8113,6 @@
       "page": 180,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 286,
-      "topic_id": 21,
-      "page": 180,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A: Sakura， 清从冰箱拿"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 286,
-      "topic_id": 21,
-      "page": 180,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A: Sakura， 清从冰箱拿"
     },
     {
       "severity": "内容错误",
@@ -11857,24 +11110,6 @@
       "page": 218,
       "field": "japanese",
       "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 357,
-      "topic_id": 24,
-      "page": 218,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah，清大声一点。B：啊"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 357,
-      "topic_id": 24,
-      "page": 218,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：A： Noah，清大声一点。B：啊"
     },
     {
       "severity": "内容错误",
