@@ -1,25 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：166
-- 问题总数：946
+- 已校对：183
+- 问题总数：823
 
-## 阻断发布（183）
+## 阻断发布（169）
 
-- `NATURALCHINESE_EMPTY` T167 / Topic 15 / p.120 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T167 / Topic 15 / p.120 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T168 / Topic 15 / p.120 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T168 / Topic 15 / p.120 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T169 / Topic 15 / p.121 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T169 / Topic 15 / p.121 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T170 / Topic 15 / p.121 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T170 / Topic 15 / p.121 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T170 / Topic 15 / p.121 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T170 / Topic 15 / p.121 `vocab`：结构化词汇为空
-- `JAPANESE_EMPTY` T171 / Topic 15 / p.121 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T171 / Topic 15 / p.121 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T171 / Topic 15 / p.121 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T175 / Topic 15 / p.123 `vocab`：结构化词汇为空
 - `JAPANESE_EMPTY` T184 / Topic 16 / p.128 `japanese`：日文为空
 - `NATURALCHINESE_EMPTY` T184 / Topic 16 / p.128 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T184 / Topic 16 / p.128 `originalChinese`：originalChinese 为空
@@ -190,56 +176,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（285）
+## 内容错误（237）
 
-- `TITLE_INVALID` T167 / Topic 15 / p.120 `title`：标题不是完整中文场景标题：？ 何月 なんがつ
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 2 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 6 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 7 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 11 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 12 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T167 / Topic 15 / p.120 `vocab`：词汇 541 的单词或释义为空
-- `TITLE_INVALID` T168 / Topic 15 / p.120 `title`：标题不是完整中文场景标题：にじゅういちにち
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 2 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 3 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 4 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 5 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 6 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 7 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 8 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 9 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 10 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 11 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 12 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 13 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 14 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 15 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 16 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 543 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T168 / Topic 15 / p.120 `vocab`：词汇 544 的单词或释义为空
-- `TITLE_INVALID` T169 / Topic 15 / p.121 `title`：标题不是完整中文场景标题：せんきゅうひゃくきゅうじゅうごねん
-- `VOCAB_VALUE_EMPTY` T169 / Topic 15 / p.121 `vocab`：词汇 545 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T169 / Topic 15 / p.121 `vocab`：词汇 546 的单词或释义为空
-- `TITLE_INVALID` T172 / Topic 15 / p.122 `title`：标题不是完整中文场景标题：アンさん、たんじょうびはいつですか。
-- `TITLE_INVALID` T173 / Topic 15 / p.122 `title`：标题不是完整中文场景标题：けんとさんのたんじょうびは
-- `VOCAB_VALUE_EMPTY` T173 / Topic 15 / p.122 `vocab`：词汇 1 的单词或释义为空
-- `TITLE_INVALID` T174 / Topic 15 / p.122 `title`：标题不是完整中文场景标题：7月17日は休みですね。何の
-- `TITLE_INVALID` T175 / Topic 15 / p.123 `title`：标题不是完整中文场景标题：金曜日は…・、2月14日ですね。
-- `TITLE_INVALID` T176 / Topic 15 / p.123 `title`：标题不是完整中文场景标题：今年は、えーと、
-- `VOCAB_VALUE_EMPTY` T176 / Topic 15 / p.123 `vocab`：词汇 1 的单词或释义为空
-- `TITLE_INVALID` T177 / Topic 15 / p.123 `title`：标题不是完整中文场景标题：ほっかいどうはどうでしたか。
-- `TITLE_INVALID` T178 / Topic 15 / p.124 `title`：标题不是完整中文场景标题：オーストラリアは今なつですか。
-- `TITLE_INVALID` T179 / Topic 15 / p.124 `title`：标题不是完整中文场景标题：あたたかくなりましたね。
-- `TITLE_INVALID` T180 / Topic 15 / p.125 `title`：标题不是完整中文场景标题：もうすぐあきですね。
-- `TITLE_INVALID` T181 / Topic 15 / p.125 `title`：标题不是完整中文场景标题：どのぐらいにほんごをべんきょうしまし…
-- `VOCAB_VALUE_EMPTY` T181 / Topic 15 / p.125 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T181 / Topic 15 / p.125 `vocab`：词汇 6 的单词或释义为空
-- `TITLE_INVALID` T182 / Topic 15 / p.126 `title`：标题不是完整中文场景标题：ノアさんの
-- `VOCAB_VALUE_EMPTY` T182 / Topic 15 / p.126 `vocab`：词汇 7 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T182 / Topic 15 / p.126 `vocab`：词汇 20 的单词或释义为空
-- `TITLE_INVALID` T183 / Topic 15 / p.126 `title`：标题不是完整中文场景标题：ふゆ休みは
 - `VOCAB_VALUE_EMPTY` T184 / Topic 16 / p.128 `vocab`：词汇 572 的单词或释义为空
 - `TITLE_INVALID` T185 / Topic 16 / p.129 `title`：标题不是完整中文场景标题：田中さんのかぞく
 - `TITLE_INVALID` T186 / Topic 16 / p.130 `title`：标题不是完整中文场景标题：7人 ななにん／しちにん
@@ -478,69 +416,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（478）
+## 字段异常（417）
 
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T167 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T168 / Topic 15 / p.120 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T169 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T169 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T171 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T171 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T171 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T171 / Topic 15 / p.121 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T172 / Topic 15 / p.122 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T172 / Topic 15 / p.122 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T173 / Topic 15 / p.122 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T173 / Topic 15 / p.122 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T174 / Topic 15 / p.122 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T174 / Topic 15 / p.122 `vocab`：词性不符合 N3 中文缩写风格：N
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T175 / Topic 15 / p.123 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T176 / Topic 15 / p.123 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T176 / Topic 15 / p.123 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T177 / Topic 15 / p.123 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T177 / Topic 15 / p.123 `vocab`：词性不符合 N3 中文缩写风格：N
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T178 / Topic 15 / p.124 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T178 / Topic 15 / p.124 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T178 / Topic 15 / p.124 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T179 / Topic 15 / p.124 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T179 / Topic 15 / p.124 `vocab`：词性不符合 N3 中文缩写风格：V1
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T180 / Topic 15 / p.125 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T180 / Topic 15 / p.125 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T180 / Topic 15 / p.125 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T181 / Topic 15 / p.125 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T181 / Topic 15 / p.125 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T181 / Topic 15 / p.125 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T181 / Topic 15 / p.125 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T182 / Topic 15 / p.126 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T182 / Topic 15 / p.126 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T182 / Topic 15 / p.126 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T182 / Topic 15 / p.126 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T183 / Topic 15 / p.126 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T183 / Topic 15 / p.126 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T183 / Topic 15 / p.126 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T184 / Topic 16 / p.128 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T184 / Topic 16 / p.128 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T186 / Topic 16 / p.130 `vocab`：词性不符合 N3 中文缩写风格：
