@@ -1,31 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：103
-- 问题总数：1288
+- 已校对：121
+- 问题总数：1181
 
-## 阻断发布（244）
+## 阻断发布（224）
 
-- `NATURALCHINESE_EMPTY` T105 / Topic 11 / p.82 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T105 / Topic 11 / p.82 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T106 / Topic 11 / p.83 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T106 / Topic 11 / p.83 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T106 / Topic 11 / p.83 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T108 / Topic 11 / p.84 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T108 / Topic 11 / p.84 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T109 / Topic 11 / p.84 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T109 / Topic 11 / p.84 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T110 / Topic 11 / p.85 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T113 / Topic 11 / p.86 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T113 / Topic 11 / p.86 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T114 / Topic 11 / p.86 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T114 / Topic 11 / p.86 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T114 / Topic 11 / p.86 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T116 / Topic 11 / p.88 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T117 / Topic 11 / p.88 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T117 / Topic 11 / p.88 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T119 / Topic 11 / p.90 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T119 / Topic 11 / p.90 `originalChinese`：originalChinese 为空
 - `JAPANESE_EMPTY` T122 / Topic 12 / p.93 `japanese`：日文为空
 - `NATURALCHINESE_EMPTY` T122 / Topic 12 / p.93 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T122 / Topic 12 / p.93 `originalChinese`：originalChinese 为空
@@ -251,28 +231,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（360）
+## 内容错误（340）
 
-- `JAPANESE_OCR_GLYPH` T104 / Topic 11 / p.81 `japanese`：日文含 OCR 异常字符：■ ジョギングはする］
-- `TITLE_INVALID` T104 / Topic 11 / p.81 `title`：标题不是完整中文场景标题：■ ジョギングはする］
-- `VOCAB_VALUE_EMPTY` T104 / Topic 11 / p.81 `vocab`：词汇 348 的单词或释义为空
-- `TITLE_INVALID` T105 / Topic 11 / p.82 `title`：标题不是完整中文场景标题：372どうぶつえん
-- `TITLE_INVALID` T106 / Topic 11 / p.83 `title`：标题不是完整中文场景标题：しゅみは何ですか。
-- `TITLE_INVALID` T107 / Topic 11 / p.83 `title`：标题不是完整中文场景标题：けんとさんのしゅみは何ですか。
-- `TITLE_INVALID` T108 / Topic 11 / p.84 `title`：标题不是完整中文场景标题：どんな
-- `TITLE_INVALID` T109 / Topic 11 / p.84 `title`：标题不是完整中文场景标题：休みに何をしますか。
-- `TITLE_INVALID` T110 / Topic 11 / p.85 `title`：标题不是完整中文场景标题：週まつ、友だちと
-- `TITLE_INVALID` T111 / Topic 11 / p.85 `title`：标题不是完整中文场景标题：土曜日、何をしましたか。
-- `TITLE_INVALID` T112 / Topic 11 / p.86 `title`：标题不是完整中文场景标题：日曜日、安かけましたか。
-- `TITLE_INVALID` T113 / Topic 11 / p.86 `title`：标题不是完整中文场景标题：休みに何をしますか。
-- `TITLE_INVALID` T114 / Topic 11 / p.86 `title`：标题不是完整中文场景标题：馬のしゃしんですか。どこでとりました…
-- `TITLE_INVALID` T115 / Topic 11 / p.87 `title`：标题不是完整中文场景标题：きのう、何かしましたか。
-- `TITLE_INVALID` T116 / Topic 11 / p.88 `title`：标题不是完整中文场景标题：アンさんはカラオケに行きますか。
-- `TITLE_INVALID` T117 / Topic 11 / p.88 `title`：标题不是完整中文场景标题：来週の
-- `TITLE_INVALID` T118 / Topic 11 / p.89 `title`：标题不是完整中文场景标题：しゅみは
-- `TITLE_INVALID` T119 / Topic 11 / p.90 `title`：标题不是完整中文场景标题：ノアさんはカラオケ、好きですか。
-- `TITLE_INVALID` T120 / Topic 11 / p.90 `title`：标题不是完整中文场景标题：たくさんあるきましたね。
-- `TITLE_INVALID` T121 / Topic 11 / p.91 `title`：标题不是完整中文场景标题：日曜日はどこかへ出かけましたか。
 - `VOCAB_VALUE_EMPTY` T122 / Topic 12 / p.93 `vocab`：词汇 110 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T122 / Topic 12 / p.93 `vocab`：词汇 416 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T123 / Topic 12 / p.94 `vocab`：词汇 420 的单词或释义为空
@@ -614,75 +574,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（684）
+## 字段异常（617）
 
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T104 / Topic 11 / p.81 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T105 / Topic 11 / p.82 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T107 / Topic 11 / p.83 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T107 / Topic 11 / p.83 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T107 / Topic 11 / p.83 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T108 / Topic 11 / p.84 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T108 / Topic 11 / p.84 `vocab`：词性不符合 N3 中文缩写风格：Adnom
-- `VOCAB_POS_INVALID` T108 / Topic 11 / p.84 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T109 / Topic 11 / p.84 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T109 / Topic 11 / p.84 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T109 / Topic 11 / p.84 `vocab`：词性不符合 N3 中文缩写风格：V1
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T110 / Topic 11 / p.85 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T111 / Topic 11 / p.85 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T111 / Topic 11 / p.85 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T112 / Topic 11 / p.86 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T112 / Topic 11 / p.86 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T113 / Topic 11 / p.86 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T113 / Topic 11 / p.86 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T115 / Topic 11 / p.87 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T115 / Topic 11 / p.87 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T115 / Topic 11 / p.87 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T115 / Topic 11 / p.87 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T115 / Topic 11 / p.87 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T115 / Topic 11 / p.87 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T116 / Topic 11 / p.88 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T117 / Topic 11 / p.88 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T117 / Topic 11 / p.88 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T118 / Topic 11 / p.89 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T118 / Topic 11 / p.89 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T118 / Topic 11 / p.89 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T118 / Topic 11 / p.89 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T119 / Topic 11 / p.90 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T119 / Topic 11 / p.90 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `VOCAB_POS_INVALID` T119 / Topic 11 / p.90 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T120 / Topic 11 / p.90 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T120 / Topic 11 / p.90 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T120 / Topic 11 / p.90 `vocab`：词性不符合 N3 中文缩写风格：V1
-- `VOCAB_POS_INVALID` T120 / Topic 11 / p.90 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T121 / Topic 11 / p.91 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T121 / Topic 11 / p.91 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T121 / Topic 11 / p.91 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T121 / Topic 11 / p.91 `vocab`：词性不符合 N3 中文缩写风格：Adv
 - `VOCAB_POS_INVALID` T122 / Topic 12 / p.93 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T122 / Topic 12 / p.93 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T122 / Topic 12 / p.93 `vocab`：词性不符合 N3 中文缩写风格：
