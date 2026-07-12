@@ -1,24 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：198
-- 问题总数：752
+- 已校对：216
+- 问题总数：682
 
-## 阻断发布（152）
+## 阻断发布（139）
 
-- `NATURALCHINESE_EMPTY` T199 / Topic 17 / p.137 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T199 / Topic 17 / p.137 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T199 / Topic 17 / p.137 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T202 / Topic 17 / p.138 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T202 / Topic 17 / p.138 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T203 / Topic 17 / p.138 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T203 / Topic 17 / p.138 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T203 / Topic 17 / p.138 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T207 / Topic 17 / p.140 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T209 / Topic 17 / p.140 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T209 / Topic 17 / p.140 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T213 / Topic 17 / p.142 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T214 / Topic 17 / p.142 `vocab`：结构化词汇为空
 - `JAPANESE_EMPTY` T217 / Topic 18 / p.145 `japanese`：日文为空
 - `NATURALCHINESE_EMPTY` T217 / Topic 18 / p.145 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T217 / Topic 18 / p.145 `originalChinese`：originalChinese 为空
@@ -159,28 +146,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（211）
+## 内容错误（191）
 
-- `TITLE_INVALID` T199 / Topic 17 / p.137 `title`：标题不是完整中文场景标题：さくらさんのたんじょうびに
-- `TITLE_INVALID` T200 / Topic 17 / p.137 `title`：标题不是完整中文场景标题：プレゼントは何を
-- `TITLE_INVALID` T201 / Topic 17 / p.137 `title`：标题不是完整中文场景标题：かわいいけしゴムですね。
-- `VOCAB_VALUE_EMPTY` T201 / Topic 17 / p.137 `vocab`：词汇 1 的单词或释义为空
-- `TITLE_INVALID` T202 / Topic 17 / p.138 `title`：标题不是完整中文场景标题：きのう、何
-- `TITLE_INVALID` T203 / Topic 17 / p.138 `title`：标题不是完整中文场景标题：それ、何ですか。
-- `TITLE_INVALID` T204 / Topic 17 / p.138 `title`：标题不是完整中文场景标题：かさ、かしますよ。どうぞ。
-- `TITLE_INVALID` T205 / Topic 17 / p.139 `title`：标题不是完整中文场景标题：どんなアルバイトをしていますか。
-- `TITLE_INVALID` T206 / Topic 17 / p.139 `title`：标题不是完整中文场景标题：フランスごを
-- `VOCAB_VALUE_EMPTY` T206 / Topic 17 / p.139 `vocab`：词汇 6 的单词或释义为空
-- `TITLE_INVALID` T207 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：ノアさん、来ませんね。
-- `TITLE_INVALID` T208 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：かんこくの
-- `TITLE_INVALID` T209 / Topic 17 / p.140 `title`：标题不是完整中文场景标题：おきなわの本ですか。
-- `TITLE_INVALID` T210 / Topic 17 / p.141 `title`：标题不是完整中文场景标题：パーティーに
-- `TITLE_INVALID` T211 / Topic 17 / p.141 `title`：标题不是完整中文场景标题：すみません。
-- `VOCAB_VALUE_EMPTY` T211 / Topic 17 / p.141 `vocab`：词汇 18 的单词或释义为空
-- `TITLE_INVALID` T212 / Topic 17 / p.142 `title`：标题不是完整中文场景标题：ちょっと
-- `TITLE_INVALID` T213 / Topic 17 / p.142 `title`：标题不是完整中文场景标题：だいじょうぶですか。つだいましょうか…
-- `TITLE_INVALID` T214 / Topic 17 / p.142 `title`：标题不是完整中文场景标题：しゃしんをメールで
-- `TITLE_INVALID` T216 / Topic 17 / p.143 `title`：标题不是完整中文场景标题：あの、けんとさん、いますか。
 - `VOCAB_VALUE_EMPTY` T217 / Topic 18 / p.145 `vocab`：词汇 618 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T218 / Topic 18 / p.146 `vocab`：词汇 680 的单词或释义为空
 - `VOCAB_VALUE_EMPTY` T220 / Topic 18 / p.147 `vocab`：词汇 684 的单词或释义为空
@@ -373,45 +340,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（389）
+## 字段异常（352）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T199 / Topic 17 / p.137 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T200 / Topic 17 / p.137 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T200 / Topic 17 / p.137 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T201 / Topic 17 / p.137 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T201 / Topic 17 / p.137 `vocab`：词性不符合 N3 中文缩写风格：V2-T
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T202 / Topic 17 / p.138 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T202 / Topic 17 / p.138 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T203 / Topic 17 / p.138 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T204 / Topic 17 / p.138 `vocab`：词性不符合 N3 中文缩写风格：V1-T
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T205 / Topic 17 / p.139 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T205 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T205 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T205 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T206 / Topic 17 / p.139 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T206 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T206 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T206 / Topic 17 / p.139 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T207 / Topic 17 / p.140 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T208 / Topic 17 / p.140 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T208 / Topic 17 / p.140 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T208 / Topic 17 / p.140 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T209 / Topic 17 / p.140 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T209 / Topic 17 / p.140 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T210 / Topic 17 / p.141 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T210 / Topic 17 / p.141 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T211 / Topic 17 / p.141 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T211 / Topic 17 / p.141 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T212 / Topic 17 / p.142 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T212 / Topic 17 / p.142 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T212 / Topic 17 / p.142 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T213 / Topic 17 / p.142 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T214 / Topic 17 / p.142 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T215 / Topic 17 / p.143 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T215 / Topic 17 / p.143 `vocab`：词性不符合 N3 中文缩写风格：V1-T
-- `VOCAB_POS_INVALID` T215 / Topic 17 / p.143 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T216 / Topic 17 / p.143 `vocab`：词性不符合 N3 中文缩写风格：Adv
-- `VOCAB_POS_INVALID` T216 / Topic 17 / p.143 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T217 / Topic 18 / p.145 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T217 / Topic 18 / p.145 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T217 / Topic 18 / p.145 `vocab`：词性不符合 N3 中文缩写风格：
