@@ -1,25 +1,11 @@
 # N5 全量内容审计
 
 - 故事数：373
-- 已校对：47
-- 问题总数：1571
+- 已校对：64
+- 问题总数：1503
 
-## 阻断发布（288）
+## 阻断发布（274）
 
-- `JAPANESE_EMPTY` T48 / Topic 7 / p.45 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T48 / Topic 7 / p.45 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T48 / Topic 7 / p.45 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T49 / Topic 7 / p.46 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T49 / Topic 7 / p.46 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T49 / Topic 7 / p.46 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T50 / Topic 7 / p.46 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T50 / Topic 7 / p.46 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T50 / Topic 7 / p.46 `originalChinese`：originalChinese 为空
-- `JAPANESE_EMPTY` T51 / Topic 7 / p.47 `japanese`：日文为空
-- `NATURALCHINESE_EMPTY` T58 / Topic 7 / p.51 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T58 / Topic 7 / p.51 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T62 / Topic 7 / p.53 `vocab`：结构化词汇为空
-- `VOCAB_EMPTY` T63 / Topic 7 / p.53 `vocab`：结构化词汇为空
 - `NATURALCHINESE_EMPTY` T65 / Topic 8 / p.57 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T65 / Topic 8 / p.57 `originalChinese`：originalChinese 为空
 - `JAPANESE_EMPTY` T66 / Topic 8 / p.57 `japanese`：日文为空
@@ -295,24 +281,8 @@
 - `ORIGINALCHINESE_EMPTY` T373 / Topic 24 / p.226 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T373 / Topic 24 / p.226 `vocab`：结构化词汇为空
 
-## 内容错误（445）
+## 内容错误（429）
 
-- `CHINESE_GARBLED` T51 / Topic 7 / p.47 `naturalChinese`：中文含乱码、越南语字符或异常英文：大学 university
-- `CHINESE_GARBLED` T51 / Topic 7 / p.47 `originalChinese`：中文含乱码、越南语字符或异常英文：大学 university
-- `TITLE_INVALID` T52 / Topic 7 / p.48 `title`：标题不是完整中文场景标题：あ、熱の
-- `TITLE_INVALID` T53 / Topic 7 / p.48 `title`：标题不是完整中文场景标题：けんとさんの
-- `TITLE_INVALID` T54 / Topic 7 / p.49 `title`：标题不是完整中文场景标题：じしょ、ありますか。
-- `TITLE_INVALID` T55 / Topic 7 / p.49 `title`：标题不是完整中文场景标题：私の
-- `TITLE_INVALID` T56 / Topic 7 / p.50 `title`：标题不是完整中文场景标题：ここは
-- `TITLE_INVALID` T57 / Topic 7 / p.50 `title`：标题不是完整中文场景标题：あのー、タオル、ありますか。
-- `TITLE_INVALID` T58 / Topic 7 / p.51 `title`：标题不是完整中文场景标题：すみません。
-- `TITLE_INVALID` T59 / Topic 7 / p.51 `title`：标题不是完整中文场景标题：アンさん、どこにいますか。
-- `TITLE_INVALID` T60 / Topic 7 / p.52 `title`：标题不是完整中文场景标题：誓くに
-- `TITLE_INVALID` T61 / Topic 7 / p.52 `title`：标题不是完整中文场景标题：あのー、おてあらいは
-- `VOCAB_VALUE_EMPTY` T61 / Topic 7 / p.52 `vocab`：词汇 206 的单词或释义为空
-- `TITLE_INVALID` T62 / Topic 7 / p.53 `title`：标题不是完整中文场景标题：アンさんのうちはアパートですか。りょ…
-- `TITLE_INVALID` T63 / Topic 7 / p.53 `title`：标题不是完整中文场景标题：森業の
-- `TITLE_INVALID` T64 / Topic 7 / p.54 `title`：标题不是完整中文场景标题：花屋と
 - `TITLE_INVALID` T65 / Topic 8 / p.57 `title`：标题不是完整中文场景标题：？ なんようび何曜日
 - `TITLE_INVALID` T67 / Topic 8 / p.58 `title`：标题不是完整中文场景标题：月曜日です。
 - `TITLE_INVALID` T68 / Topic 8 / p.58 `title`：标题不是完整中文场景标题：吉県も
@@ -743,46 +713,8 @@
 - `TITLE_INVALID` T372 / Topic 24 / p.225 `title`：标题不是完整中文场景标题：アンさん、今日のしゅくだい、もう
 - `TITLE_INVALID` T373 / Topic 24 / p.226 `title`：标题不是完整中文场景标题：あなたは袋をしましたか。青いてくださ…
 
-## 字段异常（837）
+## 字段异常（799）
 
-- `VOCAB_POS_INVALID` T48 / Topic 7 / p.45 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T48 / Topic 7 / p.45 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T49 / Topic 7 / p.46 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T50 / Topic 7 / p.46 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T51 / Topic 7 / p.47 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T52 / Topic 7 / p.48 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T52 / Topic 7 / p.48 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T52 / Topic 7 / p.48 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T53 / Topic 7 / p.48 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T53 / Topic 7 / p.48 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T54 / Topic 7 / p.49 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T54 / Topic 7 / p.49 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T55 / Topic 7 / p.49 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T55 / Topic 7 / p.49 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T56 / Topic 7 / p.50 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T56 / Topic 7 / p.50 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T57 / Topic 7 / p.50 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T57 / Topic 7 / p.50 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T58 / Topic 7 / p.51 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T58 / Topic 7 / p.51 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T59 / Topic 7 / p.51 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T60 / Topic 7 / p.52 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T60 / Topic 7 / p.52 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T61 / Topic 7 / p.52 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T61 / Topic 7 / p.52 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T61 / Topic 7 / p.52 `vocab`：词性不符合 N3 中文缩写风格：
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T63 / Topic 7 / p.53 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T64 / Topic 7 / p.54 `japanese`：对话人物标记不完整
-- `VOCAB_POS_INVALID` T64 / Topic 7 / p.54 `vocab`：词性不符合 N3 中文缩写风格：
-- `VOCAB_POS_INVALID` T64 / Topic 7 / p.54 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T65 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T65 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
 - `VOCAB_POS_INVALID` T66 / Topic 8 / p.57 `vocab`：词性不符合 N3 中文缩写风格：
