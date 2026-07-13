@@ -1,8 +1,8 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：231
-- 问题总数：569
+- 已校对：253
+- 问题总数：519
 
 ## 阻断发布（74）
 
@@ -81,53 +81,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（436）
+## 内容错误（391）
 
-- `TITLE_INVALID` T232 / Topic 14 / p.181 `title`：标题不是完整中文场景标题：ダムは、別のは流てが起きたときに、茶…
-- `VOCAB_MEANING_GARBLED` T232 / Topic 14 / p.181 `vocab`：词义异常：名 accumulated water
-- `TITLE_INVALID` T233 / Topic 14 / p.182 `title`：标题不是完整中文场景标题：マラソン本会は、あいにくの素車で、言…
-- `TITLE_INVALID` T234 / Topic 14 / p.182 `title`：标题不是完整中文场景标题：紫外線は太陽光線の一種であり、2月か…
-- `TITLE_INVALID` T235 / Topic 14 / p.183 `title`：标题不是完整中文场景标题：梅雨が聞け、無費目が多くなる7月から…
-- `VOCAB_MEANING_GARBLED` T235 / Topic 14 / p.183 `vocab`：词义异常：動1目 cool of, stay cool
-- `TITLE_INVALID` T236 / Topic 14 / p.184 `title`：标题不是完整中文场景标题：鹿島県の機品は、よくニュースなどで蒸…
-- `VOCAB_VALUE_EMPTY` T236 / Topic 14 / p.184 `vocab`：词汇 6 的单词或释义为空
-- `CHINESE_GARBLED` T237 / Topic 14 / p.184 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 rainstorm
-- `CHINESE_GARBLED` T237 / Topic 14 / p.184 `originalChinese`：中文含乱码、越南语字符或异常英文：名 rainstorm
-- `TITLE_INVALID` T237 / Topic 14 / p.184 `title`：标题不是完整中文场景标题：見本の家によく見られる要豆は、暴風雨…
-- `VOCAB_MEANING_GARBLED` T237 / Topic 14 / p.184 `vocab`：词义异常：名 rainstorm
-- `TITLE_INVALID` T238 / Topic 14 / p.185 `title`：标题不是完整中文场景标题：夢気上から吹く風は、当業熱ではたに、…
-- `CHINESE_GARBLED` T239 / Topic 14 / p.186 `naturalChinese`：中文含乱码、越南语字符或异常英文：↑冬天因暴風雪太平重，衣作物竟然是込10年来最任量。MMia dong nay do bao
-- `CHINESE_GARBLED` T239 / Topic 14 / p.186 `originalChinese`：中文含乱码、越南语字符或异常英文：↑冬天因暴風雪太平重，衣作物竟然是込10年来最任量。MMia dong nay do bao
-- `TITLE_INVALID` T239 / Topic 14 / p.186 `title`：标题不是完整中文场景标题：この熱は密雪がひどかったせいで、農作…
-- `TITLE_INVALID` T240 / Topic 14 / p.186 `title`：标题不是完整中文场景标题：さっきの夕立、ひどかったね。
-- `VOCAB_MEANING_GARBLED` T240 / Topic 14 / p.186 `vocab`：词义异常：名 rainbow
-- `VOCAB_MEANING_GARBLED` T240 / Topic 14 / p.186 `vocab`：词义异常：名 hill
-- `TITLE_INVALID` T241 / Topic 14 / p.187 `title`：标题不是完整中文场景标题：昨、今月とがきましたが、明日は本気の…
-- `VOCAB_MEANING_GARBLED` T241 / Topic 14 / p.187 `vocab`：词义异常：動3目 snowfall， snow
-- `TITLE_INVALID` T242 / Topic 14 / p.187 `title`：标题不是完整中文场景标题：あら、あの猫、さっき庭に出たばかりな…
-- `TITLE_INVALID` T243 / Topic 14 / p.188 `title`：标题不是完整中文场景标题：秋の京都ってどうですか？
-- `VOCAB_VALUE_EMPTY` T243 / Topic 14 / p.188 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T243 / Topic 14 / p.188 `vocab`：词义异常：3目 colorful fall leaves， （leaves） turn red
-- `CHINESE_GARBLED` T244 / Topic 14 / p.188 `naturalChinese`：中文含乱码、越南语字符或异常英文：名動3他 operation， operate
-- `CHINESE_GARBLED` T244 / Topic 14 / p.188 `originalChinese`：中文含乱码、越南语字符或异常英文：名動3他 operation， operate
-- `TITLE_INVALID` T244 / Topic 14 / p.188 `title`：标题不是完整中文场景标题：客機は進化し続けているが、それでも落…
-- `VOCAB_MEANING_GARBLED` T244 / Topic 14 / p.188 `vocab`：词义异常：名動3他 operation， operate
-- `TITLE_INVALID` T245 / Topic 14 / p.189 `title`：标题不是完整中文场景标题：梅雨の時期は、衣類が湿気を含みやすい…
-- `TITLE_INVALID` T246 / Topic 14 / p.189 `title`：标题不是完整中文场景标题：降水確率は「0％」と表示されていても…
-- `VOCAB_MEANING_GARBLED` T246 / Topic 14 / p.189 `vocab`：词义异常：各動3自 contradiction, contradict
-- `TITLE_INVALID` T247 / Topic 14 / p.190 `title`：标题不是完整中文场景标题：2月ばから飛び始める。本の目は、窯を
-- `VOCAB_VALUE_EMPTY` T247 / Topic 14 / p.190 `vocab`：词汇 2 的单词或释义为空
-- `TITLE_INVALID` T248 / Topic 14 / p.190 `title`：标题不是完整中文场景标题：やはり実家は快適だ。
-- `TITLE_INVALID` T249 / Topic 14 / p.191 `title`：标题不是完整中文场景标题：「春の募」が、鳥潔な風や雨を起こしや…
-- `TITLE_INVALID` T250 / Topic 14 / p.191 `title`：标题不是完整中文场景标题：雲のない晴れた目でも、いきなり意義の…
-- `TITLE_INVALID` T251 / Topic 14 / p.192 `title`：标题不是完整中文场景标题：素救助マニュアルの具が届いたので、チ…
-- `VOCAB_VALUE_EMPTY` T251 / Topic 14 / p.192 `vocab`：词汇 1287 的单词或释义为空
-- `CHINESE_GARBLED` T252 / Topic 14 / p.192 `naturalChinese`：中文含乱码、越南语字符或异常英文：動3自 evaparation, evaporate
-- `CHINESE_GARBLED` T252 / Topic 14 / p.192 `originalChinese`：中文含乱码、越南语字符或异常英文：動3自 evaparation, evaporate
-- `TITLE_INVALID` T252 / Topic 14 / p.192 `title`：标题不是完整中文场景标题：他に、
-- `VOCAB_MEANING_GARBLED` T252 / Topic 14 / p.192 `vocab`：词义异常：動3自 evaparation, evaporate
-- `TITLE_INVALID` T253 / Topic 14 / p.193 `title`：标题不是完整中文场景标题：昨晩は地震の後、津波警報が出た。万が…
-- `VOCAB_VALUE_EMPTY` T253 / Topic 14 / p.193 `vocab`：词汇 1296 的单词或释义为空
 - `TITLE_INVALID` T254 / Topic 15 / p.194 `title`：标题不是完整中文场景标题：飛行機に乗る目は、真もって窯会社の運…
 - `VOCAB_VALUE_EMPTY` T254 / Topic 15 / p.194 `vocab`：词汇 1305 的单词或释义为空
 - `TITLE_INVALID` T255 / Topic 15 / p.195 `title`：标题不是完整中文场景标题：観光には周遊型観光と滞在型観光がある…
@@ -520,13 +475,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（57）
+## 字段异常（52）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T240 / Topic 14 / p.186 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T242 / Topic 14 / p.187 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T243 / Topic 14 / p.188 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T251 / Topic 14 / p.192 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T252 / Topic 14 / p.192 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T263 / Topic 15 / p.200 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T277 / Topic 15 / p.210 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T296 / Topic 16 / p.223 `japanese`：对话人物标记不完整
