@@ -1,17 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：184
-- 问题总数：697
+- 已校对：201
+- 问题总数：652
 
-## 阻断发布（92）
+## 阻断发布（86）
 
-- `NATURALCHINESE_EMPTY` T189 / Topic 11 / p.150 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T189 / Topic 11 / p.150 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T199 / Topic 11 / p.156 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T199 / Topic 11 / p.156 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T200 / Topic 11 / p.157 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T200 / Topic 11 / p.157 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T202 / Topic 12 / p.159 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T202 / Topic 12 / p.159 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T207 / Topic 12 / p.162 `naturalChinese`：naturalChinese 为空
@@ -99,42 +93,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（531）
+## 内容错误（497）
 
-- `TITLE_INVALID` T185 / Topic 11 / p.148 `title`：标题不是完整中文场景标题：見て、かわいいカエルがいる！捕まえよ…
-- `VOCAB_MEANING_GARBLED` T185 / Topic 11 / p.148 `vocab`：词义异常：名 poison, venom
-- `CHINESE_GARBLED` T186 / Topic 11 / p.149 `naturalChinese`：中文含乱码、越南语字符或异常英文：羽毛long, canh
-- `CHINESE_GARBLED` T186 / Topic 11 / p.149 `originalChinese`：中文含乱码、越南语字符或异常英文：羽毛long, canh
-- `TITLE_INVALID` T186 / Topic 11 / p.149 `title`：标题不是完整中文场景标题：あ、島の基がある！
-- `VOCAB_MEANING_GARBLED` T186 / Topic 11 / p.149 `vocab`：词义异常：羽毛long, canh
-- `CHINESE_GARBLED` T187 / Topic 11 / p.149 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 butterfly
-- `CHINESE_GARBLED` T187 / Topic 11 / p.149 `originalChinese`：中文含乱码、越南语字符或异常英文：名 butterfly
-- `TITLE_INVALID` T187 / Topic 11 / p.149 `title`：标题不是完整中文场景标题：3月に種を植えてから、毎日丁寧に水を…
-- `VOCAB_VALUE_EMPTY` T187 / Topic 11 / p.149 `vocab`：词汇 3 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T187 / Topic 11 / p.149 `vocab`：词义异常：名 butterfly
-- `VOCAB_VALUE_EMPTY` T187 / Topic 11 / p.149 `vocab`：词汇 943 的单词或释义为空
-- `TITLE_INVALID` T188 / Topic 11 / p.150 `title`：标题不是完整中文场景标题：社で保護された犬を飼い艶めた。発は、…
-- `TITLE_INVALID` T189 / Topic 11 / p.150 `title`：标题不是完整中文场景标题：子どものときに飼っていた大は、要が感…
-- `TITLE_INVALID` T190 / Topic 11 / p.151 `title`：标题不是完整中文场景标题：犬は父に抱っこされると父の胸に顔を埋…
-- `TITLE_INVALID` T191 / Topic 11 / p.152 `title`：标题不是完整中文场景标题：犬はときどきいたずらをした。ソファを…
-- `TITLE_INVALID` T192 / Topic 11 / p.152 `title`：标题不是完整中文场景标题：窯境をかけて食ててきた本に、客が訪れ…
-- `TITLE_INVALID` T193 / Topic 11 / p.153 `title`：标题不是完整中文场景标题：今飼っている犬は、とても無く、訓練し…
-- `TITLE_INVALID` T194 / Topic 11 / p.153 `title`：标题不是完整中文场景标题：先週、場で先の乳しぼりを体験した。そ…
-- `VOCAB_VALUE_EMPTY` T194 / Topic 11 / p.153 `vocab`：词汇 974 的单词或释义为空
-- `TITLE_INVALID` T195 / Topic 11 / p.154 `title`：标题不是完整中文场景标题：'穫煎の鍋に、本な最が群れで飛行して…
-- `CHINESE_GARBLED` T196 / Topic 11 / p.154 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 show
-- `CHINESE_GARBLED` T196 / Topic 11 / p.154 `originalChinese`：中文含乱码、越南语字符或异常英文：名 show
-- `TITLE_INVALID` T196 / Topic 11 / p.154 `title`：标题不是完整中文场景标题：休暇中は何してたの？
-- `VOCAB_MEANING_GARBLED` T196 / Topic 11 / p.154 `vocab`：词义异常：名 vacation
-- `VOCAB_MEANING_GARBLED` T196 / Topic 11 / p.154 `vocab`：词义异常：名 show
-- `TITLE_INVALID` T197 / Topic 11 / p.155 `title`：标题不是完整中文场景标题：井戸の方から物音しない？
-- `VOCAB_MEANING_GARBLED` T197 / Topic 11 / p.155 `vocab`：词义异常：動1自 crawl, creep, slither
-- `TITLE_INVALID` T198 / Topic 11 / p.156 `title`：标题不是完整中文场景标题：この禁派だね。
-- `TITLE_INVALID` T199 / Topic 11 / p.156 `title`：标题不是完整中文场景标题：動物金盤に対してたが提く感境は、時代…
-- `TITLE_INVALID` T200 / Topic 11 / p.157 `title`：标题不是完整中文场景标题：で、煮本きな生き物はアフリカゾウだ。…
-- `VOCAB_VALUE_EMPTY` T200 / Topic 11 / p.157 `vocab`：词汇 1010 的单词或释义为空
-- `TITLE_INVALID` T201 / Topic 11 / p.158 `title`：标题不是完整中文场景标题：馬は本来記憶力がよい動物である。例え…
-- `VOCAB_MEANING_GARBLED` T201 / Topic 11 / p.158 `vocab`：词义异常：名 rope
 - `TITLE_INVALID` T202 / Topic 12 / p.159 `title`：标题不是完整中文场景标题：ねえ、蛇口から水が漏れてる。
 - `TITLE_INVALID` T203 / Topic 12 / p.160 `title`：标题不是完整中文场景标题：夏は、表の馬辺に水をまく、いわゆる打…
 - `CHINESE_GARBLED` T204 / Topic 12 / p.160 `naturalChinese`：中文含乱码、越南语字符或异常英文：動3他 standardization, unity, unake uniform
@@ -633,13 +593,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（72）
+## 字段异常（67）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T185 / Topic 11 / p.148 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T186 / Topic 11 / p.149 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T196 / Topic 11 / p.154 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T197 / Topic 11 / p.155 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T198 / Topic 11 / p.156 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T202 / Topic 12 / p.159 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T204 / Topic 12 / p.160 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T206 / Topic 12 / p.162 `japanese`：对话人物标记不完整
