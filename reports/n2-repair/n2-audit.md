@@ -1,17 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：216
-- 问题总数：606
+- 已校对：231
+- 问题总数：569
 
-## 阻断发布（80）
+## 阻断发布（74）
 
-- `NATURALCHINESE_EMPTY` T218 / Topic 13 / p.171 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T218 / Topic 13 / p.171 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T223 / Topic 13 / p.174 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T223 / Topic 13 / p.174 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T227 / Topic 13 / p.177 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T227 / Topic 13 / p.177 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T257 / Topic 15 / p.196 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T257 / Topic 15 / p.196 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T257 / Topic 15 / p.196 `vocab`：结构化词汇为空
@@ -87,38 +81,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（466）
+## 内容错误（436）
 
-- `TITLE_INVALID` T217 / Topic 13 / p.170 `title`：标题不是完整中文场景标题：大通りに面したコンビ
-- `VOCAB_MEANING_GARBLED` T217 / Topic 13 / p.170 `vocab`：词义异常：3自 rear-end collision， rear-end
-- `TITLE_INVALID` T218 / Topic 13 / p.171 `title`：标题不是完整中文场景标题：憂寄り駅から説期会会場への順をお知ら…
-- `VOCAB_VALUE_EMPTY` T218 / Topic 13 / p.171 `vocab`：词汇 2 的单词或释义为空
-- `TITLE_INVALID` T219 / Topic 13 / p.172 `title`：标题不是完整中文场景标题：啓カメラを設置する地区が
-- `VOCAB_VALUE_EMPTY` T219 / Topic 13 / p.172 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T219 / Topic 13 / p.172 `vocab`：词义异常：名 vicinity
-- `TITLE_INVALID` T220 / Topic 13 / p.172 `title`：标题不是完整中文场景标题：智事が記者会見で、青化が準む島舎の移…
-- `TITLE_INVALID` T221 / Topic 13 / p.173 `title`：标题不是完整中文场景标题：勤めの喜ん真のビルの展ようには、アン…
-- `VOCAB_MEANING_GARBLED` T221 / Topic 13 / p.173 `vocab`：词义异常：副 finally＼好不容易
-- `TITLE_INVALID` T222 / Topic 13 / p.174 `title`：标题不是完整中文场景标题：マンションの最占階に住んでいる。を備…
-- `TITLE_INVALID` T223 / Topic 13 / p.174 `title`：标题不是完整中文场景标题：地元の温の水辺や野原を自主掃するグル…
-- `TITLE_INVALID` T224 / Topic 13 / p.175 `title`：标题不是完整中文场景标题：人間は共同生活を行う動物だが、最初の…
-- `VOCAB_MEANING_GARBLED` T224 / Topic 13 / p.175 `vocab`：词义异常：接尾 ~squad， 〜team
-- `TITLE_INVALID` T225 / Topic 13 / p.176 `title`：标题不是完整中文场景标题：名古屋、専京問にリニア部新幹線が黒導…
-- `VOCAB_MEANING_GARBLED` T225 / Topic 13 / p.176 `vocab`：词义异常：動3自 work transfer， relocate （for work）
-- `CHINESE_GARBLED` T226 / Topic 13 / p.176 `naturalChinese`：中文含乱码、越南语字符或异常英文：名動3自 delay， be delayed
-- `CHINESE_GARBLED` T226 / Topic 13 / p.176 `originalChinese`：中文含乱码、越南语字符或异常英文：名動3自 delay， be delayed
-- `TITLE_INVALID` T226 / Topic 13 / p.176 `title`：标题不是完整中文场景标题：交通系！Cカードの導入により、バスの…
-- `VOCAB_VALUE_EMPTY` T226 / Topic 13 / p.176 `vocab`：词汇 1156 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T226 / Topic 13 / p.176 `vocab`：词义异常：土 contactless
-- `VOCAB_MEANING_GARBLED` T226 / Topic 13 / p.176 `vocab`：词义异常：名動3自 delay， be delayed
-- `VOCAB_MEANING_GARBLED` T226 / Topic 13 / p.176 `vocab`：词义异常：名動3他 elimination, eliminate
-- `TITLE_INVALID` T227 / Topic 13 / p.177 `title`：标题不是完整中文场景标题：自宅前の生活道路は速度制限の標識がな…
-- `TITLE_INVALID` T228 / Topic 13 / p.178 `title`：标题不是完整中文场景标题：最新は、敷地と導路の墓に、根などを振…
-- `TITLE_INVALID` T229 / Topic 13 / p.178 `title`：标题不是完整中文场景标题：でこぼこした道を自転車で走っていたら…
-- `TITLE_INVALID` T230 / Topic 13 / p.179 `title`：标题不是完整中文场景标题：すみません、テレビに行きたいんですが…
-- `VOCAB_MEANING_GARBLED` T230 / Topic 13 / p.179 `vocab`：词义异常：接尾 along~
-- `TITLE_INVALID` T231 / Topic 13 / p.180 `title`：标题不是完整中文场景标题：私たちご家が引っ越してきたのは、おい…
-- `VOCAB_VALUE_EMPTY` T231 / Topic 13 / p.180 `vocab`：词汇 1190 的单词或释义为空
 - `TITLE_INVALID` T232 / Topic 14 / p.181 `title`：标题不是完整中文场景标题：ダムは、別のは流てが起きたときに、茶…
 - `VOCAB_MEANING_GARBLED` T232 / Topic 14 / p.181 `vocab`：词义异常：名 accumulated water
 - `TITLE_INVALID` T233 / Topic 14 / p.182 `title`：标题不是完整中文场景标题：マラソン本会は、あいにくの素車で、言…
@@ -556,9 +520,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（58）
+## 字段异常（57）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T230 / Topic 13 / p.179 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T240 / Topic 14 / p.186 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T242 / Topic 14 / p.187 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T243 / Topic 14 / p.188 `japanese`：对话人物标记不完整
