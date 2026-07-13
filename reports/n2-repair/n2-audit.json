@@ -1,136 +1,28 @@
 {
   "level": "n2",
   "story_count": 452,
-  "reviewed_count": 154,
-  "issue_count": 779,
+  "reviewed_count": 161,
+  "issue_count": 767,
   "severity_counts": {
     "阻断发布": 96,
-    "内容错误": 600,
-    "字段异常": 81,
+    "内容错误": 589,
+    "字段异常": 80,
     "格式问题": 0,
     "可选优化": 2
   },
   "code_counts": {
-    "CHINESE_GARBLED": 82,
-    "DIALOGUE_SPEAKERS_INCOMPLETE": 81,
+    "CHINESE_GARBLED": 80,
+    "DIALOGUE_SPEAKERS_INCOMPLETE": 80,
     "JAPANESE_HAS_CHINESE": 1,
     "NATURALCHINESE_EMPTY": 43,
     "ORIGINALCHINESE_EMPTY": 43,
-    "TITLE_INVALID": 297,
+    "TITLE_INVALID": 290,
     "VOCAB_EMPTY": 10,
-    "VOCAB_MEANING_GARBLED": 132,
+    "VOCAB_MEANING_GARBLED": 131,
     "VOCAB_MEANING_MULTIPLE": 2,
-    "VOCAB_VALUE_EMPTY": 88
+    "VOCAB_VALUE_EMPTY": 87
   },
   "issues": [
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 155,
-      "topic_id": 9,
-      "page": 128,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：新製コロナウイルスが広まったことで、…"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 156,
-      "topic_id": 9,
-      "page": 129,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：金通りはもともと、先祖の霊を据える貝…"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 157,
-      "topic_id": 9,
-      "page": 129,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：縁起を担ぐために、5時に起床して、目…"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 158,
-      "topic_id": 9,
-      "page": 130,
-      "field": "naturalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：名 hatsumode （the first shrine visit of the new year）"
-    },
-    {
-      "severity": "内容错误",
-      "code": "CHINESE_GARBLED",
-      "story_id": 158,
-      "topic_id": 9,
-      "page": 130,
-      "field": "originalChinese",
-      "message": "中文含乱码、越南语字符或异常英文：名 hatsumode （the first shrine visit of the new year）"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 158,
-      "topic_id": 9,
-      "page": 130,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：日本には、みそかにきで無をつき、森具…"
-    },
-    {
-      "severity": "内容错误",
-      "code": "VOCAB_VALUE_EMPTY",
-      "story_id": 158,
-      "topic_id": 9,
-      "page": 130,
-      "field": "vocab",
-      "message": "词汇 790 的单词或释义为空"
-    },
-    {
-      "severity": "内容错误",
-      "code": "VOCAB_MEANING_GARBLED",
-      "story_id": 158,
-      "topic_id": 9,
-      "page": 130,
-      "field": "vocab",
-      "message": "词义异常：名 hatsumode （the first shrine visit of the new year）"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 159,
-      "topic_id": 9,
-      "page": 131,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：毎年お花見はするのに、"
-    },
-    {
-      "severity": "字段异常",
-      "code": "DIALOGUE_SPEAKERS_INCOMPLETE",
-      "story_id": 160,
-      "topic_id": 9,
-      "page": 131,
-      "field": "japanese",
-      "message": "对话人物标记不完整"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 160,
-      "topic_id": 9,
-      "page": 131,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：気の暮れにお墓にお参りしたいから、子…"
-    },
-    {
-      "severity": "内容错误",
-      "code": "TITLE_INVALID",
-      "story_id": 161,
-      "topic_id": 9,
-      "page": 132,
-      "field": "title",
-      "message": "标题不是完整中文场景标题：日本の年中行事や祭りの多くが、昔の農…"
-    },
     {
       "severity": "内容错误",
       "code": "TITLE_INVALID",

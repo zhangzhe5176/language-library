@@ -1,8 +1,8 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：154
-- 问题总数：779
+- 已校对：161
+- 问题总数：767
 
 ## 阻断发布（96）
 
@@ -103,19 +103,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（600）
+## 内容错误（589）
 
-- `TITLE_INVALID` T155 / Topic 9 / p.128 `title`：标题不是完整中文场景标题：新製コロナウイルスが広まったことで、…
-- `TITLE_INVALID` T156 / Topic 9 / p.129 `title`：标题不是完整中文场景标题：金通りはもともと、先祖の霊を据える貝…
-- `TITLE_INVALID` T157 / Topic 9 / p.129 `title`：标题不是完整中文场景标题：縁起を担ぐために、5時に起床して、目…
-- `CHINESE_GARBLED` T158 / Topic 9 / p.130 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 hatsumode （the first shrine visit of the new year）
-- `CHINESE_GARBLED` T158 / Topic 9 / p.130 `originalChinese`：中文含乱码、越南语字符或异常英文：名 hatsumode （the first shrine visit of the new year）
-- `TITLE_INVALID` T158 / Topic 9 / p.130 `title`：标题不是完整中文场景标题：日本には、みそかにきで無をつき、森具…
-- `VOCAB_VALUE_EMPTY` T158 / Topic 9 / p.130 `vocab`：词汇 790 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T158 / Topic 9 / p.130 `vocab`：词义异常：名 hatsumode （the first shrine visit of the new year）
-- `TITLE_INVALID` T159 / Topic 9 / p.131 `title`：标题不是完整中文场景标题：毎年お花見はするのに、
-- `TITLE_INVALID` T160 / Topic 9 / p.131 `title`：标题不是完整中文场景标题：気の暮れにお墓にお参りしたいから、子…
-- `TITLE_INVALID` T161 / Topic 9 / p.132 `title`：标题不是完整中文场景标题：日本の年中行事や祭りの多くが、昔の農…
 - `TITLE_INVALID` T162 / Topic 10 / p.133 `title`：标题不是完整中文场景标题：2022無空村平氏が県で引退すること…
 - `VOCAB_VALUE_EMPTY` T162 / Topic 10 / p.133 `vocab`：词汇 805 的单词或释义为空
 - `VOCAB_MEANING_GARBLED` T162 / Topic 10 / p.133 `vocab`：词义异常：名 Olympic Games
@@ -706,9 +695,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（81）
+## 字段异常（80）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T160 / Topic 9 / p.131 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T163 / Topic 10 / p.134 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T169 / Topic 10 / p.138 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T170 / Topic 10 / p.138 `japanese`：对话人物标记不完整
