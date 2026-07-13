@@ -1,0 +1,6 @@
+level,scope,field,before,after,source,note
+N1,source,epub,,图片型 EPUB，按 spine 提取原始图片,EPUB content.opf / spine,自动来源检查
+N1,source,audio,,T1.mp3–T494.mp3,官方音频包 Best_Vocab_N1.zip,自动音频整理
+N1,data,stories,,494,data/n1-data.js,OCR 结构化初稿
+N1,data,vocab,,2571,data/n1-data.js,主编号词汇序列
+N1,review,reviewStatus,OCR已整理,已校对,原始图片逐条校对,未完成：0 条仍需人工级校对

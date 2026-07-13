@@ -1,0 +1,18 @@
+{
+  "level": "n1",
+  "story_count": 494,
+  "topic_count": 27,
+  "reviewed_count": 494,
+  "ocr_organized_count": 0,
+  "vocab_count": 2571,
+  "issue_count": 0,
+  "severity_counts": {
+    "阻断发布": 0,
+    "内容错误": 0,
+    "字段异常": 0,
+    "格式问题": 0,
+    "可选优化": 0
+  },
+  "code_counts": {},
+  "issues": []
+}
