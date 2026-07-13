@@ -38,11 +38,11 @@ const LESSON = {
 };
 
 const LANGUAGES = [
-  ["日", "日语", "JLPT N1–N5", "已完成全等级内容，可进入新版学习体验"],
-  ["En", "英语", "Vocabulary & Reading", "预留英文词汇、阅读和听力入口"],
-  ["한", "韩语", "TOPIK Path", "预留韩语等级学习路径"],
-  ["Fr", "法语", "CEFR Path", "预留法语阶段学习路径"],
-  ["Es", "西班牙语", "CEFR Path", "预留西语阶段学习路径"],
+  { symbol: "日", name: "日语", path: "JLPT N1–N5", description: "已完成 N1–N5 全等级内容，从真实短文、音频和词汇继续学习。", status: "可开始学习", available: true },
+  { symbol: "En", name: "英语", path: "Vocabulary & Reading", description: "英文词汇、阅读和听力入口。", status: "规划中", available: false },
+  { symbol: "한", name: "韩语", path: "TOPIK Path", description: "韩语等级与场景学习路径。", status: "规划中", available: false },
+  { symbol: "Fr", name: "法语", path: "CEFR Path", description: "法语分阶段阅读与听力路径。", status: "规划中", available: false },
+  { symbol: "Es", name: "西班牙语", path: "CEFR Path", description: "西班牙语分阶段学习路径。", status: "规划中", available: false },
 ];
 
 const app = document.querySelector("#app");
@@ -90,17 +90,27 @@ function renderPortal() {
         <div class="miniStats">${stat("5", "语言入口")}${stat("5", "JLPT 等级")}${stat("1", "统一体验")}</div>
       </aside>
     </section>
+    <div class="sectionHead">
+      <div>
+        <span class="kicker">Language paths</span>
+        <h2>选择要继续的语言</h2>
+      </div>
+      <p>日语内容现已可用；其他语言保留清晰入口，并明确标注当前状态。</p>
+    </div>
     <section class="grid languageGrid">
-      ${LANGUAGES.map((l, i) => `
-        <a class="card languageCard" style="animation-delay:${i * 45}ms" href="${l[1] === "日语" ? "./japanese.html" : "#"}">
-          <span class="languageSymbol">${l[0]}</span>
+      ${LANGUAGES.map((language, i) => {
+        const content = `
+          <span class="languageSymbol">${language.symbol}</span>
           <span>
-            <span class="kicker">${l[2]}</span>
-            <h3>${l[1]}</h3>
-            <p>${l[3]}</p>
+            <span class="kicker">${language.path}</span>
+            <h3>${language.name}</h3>
+            <p>${language.description}</p>
           </span>
-        </a>
-      `).join("")}
+          <span class="languageStatus">${language.status}</span>`;
+        return language.available
+          ? `<a class="card languageCard available" style="animation-delay:${i * 45}ms" href="./japanese.html">${content}</a>`
+          : `<article class="card languageCard planned" style="animation-delay:${i * 45}ms">${content}</article>`;
+      }).join("")}
     </section>
   `, "portal");
 }
