@@ -6,10 +6,10 @@
 
 - 等级：N4
 - Topic：1–13 全部完成
-- 故事总数：262
+- N4 总故事数：262
 - 已校对数量：262
 - 未校对数量：0
-- 总词汇数量：1035
+- N4 总词汇数：1035
 - 无法确认条目：0
 - 总字段变更数量：1858
 
@@ -71,7 +71,7 @@
 - 学习状态保存：通过，Topic 13 第一条标记已学后刷新仍保持已学状态，进度显示 `1/35`
 - 移动端横向溢出：320px 视口下 `scrollWidth=320`、`clientWidth=320`，无横向溢出
 
-## 提交记录
+## 所有 Topic 提交哈希
 
 - `8a3d7a3` `fix(n4): review topic 1 against source pages`
 - `35f7d89` `fix(n4): review topic 2 against source pages`
@@ -87,6 +87,10 @@
 - `b180ccf` `fix(n4): review topic 12 against source pages`
 - `eda5580` `fix(n4): review topic 13 against source pages`
 
+## 最终验收提交哈希
+
+- `77b6521` `chore(n4): complete full content audit and validation`
+
 ## 范围确认
 
 - N3：未修改
@@ -94,6 +98,13 @@
 - `main`：未修改；本地 `main` 与 `origin/main` 一致
 - 未合并到 `main`
 - 无无关大文件、缓存或临时文件进入 Git
+
+## 最终远程分支状态
+
+- 远程分支：`origin/feature/n5-sample`
+- 最新最终验收提交：`77b6521`
+- 本地与远程：一致
+- 领先/落后：0/0
 
 ## 最终结论
 
