@@ -1,0 +1,15 @@
+{
+  "level": "n4",
+  "story_count": 262,
+  "reviewed_count": 262,
+  "issue_count": 0,
+  "severity_counts": {
+    "阻断发布": 0,
+    "内容错误": 0,
+    "字段异常": 0,
+    "格式问题": 0,
+    "可选优化": 0
+  },
+  "code_counts": {},
+  "issues": []
+}
