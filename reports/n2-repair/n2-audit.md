@@ -1,17 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：201
-- 问题总数：652
+- 已校对：216
+- 问题总数：606
 
-## 阻断发布（86）
+## 阻断发布（80）
 
-- `NATURALCHINESE_EMPTY` T202 / Topic 12 / p.159 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T202 / Topic 12 / p.159 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T207 / Topic 12 / p.162 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T207 / Topic 12 / p.162 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T216 / Topic 12 / p.168 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T216 / Topic 12 / p.168 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T218 / Topic 13 / p.171 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T218 / Topic 13 / p.171 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T223 / Topic 13 / p.174 `naturalChinese`：naturalChinese 为空
@@ -93,39 +87,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（497）
+## 内容错误（466）
 
-- `TITLE_INVALID` T202 / Topic 12 / p.159 `title`：标题不是完整中文场景标题：ねえ、蛇口から水が漏れてる。
-- `TITLE_INVALID` T203 / Topic 12 / p.160 `title`：标题不是完整中文场景标题：夏は、表の馬辺に水をまく、いわゆる打…
-- `CHINESE_GARBLED` T204 / Topic 12 / p.160 `naturalChinese`：中文含乱码、越南语字符或异常英文：動3他 standardization, unity, unake uniform
-- `CHINESE_GARBLED` T204 / Topic 12 / p.160 `originalChinese`：中文含乱码、越南语字符或异常英文：動3他 standardization, unity, unake uniform
-- `TITLE_INVALID` T204 / Topic 12 / p.160 `title`：标题不是完整中文场景标题：このテーブル傾いてない？
-- `VOCAB_MEANING_GARBLED` T204 / Topic 12 / p.160 `vocab`：词义异常：動 3他 immobilization， fix in place
-- `VOCAB_MEANING_GARBLED` T204 / Topic 12 / p.160 `vocab`：词义异常：動3他 standardization, unity, unake uniform
-- `TITLE_INVALID` T205 / Topic 12 / p.161 `title`：标题不是完整中文场景标题：この辺りは都心への通勤に最適な距離で…
-- `VOCAB_MEANING_GARBLED` T205 / Topic 12 / p.161 `vocab`：词义异常：名 horizon， horizontal line
-- `VOCAB_MEANING_GARBLED` T205 / Topic 12 / p.161 `vocab`：词义异常：1自 1eave
-- `TITLE_INVALID` T206 / Topic 12 / p.162 `title`：标题不是完整中文场景标题：製持って、ミステリーでは製的な悲劇の…
-- `TITLE_INVALID` T207 / Topic 12 / p.162 `title`：标题不是完整中文场景标题：見てこのカタログ。家の壁がコンクリー…
-- `VOCAB_VALUE_EMPTY` T207 / Topic 12 / p.162 `vocab`：词汇 5 的单词或释义为空
-- `TITLE_INVALID` T208 / Topic 12 / p.163 `title`：标题不是完整中文场景标题：新無等き家の繋が増えている。その原因…
-- `TITLE_INVALID` T209 / Topic 12 / p.164 `title`：标题不是完整中文场景标题：また、多くの害き家は本が警備されず、…
-- `VOCAB_MEANING_GARBLED` T209 / Topic 12 / p.164 `vocab`：词义异常：litter， discard， toss away 乱歩表］
-- `TITLE_INVALID` T210 / Topic 12 / p.164 `title`：标题不是完整中文场景标题：この、天井から植物をぶら下げてるの、…
-- `VOCAB_MEANING_GARBLED` T210 / Topic 12 / p.164 `vocab`：词义异常：動1自 hang
-- `CHINESE_GARBLED` T211 / Topic 12 / p.165 `naturalChinese`：中文含乱码、越南语字符或异常英文：了。説要挑哉DIY。然后帮生銹的刷了油漆，装了巻］
-- `CHINESE_GARBLED` T211 / Topic 12 / p.165 `originalChinese`：中文含乱码、越南语字符或异常英文：了。説要挑哉DIY。然后帮生銹的刷了油漆，装了巻］
-- `TITLE_INVALID` T211 / Topic 12 / p.165 `title`：标题不是完整中文场景标题：はあ、また親から写真が送られてきた。
-- `VOCAB_VALUE_EMPTY` T211 / Topic 12 / p.165 `vocab`：词汇 1068 的单词或释义为空
-- `TITLE_INVALID` T212 / Topic 12 / p.166 `title`：标题不是完整中文场景标题：この煎本きな荷物連んでたら、事駄にぶ…
-- `CHINESE_GARBLED` T213 / Topic 12 / p.166 `naturalChinese`：中文含乱码、越南语字符或异常英文：名動3他 disregard, belittle, disuniss
-- `CHINESE_GARBLED` T213 / Topic 12 / p.166 `originalChinese`：中文含乱码、越南语字符或异常英文：名動3他 disregard, belittle, disuniss
-- `TITLE_INVALID` T213 / Topic 12 / p.166 `title`：标题不是完整中文场景标题：お隣さんの飼い猫がうちに合ってきて困…
-- `VOCAB_MEANING_GARBLED` T213 / Topic 12 / p.166 `vocab`：词义异常：動3他 emphasis, emphasize
-- `VOCAB_MEANING_GARBLED` T213 / Topic 12 / p.166 `vocab`：词义异常：名動3他 disregard, belittle, disuniss
-- `TITLE_INVALID` T214 / Topic 12 / p.167 `title`：标题不是完整中文场景标题：軒家を買うか、賃貸アパートにするか迷…
-- `TITLE_INVALID` T215 / Topic 12 / p.168 `title`：标题不是完整中文场景标题：新所のスーパーに、一週間ごとに食品の…
-- `TITLE_INVALID` T216 / Topic 12 / p.168 `title`：标题不是完整中文场景标题：レンガは長方形のものが最も一般的だ。…
 - `TITLE_INVALID` T217 / Topic 13 / p.170 `title`：标题不是完整中文场景标题：大通りに面したコンビ
 - `VOCAB_MEANING_GARBLED` T217 / Topic 13 / p.170 `vocab`：词义异常：3自 rear-end collision， rear-end
 - `TITLE_INVALID` T218 / Topic 13 / p.171 `title`：标题不是完整中文场景标题：憂寄り駅から説期会会場への順をお知ら…
@@ -593,17 +556,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（67）
+## 字段异常（58）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T202 / Topic 12 / p.159 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T204 / Topic 12 / p.160 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T206 / Topic 12 / p.162 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T207 / Topic 12 / p.162 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T210 / Topic 12 / p.164 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T211 / Topic 12 / p.165 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T212 / Topic 12 / p.166 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T213 / Topic 12 / p.166 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T214 / Topic 12 / p.167 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T230 / Topic 13 / p.179 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T240 / Topic 14 / p.186 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T242 / Topic 14 / p.187 `japanese`：对话人物标记不完整

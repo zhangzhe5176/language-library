@@ -57,7 +57,7 @@ def suspicious_chinese(text: str) -> bool:
     scrubbed = re.sub(r"\b[A-Z]\b", "", text)
     for name in ("KAKAKU.com", "KAIGAI MALL", "White Day", "Lookism", "Looks", "Instagram", "Instagrammable", "Bravo", "SNYDER", "Brad"):
         scrubbed = scrubbed.replace(name, "")
-    for acronym in ("AMENOHABAKIRI", "AMENOHAGISU", "HIMIKO", "BRAVO", "SNS", "WEB", "APP", "INS", "AI", "IT", "MB", "PC", "PDF", "RPG", "AMENO"):
+    for acronym in ("AMENOHABAKIRI", "AMENOHAGISU", "HIMIKO", "BRAVO", "SNS", "WEB", "APP", "INS", "AI", "IT", "MB", "PC", "PDF", "RPG", "DIY", "AMENO"):
         scrubbed = scrubbed.replace(acronym, "")
     scrubbed = re.sub(r"\bism\b", "", scrubbed)
     scrubbed = re.sub(r"\b(AI|SNS|WEB|IT|MB|APP|PC|PDF|RPG|HIMIKO|AMENO|AMENOHABAKIRI|AMENOHAGISU|BRAVO|C)\b", "", scrubbed)
