@@ -1,18 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：371
-- 问题总数：198
+- 已校对：389
+- 问题总数：146
 
-## 阻断发布（29）
+## 阻断发布（22）
 
-- `NATURALCHINESE_EMPTY` T374 / Topic 20 / p.278 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T374 / Topic 20 / p.278 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T378 / Topic 20 / p.280 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T378 / Topic 20 / p.280 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T378 / Topic 20 / p.280 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T381 / Topic 20 / p.282 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T381 / Topic 20 / p.282 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T394 / Topic 21 / p.292 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T394 / Topic 21 / p.292 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T404 / Topic 21 / p.298 `naturalChinese`：naturalChinese 为空
@@ -36,45 +29,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（141）
+## 内容错误（104）
 
-- `CHINESE_GARBLED` T372 / Topic 20 / p.276 `naturalChinese`：中文含乱码、越南语字符或异常英文：各 complaint
-- `CHINESE_GARBLED` T372 / Topic 20 / p.276 `originalChinese`：中文含乱码、越南语字符或异常英文：各 complaint
-- `TITLE_INVALID` T372 / Topic 20 / p.276 `title`：标题不是完整中文场景标题：求人情報には「年齢を問わない」と書い…
-- `VOCAB_MEANING_GARBLED` T372 / Topic 20 / p.276 `vocab`：词义异常：各 complaint
-- `VOCAB_MEANING_GARBLED` T372 / Topic 20 / p.276 `vocab`：词义异常：各 complaint
-- `TITLE_INVALID` T373 / Topic 20 / p.277 `title`：标题不是完整中文场景标题：友達に、内定を断るときのメールの文面…
-- `TITLE_INVALID` T374 / Topic 20 / p.278 `title`：标题不是完整中文场景标题：今月の男け売を達が酒に酔って豊で、転…
-- `VOCAB_VALUE_EMPTY` T374 / Topic 20 / p.278 `vocab`：词汇 1944 的单词或释义为空
-- `CHINESE_GARBLED` T375 / Topic 20 / p.278 `naturalChinese`：中文含乱码、越南语字符或异常英文：名動3他 appeal， promote
-- `CHINESE_GARBLED` T375 / Topic 20 / p.278 `originalChinese`：中文含乱码、越南语字符或异常英文：名動3他 appeal， promote
-- `TITLE_INVALID` T375 / Topic 20 / p.278 `title`：标题不是完整中文场景标题：面接で、どうやったらうまく自身をアピ…
-- `VOCAB_MEANING_GARBLED` T375 / Topic 20 / p.278 `vocab`：词义异常：名動3他 appeal， promote
-- `VOCAB_VALUE_EMPTY` T375 / Topic 20 / p.278 `vocab`：词汇 1949 的单词或释义为空
-- `TITLE_INVALID` T376 / Topic 20 / p.279 `title`：标题不是完整中文场景标题：私は目に障がいがある。いつも杖を持ち…
-- `VOCAB_VALUE_EMPTY` T376 / Topic 20 / p.279 `vocab`：词汇 1957 的单词或释义为空
-- `TITLE_INVALID` T377 / Topic 20 / p.280 `title`：标题不是完整中文场景标题：私は紙婦だ。昨バスに乗ったとき、3分…
-- `TITLE_INVALID` T378 / Topic 20 / p.280 `title`：标题不是完整中文场景标题：今朝、裏車でマスクをはずして、異いっ…
-- `TITLE_INVALID` T379 / Topic 20 / p.281 `title`：标题不是完整中文场景标题：今日、うちの会社に新合意がった。駅か…
-- `VOCAB_MEANING_GARBLED` T379 / Topic 20 / p.281 `vocab`：词义异常：名 things, matters
-- `TITLE_INVALID` T380 / Topic 20 / p.282 `title`：标题不是完整中文场景标题：クラブってどうやって楽しむの？
-- `TITLE_INVALID` T381 / Topic 20 / p.282 `title`：标题不是完整中文场景标题：我が家の庭と、山本さんの庭の境界はあ…
-- `TITLE_INVALID` T382 / Topic 20 / p.283 `title`：标题不是完整中文场景标题：電車では、リュックは体の前にぴったり…
-- `VOCAB_VALUE_EMPTY` T382 / Topic 20 / p.283 `vocab`：词汇 1986 的单词或释义为空
-- `TITLE_INVALID` T383 / Topic 20 / p.284 `title`：标题不是完整中文场景标题：リュックが何度もぶつかるのでその学生…
-- `VOCAB_MEANING_GARBLED` T383 / Topic 20 / p.284 `vocab`：词义异常：瞪lliec, lutdm
-- `TITLE_INVALID` T384 / Topic 20 / p.284 `title`：标题不是完整中文场景标题：夏休みの課題について説明します。日本…
-- `VOCAB_MEANING_GARBLED` T384 / Topic 20 / p.284 `vocab`：词义异常：動1他 indicate
-- `TITLE_INVALID` T385 / Topic 20 / p.285 `title`：标题不是完整中文场景标题：昨日終電に乗ろうとしたら、駅のホーム…
-- `VOCAB_MEANING_GARBLED` T385 / Topic 20 / p.285 `vocab`：词义异常：数、好↑1s6 nhieu， nhieu， mot so
-- `TITLE_INVALID` T386 / Topic 20 / p.286 `title`：标题不是完整中文场景标题：昨、居酒屋に行ったんだけど、隣の家が…
-- `VOCAB_VALUE_EMPTY` T386 / Topic 20 / p.286 `vocab`：词汇 2004 的单词或释义为空
-- `TITLE_INVALID` T387 / Topic 20 / p.287 `title`：标题不是完整中文场景标题：さっき、霊の調路の真ん出に寒って、や…
-- `VOCAB_VALUE_EMPTY` T387 / Topic 20 / p.287 `vocab`：词汇 2011 的单词或释义为空
-- `TITLE_INVALID` T388 / Topic 20 / p.288 `title`：标题不是完整中文场景标题：今朝、地震の影響で東京駅一新橋駅の区…
-- `VOCAB_VALUE_EMPTY` T388 / Topic 20 / p.288 `vocab`：词汇 2024 的单词或释义为空
-- `TITLE_INVALID` T389 / Topic 20 / p.289 `title`：标题不是完整中文场景标题：田由装へのプレゼントに手紙を添えたい…
-- `VOCAB_VALUE_EMPTY` T389 / Topic 20 / p.289 `vocab`：词汇 2028 的单词或释义为空
 - `TITLE_INVALID` T390 / Topic 21 / p.290 `title`：标题不是完整中文场景标题：今の日本では、所得が増えると、
 - `TITLE_INVALID` T391 / Topic 21 / p.291 `title`：标题不是完整中文场景标题：しばしば盗難が起きているので、真車県…
 - `TITLE_INVALID` T392 / Topic 21 / p.291 `title`：标题不是完整中文场景标题：急速に穀物の価格が上がった。穀物の用…
@@ -180,16 +136,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（28）
+## 字段异常（20）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T373 / Topic 20 / p.277 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T375 / Topic 20 / p.278 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T378 / Topic 20 / p.280 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T380 / Topic 20 / p.282 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T385 / Topic 20 / p.285 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T386 / Topic 20 / p.286 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T387 / Topic 20 / p.287 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T389 / Topic 20 / p.289 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T395 / Topic 21 / p.293 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T413 / Topic 22 / p.305 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T417 / Topic 22 / p.307 `japanese`：对话人物标记不完整
