@@ -1,21 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：253
-- 问题总数：519
+- 已校对：278
+- 问题总数：461
 
-## 阻断发布（74）
+## 阻断发布（64）
 
-- `NATURALCHINESE_EMPTY` T257 / Topic 15 / p.196 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T257 / Topic 15 / p.196 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T257 / Topic 15 / p.196 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T263 / Topic 15 / p.200 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T263 / Topic 15 / p.200 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T263 / Topic 15 / p.200 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T269 / Topic 15 / p.204 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T269 / Topic 15 / p.204 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T272 / Topic 15 / p.206 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T272 / Topic 15 / p.206 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T286 / Topic 16 / p.216 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T286 / Topic 16 / p.216 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T286 / Topic 16 / p.216 `vocab`：结构化词汇为空
@@ -81,53 +71,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（391）
+## 内容错误（346）
 
-- `TITLE_INVALID` T254 / Topic 15 / p.194 `title`：标题不是完整中文场景标题：飛行機に乗る目は、真もって窯会社の運…
-- `VOCAB_VALUE_EMPTY` T254 / Topic 15 / p.194 `vocab`：词汇 1305 的单词或释义为空
-- `TITLE_INVALID` T255 / Topic 15 / p.195 `title`：标题不是完整中文场景标题：観光には周遊型観光と滞在型観光がある…
-- `VOCAB_MEANING_GARBLED` T255 / Topic 15 / p.195 `vocab`：词义异常：temple 寺院
-- `TITLE_INVALID` T256 / Topic 15 / p.196 `title`：标题不是完整中文场景标题：空港に着いたら、まず航空会社のカウン…
-- `TITLE_INVALID` T257 / Topic 15 / p.196 `title`：标题不是完整中文场景标题：日本人海外旅行者数は1985年の「プ…
-- `TITLE_INVALID` T258 / Topic 15 / p.197 `title`：标题不是完整中文场景标题：ドイツ、オランダ、ベルギーの三国が接…
-- `VOCAB_VALUE_EMPTY` T258 / Topic 15 / p.197 `vocab`：词汇 3 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T258 / Topic 15 / p.197 `vocab`：词义异常：1自 extend ones journey （literally， stretch one's legs）
-- `TITLE_INVALID` T259 / Topic 15 / p.198 `title`：标题不是完整中文场景标题：海外に行く企向けに海外旅行保験がある…
-- `CHINESE_GARBLED` T260 / Topic 15 / p.198 `naturalChinese`：中文含乱码、越南语字符或异常英文：3自 common use， be accepted
-- `CHINESE_GARBLED` T260 / Topic 15 / p.198 `originalChinese`：中文含乱码、越南语字符或异常英文：3自 common use， be accepted
-- `TITLE_INVALID` T260 / Topic 15 / p.198 `title`：标题不是完整中文场景标题：お金は旅の必需品だが、どのくらい持っ…
-- `VOCAB_MEANING_GARBLED` T260 / Topic 15 / p.198 `vocab`：词义异常：3自 common use， be accepted
-- `TITLE_INVALID` T261 / Topic 15 / p.199 `title`：标题不是完整中文场景标题：装思をだちと船釣リツアーに参加した。…
-- `VOCAB_VALUE_EMPTY` T261 / Topic 15 / p.199 `vocab`：词汇 5 的单词或释义为空
-- `TITLE_INVALID` T262 / Topic 15 / p.200 `title`：标题不是完整中文场景标题：家生のころは獲代を浮かすために、行バ…
-- `TITLE_INVALID` T263 / Topic 15 / p.200 `title`：标题不是完整中文场景标题：ねえ、これ見て。すっごくきれい！
-- `TITLE_INVALID` T264 / Topic 15 / p.201 `title`：标题不是完整中文场景标题：日本でダイビングをするなら、東京から…
-- `VOCAB_MEANING_GARBLED` T264 / Topic 15 / p.201 `vocab`：词义异常：動1目 dive, pass under
-- `TITLE_INVALID` T265 / Topic 15 / p.202 `title`：标题不是完整中文场景标题：無年8月のお盆休みはお祭りや親感に会…
-- `VOCAB_VALUE_EMPTY` T265 / Topic 15 / p.202 `vocab`：词汇 1360 的单词或释义为空
-- `TITLE_INVALID` T266 / Topic 15 / p.202 `title`：标题不是完整中文场景标题：これまでロープウェイは山や高原、スキ…
-- `TITLE_INVALID` T267 / Topic 15 / p.203 `title`：标题不是完整中文场景标题：お金をかけなくても旅はできる。安いゲ…
-- `TITLE_INVALID` T268 / Topic 15 / p.204 `title`：标题不是完整中文场景标题：目は※出が多いため、急増に温泉が薄い…
-- `TITLE_INVALID` T269 / Topic 15 / p.204 `title`：标题不是完整中文场景标题：この冷園には購水があり、裏やかな風が…
-- `TITLE_INVALID` T270 / Topic 15 / p.205 `title`：标题不是完整中文场景标题：バスや電車に乗ると「つり薫手すりにお…
-- `TITLE_INVALID` T271 / Topic 15 / p.206 `title`：标题不是完整中文场景标题：1945表島と長崎に原子機が落とされ…
-- `VOCAB_MEANING_GARBLED` T271 / Topic 15 / p.206 `vocab`：词义异常：名 statue
-- `VOCAB_VALUE_EMPTY` T271 / Topic 15 / p.206 `vocab`：词汇 1389 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T271 / Topic 15 / p.206 `vocab`：词汇 1945 的单词或释义为空
-- `TITLE_INVALID` T272 / Topic 15 / p.206 `title`：标题不是完整中文场景标题：山道は方角が分かりにくく急カーブの道…
-- `TITLE_INVALID` T273 / Topic 15 / p.207 `title`：标题不是完整中文场景标题：この間の旅行では、子どもが人混みで迷…
-- `TITLE_INVALID` T274 / Topic 15 / p.208 `title`：标题不是完整中文场景标题：冬に旅行したとき、北海道で車を借りた…
-- `VOCAB_VALUE_EMPTY` T274 / Topic 15 / p.208 `vocab`：词汇 1405 的单词或释义为空
-- `CHINESE_GARBLED` T275 / Topic 15 / p.208 `naturalChinese`：中文含乱码、越南语字符或异常英文：副 precisely
-- `CHINESE_GARBLED` T275 / Topic 15 / p.208 `originalChinese`：中文含乱码、越南语字符或异常英文：副 precisely
-- `TITLE_INVALID` T275 / Topic 15 / p.208 `title`：标题不是完整中文场景标题：家森旅行はきっちり計画を来てておいて…
-- `VOCAB_MEANING_GARBLED` T275 / Topic 15 / p.208 `vocab`：词义异常：副 precisely
-- `TITLE_INVALID` T276 / Topic 15 / p.209 `title`：标题不是完整中文场景标题：日本政府は、公衆トイレの洋式化をすす…
-- `TITLE_INVALID` T277 / Topic 15 / p.210 `title`：标题不是完整中文场景标题：来月、蒸期休暇取るんだって？
-- `CHINESE_GARBLED` T278 / Topic 15 / p.211 `naturalChinese`：中文含乱码、越南语字符或异常英文：最近，一↑人搭水篷露営的「Solo
-- `CHINESE_GARBLED` T278 / Topic 15 / p.211 `originalChinese`：中文含乱码、越南语字符或异常英文：最近，一↑人搭水篷露営的「Solo
-- `TITLE_INVALID` T278 / Topic 15 / p.211 `title`：标题不是完整中文场景标题：普、ひと分でテントを張ってキャンプを…
-- `VOCAB_MEANING_GARBLED` T278 / Topic 15 / p.211 `vocab`：词义异常：名 tent
 - `TITLE_INVALID` T279 / Topic 16 / p.212 `title`：标题不是完整中文场景标题：約い頃から会見知りでなかなか友達がで…
 - `VOCAB_MEANING_GARBLED` T279 / Topic 16 / p.212 `vocab`：词义异常：動 2自 be blessed with
 - `TITLE_INVALID` T280 / Topic 16 / p.213 `title`：标题不是完整中文场景标题：期末試験で、マークシートの欄を一つず…
@@ -475,10 +420,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（52）
+## 字段异常（50）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T263 / Topic 15 / p.200 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T277 / Topic 15 / p.210 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T296 / Topic 16 / p.223 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T298 / Topic 16 / p.224 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T304 / Topic 16 / p.228 `japanese`：对话人物标记不完整
@@ -534,7 +477,6 @@
 
 - 无
 
-## 可选优化（2）
+## 可选优化（1）
 
-- `VOCAB_MEANING_MULTIPLE` T262 / Topic 15 / p.200 `vocab`：词义含多个释义：次数票／票
 - `VOCAB_MEANING_MULTIPLE` T350 / Topic 18 / p.259 `vocab`：词义含多个释义：彩票／笠
