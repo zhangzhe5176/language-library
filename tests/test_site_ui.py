@@ -1,6 +1,7 @@
 import json
 import re
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
@@ -71,6 +72,47 @@ class ProductionSiteTests(unittest.TestCase):
         self.assertIn('level === "n3" ? "assets/audio"', app)
         data = load_level("n3")
         self.assertTrue(all(image.startswith("assets/entries/") for story in data["stories"] for image in story["images"]))
+
+    def test_n3_blank_transition_pages_are_not_published(self):
+        stories = {story["id"]: story for story in load_level("n3")["stories"]}
+        self.assertEqual(stories[168]["images"], ["assets/entries/T168_1.png"])
+        self.assertEqual(stories[199]["images"], ["assets/entries/T199_1.png"])
+        self.assertTrue((ROOT / "assets" / "entries" / "T168_2.png").is_file())
+        self.assertTrue((ROOT / "assets" / "entries" / "T199_2.png").is_file())
+
+    def test_english_legacy_urls_are_consistent_planned_pages(self):
+        for name in ("index.html", "sample.html"):
+            text = (ROOT / "levels" / "english" / name).read_text(encoding="utf-8")
+            self.assertIn("English / 英语", text)
+            self.assertIn("规划中", text)
+            self.assertIn('href="../../index.html"', text)
+            self.assertIn('href="../../favicon.svg"', text)
+            for stale in ("本地版", "旧样张", "测试版", "开发说明", "english-outline.js"):
+                self.assertNotIn(stale, text)
+
+    def test_all_formal_pages_reference_the_local_favicon(self):
+        favicon = ROOT / "favicon.svg"
+        self.assertTrue(favicon.is_file())
+        ET.parse(favicon)
+        pages = [
+            (ROOT / "index.html", "./favicon.svg"),
+            (ROOT / "levels" / "japanese" / "index.html", "../../favicon.svg"),
+            (ROOT / "levels" / "english" / "index.html", "../../favicon.svg"),
+            (ROOT / "levels" / "english" / "sample.html", "../../favicon.svg"),
+        ]
+        for level in LEVELS:
+            data = load_level(level)
+            level_dir = ROOT / "levels" / level
+            names = ["index.html", "topics.html", "topic.html"]
+            names.extend(f"topic-{topic['id']:02d}.html" for topic in data["topics"])
+            pages.extend((level_dir / name, "../../favicon.svg") for name in names)
+        for page, href in pages:
+            text = page.read_text(encoding="utf-8")
+            self.assertIn(f'<link rel="icon" href="{href}" type="image/svg+xml" />', text, str(page))
+
+    def test_removed_topic_url_helper_has_no_calls(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertNotIn("topicUrl(", app)
 
     def test_all_audio_and_image_resources_exist(self):
         for level in LEVELS:

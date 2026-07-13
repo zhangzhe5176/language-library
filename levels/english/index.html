@@ -3,162 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>English 课程目录 - 外语学习门户本地版</title>
-    <link rel="stylesheet" href="../../styles.css" />
+    <title>English / 英语 · Language Library</title>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../styles.css?v=20260714-4" />
   </head>
-  <body>
-    <header class="siteHeader">
-      <a class="brand" href="../../index.html"><span>外语学习门户</span><strong>Language Library</strong></a>
-      <nav class="topNav" aria-label="主导航">
-        <a href="../../index.html">首页</a>
-        <a href="../n3/index.html">Japanese</a>
-        <a aria-current="page" href="./index.html">English</a>
-      </nav>
-    </header>
+  <body data-page="english-planned">
+    <div class="page">
+      <div class="shell">
+        <header class="topbar">
+          <a class="brand" href="../../index.html">
+            <span class="brandMark" aria-hidden="true">語</span>
+            <span>Language Library</span>
+          </a>
+          <nav class="nav nav-2" aria-label="页面导航">
+            <a href="../../index.html">语言</a>
+            <a class="active" href="./index.html" aria-current="page">英语</a>
+          </nav>
+        </header>
 
-    <main class="siteShell">
-      <section class="heroPanel compact">
-        <div>
-          <p class="eyebrow">English Course Outline</p>
-          <h1>英语 600 词课程目录</h1>
-          <p class="lead">先只创建课程目录和目标词分配：30 个 Unit，每个 Unit 4 个 Entry，每个 Entry 5 个词。后续确认后，再把每个 Entry 写成原创短对话或小短文。</p>
-        </div>
-        <a class="primaryLink" href="./sample.html">查看旧样张</a>
-      </section>
-
-      <section class="statGrid" aria-label="课程统计">
-        <div class="statCard"><span>Unit</span><strong id="unitCount">30</strong></div>
-        <div class="statCard"><span>Entry</span><strong id="entryCount">120</strong></div>
-        <div class="statCard"><span>目标词</span><strong id="wordCount">600</strong></div>
-      </section>
-
-      <section class="outlinePanel">
-        <div class="sectionHead">
-          <h2>目录与词组</h2>
-          <span class="outlineNote">标红词正式生成时按这里唯一计入</span>
-        </div>
-        <div class="outlineToolbar">
-          <label class="searchBox">
-            <span>搜索目录</span>
-            <input id="outlineSearch" type="search" placeholder="Unit、Entry、单词、中文释义" />
-          </label>
-          <div class="controlGroup" role="group" aria-label="类型筛选">
-            <button class="segButton active" type="button" data-type="all">全部</button>
-            <button class="segButton" type="button" data-type="dialogue">对话</button>
-            <button class="segButton" type="button" data-type="short">短文</button>
-          </div>
-        </div>
-        <div id="outlineApp" class="courseOutline" aria-live="polite"></div>
-      </section>
-    </main>
-
-    <script src="../../data/english-outline.js"></script>
-    <script>
-      const outline = window.ENGLISH_OUTLINE;
-      const app = document.querySelector("#outlineApp");
-      const searchInput = document.querySelector("#outlineSearch");
-      const typeButtons = document.querySelectorAll("[data-type]");
-      const state = { query: "", type: "all" };
-
-      function escapeHtml(value) {
-        return String(value ?? "")
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#039;");
-      }
-
-      function typeLabel(type) {
-        return type === "dialogue" ? "小对话" : "小短文";
-      }
-
-      function entrySearchText(unit, entry) {
-        return [
-          unit.id,
-          unit.title,
-          entry.id,
-          entry.title,
-          typeLabel(entry.type),
-          ...entry.words.flatMap((word) => [word.id, word.word, word.meaning]),
-        ].join(" ").toLowerCase();
-      }
-
-      function render() {
-        const query = state.query.trim().toLowerCase();
-        const units = outline.units
-          .map((unit) => ({
-            ...unit,
-            entries: unit.entries.filter((entry) => {
-              const matchesType = state.type === "all" || entry.type === state.type;
-              const matchesQuery = !query || entrySearchText(unit, entry).includes(query);
-              return matchesType && matchesQuery;
-            }),
-          }))
-          .filter((unit) => unit.entries.length > 0);
-
-        app.innerHTML = units.length
-          ? units.map(renderUnit).join("")
-          : "<p class='mutedText'>没有匹配的目录项。</p>";
-      }
-
-      function renderUnit(unit) {
-        const start = unit.entries[0]?.id || "";
-        const end = unit.entries.at(-1)?.id || "";
-        const shouldOpen = state.query || unit.id <= 3 ? " open" : "";
-        return `
-          <details class="courseUnit"${shouldOpen}>
-            <summary class="unitHead">
-              <div>
-                <p class="eyebrow">Unit ${String(unit.id).padStart(2, "0")}</p>
-                <h2>${escapeHtml(unit.title)}</h2>
-              </div>
-              <span class="outlineRange">${escapeHtml(start)}-${escapeHtml(end)} · ${unit.entries.length} Entries</span>
-            </summary>
-            <div class="entryPlanList">
-              ${unit.entries.map((entry) => renderEntry(entry)).join("")}
+        <main>
+          <section class="panel planningState" aria-labelledby="planning-title">
+            <span class="eyebrow">English / 英语</span>
+            <h1 id="planning-title">英语学习内容正在规划中</h1>
+            <p class="lead">课程准备完成后会在这里开放。现在可以返回语言门户，继续使用已上线的日语学习内容。</p>
+            <div class="actions">
+              <a class="btn primary" href="../../index.html">返回语言门户</a>
             </div>
-          </details>
-        `;
-      }
-
-      function renderEntry(entry) {
-        return `
-          <article class="entryPlan">
-            <div class="entryMeta">
-              <span class="pill ${entry.type}">${escapeHtml(typeLabel(entry.type))}</span>
-              <strong>${escapeHtml(entry.id)}</strong>
-            </div>
-            <div class="entryWords">
-              ${entry.words.map((word) => `
-                <span class="wordChip">
-                  <strong>${escapeHtml(word.word)}</strong>
-                  <em>#${escapeHtml(word.id)}</em>
-                  <small>${escapeHtml(word.meaning)}</small>
-                </span>
-              `).join("")}
-            </div>
-          </article>
-        `;
-      }
-
-      searchInput.addEventListener("input", (event) => {
-        state.query = event.target.value;
-        render();
-      });
-
-      typeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          state.type = button.dataset.type;
-          typeButtons.forEach((item) => item.classList.toggle("active", item === button));
-          render();
-        });
-      });
-
-      document.querySelector("#unitCount").textContent = outline.meta.totalUnits;
-      document.querySelector("#entryCount").textContent = outline.meta.totalEntries;
-      document.querySelector("#wordCount").textContent = outline.meta.totalWords;
-      render();
-    </script>
+          </section>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

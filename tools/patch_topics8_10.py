@@ -373,9 +373,9 @@ VOCAB_BY_ID = parse_vocab("""
 
 
 IMAGE_OVERRIDES = {
-    168: ["assets/entries/T168_1.png", "assets/entries/T168_2.png"],
+    168: ["assets/entries/T168_1.png"],
     186: ["assets/entries/T186_1.png"],
-    199: ["assets/entries/T199_1.png", "assets/entries/T199_2.png"],
+    199: ["assets/entries/T199_1.png"],
 }
 
 

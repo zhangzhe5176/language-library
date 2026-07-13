@@ -3,180 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>English Sample - 外语学习门户本地版</title>
-    <link rel="stylesheet" href="../../styles.css" />
-    <style>
-      .englishLine {
-        margin: 0 0 12px;
-        font-size: 19px;
-        line-height: 1.75;
-        overflow-wrap: anywhere;
-      }
-
-      .englishBlock {
-        padding: 12px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel-soft);
-      }
-
-      .tipList {
-        display: grid;
-        gap: 8px;
-        margin: 8px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .tipList li {
-        padding: 10px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel-soft);
-      }
-
-      .tipList strong {
-        color: var(--accent-strong);
-      }
-
-      .sampleRoadmap {
-        display: grid;
-        gap: 8px;
-      }
-
-      .sampleRoadmap a {
-        display: grid;
-        gap: 2px;
-        padding: 10px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel-soft);
-      }
-
-      .sampleRoadmap a.active {
-        border-color: var(--accent);
-        background: var(--accent-soft);
-      }
-
-      .sampleRoadmap span {
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 800;
-      }
-
-      @media (max-width: 620px) {
-        .englishLine {
-          font-size: 17px;
-        }
-      }
-    </style>
+    <title>English / 英语 · Language Library</title>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../styles.css?v=20260714-4" />
   </head>
-  <body>
-    <header class="siteHeader">
-      <a class="brand" href="../../index.html"><span>外语学习门户</span><strong>Language Library</strong></a>
-      <nav class="topNav" aria-label="主导航">
-        <a href="../../index.html">首页</a>
-        <a href="../n3/index.html">Japanese</a>
-        <a href="./index.html">English</a>
-      </nav>
-    </header>
+  <body data-page="english-planned">
+    <div class="page">
+      <div class="shell">
+        <header class="topbar">
+          <a class="brand" href="../../index.html">
+            <span class="brandMark" aria-hidden="true">語</span>
+            <span>Language Library</span>
+          </a>
+          <nav class="nav nav-2" aria-label="页面导航">
+            <a href="../../index.html">语言</a>
+            <a class="active" href="./index.html" aria-current="page">英语</a>
+          </nav>
+        </header>
 
-    <main class="studyShell">
-      <aside class="chapterNav">
-        <a class="backLink" href="./index.html">返回目录</a>
-        <h2>English</h2>
-        <div class="sampleRoadmap">
-          <a class="active" href="./sample.html"><span>Topic 01</span><strong>Travel & Daily Life</strong><em>样张</em></a>
-          <a href="#"><span>Topic 02</span><strong>Food & Shopping</strong><em>预留</em></a>
-          <a href="#"><span>Topic 03</span><strong>School & Work</strong><em>预留</em></a>
-          <a href="#"><span>Topic 04</span><strong>Health & Feelings</strong><em>预留</em></a>
-          <a href="#"><span>Topic 05</span><strong>Technology & Society</strong><em>预留</em></a>
-        </div>
-      </aside>
-
-      <section class="studyMain">
-        <div class="topicHeader">
-          <p class="eyebrow">English Sample 001</p>
-          <h1>Travel & Daily Life</h1>
-          <p>从 Excel 词表抽取同一场景中能自然组合的词，制作成原创短对话。正式版会继续按主题扩展。</p>
-          <div class="toolbarInline">
-            <label class="searchBox"><span>搜索本章</span><input type="search" value="" placeholder="单词、标题、中文释义" /></label>
-            <div class="controlGroup" role="group" aria-label="类型筛选">
-              <button class="segButton active" type="button">全部</button>
-              <button class="segButton" type="button">对话</button>
-              <button class="segButton" type="button">短文</button>
-            </div>
-            <label class="switch"><input type="checkbox" /><span>隐藏中文</span></label>
-          </div>
-        </div>
-
-        <article class="storyCard" id="english-sample-001">
-          <div class="cardHead">
-            <div>
-              <div class="metaLine">
-                <span class="pill">Travel & Daily Life</span>
-                <span class="pill">No. E001</span>
-                <span class="pill dialogue">对话</span>
-                <span class="pill checked">原创样张</span>
-              </div>
-              <h2>A Rainy Morning in the Capital</h2>
-            </div>
-            <div class="cardActions">
-              <button class="iconButton" type="button">未学</button>
-              <button class="iconButton" type="button">收藏</button>
-            </div>
-          </div>
-
-          <div class="contentGrid">
-            <section class="englishBlock" aria-label="英文正文">
-              <p class="englishLine"><span class="speaker">Tom：</span>The <span class="focus">weather</span> is better than I expected. Do you still <span class="focus">agree</span> to <span class="focus">travel</span> to the <span class="focus">capital</span> today?</p>
-              <p class="englishLine"><span class="speaker">Lina：</span>Yes. If we <span class="focus">catch</span> the early train, we can <span class="focus">arrive</span> before nine and have <span class="focus">breakfast</span> near the river.</p>
-              <p class="englishLine"><span class="speaker">Tom：</span>Great. I will bring my <span class="focus">camera</span>. The river tour uses a small <span class="focus">boat</span>, right?</p>
-              <p class="englishLine"><span class="speaker">Lina：</span>Right. <span class="focus">August</span> is a <span class="focus">typical</span> busy <span class="focus">month</span>, so I <span class="focus">invited</span> Mia last <span class="focus">week</span> to book the tickets early.</p>
-              <p class="englishLine"><span class="speaker">Tom：</span>Good idea. After we <span class="focus">visit</span> the old market, we can slow down and <span class="focus">enjoy</span> the rest of the day.</p>
-            </section>
-
-            <section class="translationBlock" aria-label="中文翻译">
-              <h3>自然中文</h3>
-              <div class="translationText">
-                <p>Tom：天气比我预想的好。你还是同意今天去首都旅行吗？</p>
-                <p>Lina：同意。如果我们赶上早班火车，就能九点前到达，并在河边吃早餐。</p>
-                <p>Tom：太好了。我会带上相机。河上游览是坐一艘小船，对吧？</p>
-                <p>Lina：对。八月通常是很忙的月份，所以我上周就邀请 Mia 提前订票了。</p>
-                <p>Tom：好主意。参观完老市场后，我们可以放慢节奏，好好享受剩下的一天。</p>
-              </div>
-            </section>
-          </div>
-
-          <section class="vocabBlock" aria-label="重点词汇">
-            <h3>本条重点单词</h3>
-            <div class="vocabList">
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">agree</span><span class="vocabNo">#1</span></div><span class="reading">v.</span><span class="meaning">同意；赞成；一致</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">weather</span><span class="vocabNo">#18</span></div><span class="reading">n.</span><span class="meaning">天气；气象</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">travel</span><span class="vocabNo">#15</span></div><span class="reading">v. / n.</span><span class="meaning">旅行；移动</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">capital</span><span class="vocabNo">#8</span></div><span class="reading">n.</span><span class="meaning">首都；资本；大写字母</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">catch</span><span class="vocabNo">#9</span></div><span class="reading">v.</span><span class="meaning">赶上；抓住；捕捉；领会</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">arrive</span><span class="vocabNo">#3</span></div><span class="reading">vi.</span><span class="meaning">到达；到来</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">breakfast</span><span class="vocabNo">#6</span></div><span class="reading">n. / v.</span><span class="meaning">早餐；吃早餐</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">camera</span><span class="vocabNo">#7</span></div><span class="reading">n.</span><span class="meaning">照相机；摄像机</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">boat</span><span class="vocabNo">#5</span></div><span class="reading">n. / v.</span><span class="meaning">船；划船；乘船</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">typical</span><span class="vocabNo">#16</span></div><span class="reading">adj.</span><span class="meaning">典型的；有代表性的</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">invite</span><span class="vocabNo">#12</span></div><span class="reading">vt.</span><span class="meaning">邀请；请求；招待</span></div>
-              <div class="vocabItem"><div class="vocabTop"><span class="vocabWord">enjoy</span><span class="vocabNo">#11</span></div><span class="reading">v.</span><span class="meaning">享受；喜欢</span></div>
+        <main>
+          <section class="panel planningState" aria-labelledby="planning-title">
+            <span class="eyebrow">English / 英语</span>
+            <h1 id="planning-title">英语学习内容正在规划中</h1>
+            <p class="lead">课程准备完成后会在这里开放。现在可以返回语言门户，继续使用已上线的日语学习内容。</p>
+            <div class="actions">
+              <a class="btn primary" href="../../index.html">返回语言门户</a>
             </div>
           </section>
-
-          <section class="vocabBlock" aria-label="学习提示">
-            <h3>学习提示</h3>
-            <ul class="tipList">
-              <li><strong>agree to + 计划 / 安排</strong>：Do you agree to travel today? 表示“你同意今天出行这个安排吗？”</li>
-              <li><strong>catch + 交通工具</strong>：catch the early train 是“赶上早班火车”，比 take 更强调“及时赶上”。</li>
-              <li><strong>arrive in / arrive at</strong>：arrive in the capital 用于城市或国家；arrive at the station 用于具体地点。</li>
-              <li><strong>enjoy + 名词 / 动名词</strong>：enjoy the day 或 enjoy visiting the market，后面接动词时常用 -ing。</li>
-            </ul>
-          </section>
-        </article>
-      </section>
-    </main>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

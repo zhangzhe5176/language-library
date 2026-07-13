@@ -521,7 +521,7 @@ def page_html(page: str, base: str, title: str, topic_id: int | None = None) -> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="{base}/styles.css?v=20260714-3" />
   </head>
   <body data-page="{page}" data-level="n3" data-base="{base}"{topic_attr}>

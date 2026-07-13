@@ -51,11 +51,6 @@
     return `${levelUrl(level, "topic.html")}?topic=${story.topicId}&story=${story.id}`;
   }
 
-  function topicUrl(level, topicId, storyId = "") {
-    const storyPart = storyId ? `&story=${storyId}` : "";
-    return `${levelUrl(level, "topic.html")}?topic=${topicId}${storyPart}`;
-  }
-
   function safeLocalStorage() {
     try {
       return window.localStorage;

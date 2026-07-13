@@ -68,7 +68,7 @@ class N5SampleTests(unittest.TestCase):
             self.assertIn("../../data/n5-data.js", text)
             self.assertIn("../../state.js", text)
             self.assertIn("../../app.js", text)
-            self.assertIn('rel="icon" href="data:,"', text)
+            self.assertIn('rel="icon" href="../../favicon.svg"', text)
 
     def test_n4_contains_all_tracks_and_topics(self):
         data = self.assert_level_is_complete("n4", 13, 262)

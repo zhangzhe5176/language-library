@@ -641,7 +641,7 @@ def level_page_html(book: Book, page: str, title: str, topic_id: int | None = No
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../../styles.css?v=20260714-3" />
   </head>
   <body data-page="{page}" data-level="{book.level}" data-base="../.."{topic_attr}>
