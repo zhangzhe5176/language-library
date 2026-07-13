@@ -1,27 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：308
-- 问题总数：387
+- 已校对：335
+- 问题总数：301
 
-## 阻断发布（57）
+## 阻断发布（41）
 
-- `NATURALCHINESE_EMPTY` T313 / Topic 17 / p.234 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T313 / Topic 17 / p.234 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T313 / Topic 17 / p.234 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T314 / Topic 17 / p.235 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T314 / Topic 17 / p.235 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T318 / Topic 17 / p.238 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T318 / Topic 17 / p.238 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T324 / Topic 17 / p.241 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T324 / Topic 17 / p.241 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T327 / Topic 17 / p.242 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T327 / Topic 17 / p.242 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T327 / Topic 17 / p.242 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T331 / Topic 17 / p.245 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T331 / Topic 17 / p.245 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T333 / Topic 17 / p.246 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T333 / Topic 17 / p.246 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T344 / Topic 18 / p.254 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T344 / Topic 18 / p.254 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T349 / Topic 18 / p.258 `naturalChinese`：naturalChinese 为空
@@ -64,65 +48,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（282）
+## 内容错误（225）
 
-- `CHINESE_GARBLED` T309 / Topic 17 / p.232 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 safe
-- `CHINESE_GARBLED` T309 / Topic 17 / p.232 `originalChinese`：中文含乱码、越南语字符或异常英文：名 safe
-- `TITLE_INVALID` T309 / Topic 17 / p.232 `title`：标题不是完整中文场景标题：感事に驚備していたにもかかわらずにふ…
-- `VOCAB_MEANING_GARBLED` T309 / Topic 17 / p.232 `vocab`：词义异常：名 safe
-- `TITLE_INVALID` T310 / Topic 17 / p.233 `title`：标题不是完整中文场景标题：冬勤は事情があれば当日の申請でも認め…
-- `VOCAB_VALUE_EMPTY` T310 / Topic 17 / p.233 `vocab`：词汇 1586 的单词或释义为空
-- `TITLE_INVALID` T311 / Topic 17 / p.233 `title`：标题不是完整中文场景标题：熱職して新会証修を受けるまで、「奪じ…
-- `VOCAB_VALUE_EMPTY` T311 / Topic 17 / p.233 `vocab`：词汇 1589 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T311 / Topic 17 / p.233 `vocab`：词汇 1590 的单词或释义为空
-- `TITLE_INVALID` T312 / Topic 17 / p.234 `title`：标题不是完整中文场景标题：コンビニのバイトはどう？
-- `VOCAB_MEANING_GARBLED` T312 / Topic 17 / p.234 `vocab`：词义异常：名 overtime work without pay
-- `TITLE_INVALID` T313 / Topic 17 / p.234 `title`：标题不是完整中文场景标题：あの新しくオープンしたコンビニ、行っ…
-- `TITLE_INVALID` T314 / Topic 17 / p.235 `title`：标题不是完整中文场景标题：今度、社内レクリエーションで何をする…
-- `VOCAB_MEANING_GARBLED` T314 / Topic 17 / p.235 `vocab`：词义异常：各 win
-- `TITLE_INVALID` T315 / Topic 17 / p.236 `title`：标题不是完整中文场景标题：日本でも1980年代の初め頃までは、…
-- `VOCAB_VALUE_EMPTY` T315 / Topic 17 / p.236 `vocab`：词汇 1608 的单词或释义为空
-- `CHINESE_GARBLED` T316 / Topic 17 / p.236 `naturalChinese`：中文含乱码、越南语字符或异常英文：動3目 work, go to work
-- `CHINESE_GARBLED` T316 / Topic 17 / p.236 `originalChinese`：中文含乱码、越南语字符或异常英文：動3目 work, go to work
-- `TITLE_INVALID` T316 / Topic 17 / p.236 `title`：标题不是完整中文场景标题：職場のマネージャーから、またまで飲み…
-- `VOCAB_VALUE_EMPTY` T316 / Topic 17 / p.236 `vocab`：词汇 1612 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T316 / Topic 17 / p.236 `vocab`：词义异常：動3目 work, go to work
-- `VOCAB_MEANING_GARBLED` T316 / Topic 17 / p.236 `vocab`：词义异常：各 misery, pain
-- `VOCAB_MEANING_GARBLED` T316 / Topic 17 / p.236 `vocab`：词义异常：動3日 malice， be spitetul
-- `TITLE_INVALID` T317 / Topic 17 / p.237 `title`：标题不是完整中文场景标题：どうしたの？さっきからため息ばかりだ…
-- `VOCAB_MEANING_GARBLED` T317 / Topic 17 / p.237 `vocab`：词义异常：圧力lap luic
-- `TITLE_INVALID` T318 / Topic 17 / p.238 `title`：标题不是完整中文场景标题：昨日のプレゼン、どうだった？
-- `TITLE_INVALID` T319 / Topic 17 / p.238 `title`：标题不是完整中文场景标题：新製コロナウイルスが流行して必来、食…
-- `VOCAB_MEANING_GARBLED` T319 / Topic 17 / p.238 `vocab`：词义异常：sincel以后
-- `VOCAB_MEANING_GARBLED` T319 / Topic 17 / p.238 `vocab`：词义异常：動3目 food and beverages, eat and drink
-- `VOCAB_MEANING_GARBLED` T319 / Topic 17 / p.238 `vocab`：词义异常：名 bygiene
-- `TITLE_INVALID` T320 / Topic 17 / p.239 `title`：标题不是完整中文场景标题：部下が鮮なら、点司は必ずしも態じやな…
-- `TITLE_INVALID` T321 / Topic 17 / p.239 `title`：标题不是完整中文场景标题：会議で打ち合わせる重に、
-- `VOCAB_MEANING_GARBLED` T321 / Topic 17 / p.239 `vocab`：词义异常：動1自 1ook over
-- `TITLE_INVALID` T322 / Topic 17 / p.240 `title`：标题不是完整中文场景标题：あの人
-- `VOCAB_VALUE_EMPTY` T322 / Topic 17 / p.240 `vocab`：词汇 1644 的单词或释义为空
-- `TITLE_INVALID` T323 / Topic 17 / p.240 `title`：标题不是完整中文场景标题：*サイトに「急暮」と書いてある食庫の…
-- `VOCAB_VALUE_EMPTY` T323 / Topic 17 / p.240 `vocab`：词汇 1647 的单词或释义为空
-- `TITLE_INVALID` T324 / Topic 17 / p.241 `title`：标题不是完整中文场景标题：助きだった頃は絵料が無かったので、た…
-- `TITLE_INVALID` T325 / Topic 17 / p.241 `title`：标题不是完整中文场景标题：イベントのポスターを、各階の掲示板に…
-- `TITLE_INVALID` T326 / Topic 17 / p.242 `title`：标题不是完整中文场景标题：最近新しく入ったアシスタント、すごく…
-- `TITLE_INVALID` T327 / Topic 17 / p.242 `title`：标题不是完整中文场景标题：文字を確定すると、過去のデータから推…
-- `CHINESE_GARBLED` T328 / Topic 17 / p.243 `naturalChinese`：中文含乱码、越南语字符或异常英文：Ba）”， con cong ty hay doan the thi “御中（Quy co quan）”
-- `CHINESE_GARBLED` T328 / Topic 17 / p.243 `originalChinese`：中文含乱码、越南语字符或异常英文：Ba）”， con cong ty hay doan the thi “御中（Quy co quan）”
-- `TITLE_INVALID` T328 / Topic 17 / p.243 `title`：标题不是完整中文场景标题：宛名の形式は、人が「様」、
-- `TITLE_INVALID` T329 / Topic 17 / p.244 `title`：标题不是完整中文场景标题：ウイルス対策に協れした飲食点には、協…
-- `CHINESE_GARBLED` T330 / Topic 17 / p.244 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 artisan， craftsperson
-- `CHINESE_GARBLED` T330 / Topic 17 / p.244 `originalChinese`：中文含乱码、越南语字符或异常英文：名 artisan， craftsperson
-- `TITLE_INVALID` T330 / Topic 17 / p.244 `title`：标题不是完整中文场景标题：下町に腕のいい包丁職人がいると聞いた…
-- `VOCAB_MEANING_GARBLED` T330 / Topic 17 / p.244 `vocab`：词义异常：名 artisan， craftsperson
-- `VOCAB_MEANING_GARBLED` T330 / Topic 17 / p.244 `vocab`：词义异常：動 3他 understand, agree
-- `TITLE_INVALID` T331 / Topic 17 / p.245 `title`：标题不是完整中文场景标题：月本の会社では、高司と常的にどう接し…
-- `TITLE_INVALID` T332 / Topic 17 / p.246 `title`：标题不是完整中文场景标题：オーダーを間違えた生、
-- `VOCAB_MEANING_GARBLED` T332 / Topic 17 / p.246 `vocab`：词义异常：動3他 order， place an order
-- `TITLE_INVALID` T333 / Topic 17 / p.246 `title`：标题不是完整中文场景标题：最後はどうせ社長が決めちゃうんでしょ…
-- `TITLE_INVALID` T334 / Topic 17 / p.247 `title`：标题不是完整中文场景标题：プログラミングをマスターすれば、フリ…
-- `TITLE_INVALID` T335 / Topic 17 / p.248 `title`：标题不是完整中文场景标题：繁社類をもって会社に喜載してきたが、…
-- `VOCAB_MEANING_GARBLED` T335 / Topic 17 / p.248 `vocab`：词义异常：名 finish, end
 - `TITLE_INVALID` T336 / Topic 18 / p.249 `title`：标题不是完整中文场景标题：彼女と私は、分っ子園きで、彼女の家族…
 - `VOCAB_VALUE_EMPTY` T336 / Topic 18 / p.249 `vocab`：词汇 1710 的单词或释义为空
 - `TITLE_INVALID` T337 / Topic 18 / p.250 `title`：标题不是完整中文场景标题：貯金を金部はたいて、蕎壊が無れていた…
@@ -349,21 +276,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（47）
+## 字段异常（34）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T312 / Topic 17 / p.234 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T314 / Topic 17 / p.235 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T316 / Topic 17 / p.236 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T317 / Topic 17 / p.237 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T318 / Topic 17 / p.238 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T320 / Topic 17 / p.239 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T322 / Topic 17 / p.240 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T326 / Topic 17 / p.242 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T328 / Topic 17 / p.243 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T331 / Topic 17 / p.245 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T332 / Topic 17 / p.246 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T333 / Topic 17 / p.246 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T334 / Topic 17 / p.247 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T356 / Topic 19 / p.264 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T360 / Topic 19 / p.267 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T361 / Topic 19 / p.268 `japanese`：对话人物标记不完整
