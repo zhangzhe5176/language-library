@@ -12,6 +12,16 @@ SPEC.loader.exec_module(build_levels)
 
 
 class LevelBuilderConfigTests(unittest.TestCase):
+    def test_n2_book_contract(self):
+        config = build_levels.BOOKS["n2"]
+        self.assertEqual(config.track_count, 452)
+        self.assertEqual(config.word_count, 2400)
+        self.assertEqual(config.numbered_word_count, 2360)
+        self.assertEqual(len(config.topics), 23)
+        self.assertEqual(config.topics[0].title, "食事")
+        self.assertEqual(config.topics[-1].title, "環境・科学")
+        self.assertEqual(set(config.marker_overrides), {1, 12, 17, 28, 98, 413})
+
     def test_n5_book_contract(self):
         config = build_levels.BOOKS["n5"]
         self.assertEqual(config.track_count, 373)

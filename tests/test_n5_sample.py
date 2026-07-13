@@ -74,8 +74,18 @@ class N5SampleTests(unittest.TestCase):
         for relative_path in ["levels/n4/index.html", "levels/n4/topics.html", "levels/n4/topic-13.html"]:
             self.assertTrue((ROOT / relative_path).is_file())
 
+    def test_n2_contains_all_tracks_and_topics(self):
+        data = self.assert_level_is_complete("n2", 23, 452)
+        self.assertEqual(data["level"], "n2")
+        self.assertEqual(data["topics"][0]["title"], "食事")
+        self.assertEqual(data["topics"][-1]["title"], "環境・科学")
+        self.assertEqual(data["numberedWordCount"], 2360)
+        for relative_path in ["levels/n2/index.html", "levels/n2/topics.html", "levels/n2/topic-23.html"]:
+            self.assertTrue((ROOT / relative_path).is_file())
+
     def test_portal_links_to_n5(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("./levels/n2/index.html", text)
         self.assertIn("./levels/n5/index.html", text)
         self.assertIn("./levels/n4/index.html", text)
 
