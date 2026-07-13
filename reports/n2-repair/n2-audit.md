@@ -1,16 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：335
-- 问题总数：301
+- 已校对：355
+- 问题总数：239
 
-## 阻断发布（41）
+## 阻断发布（36）
 
-- `NATURALCHINESE_EMPTY` T344 / Topic 18 / p.254 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T344 / Topic 18 / p.254 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T349 / Topic 18 / p.258 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T349 / Topic 18 / p.258 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T349 / Topic 18 / p.258 `vocab`：结构化词汇为空
 - `NATURALCHINESE_EMPTY` T362 / Topic 19 / p.268 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T362 / Topic 19 / p.268 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T365 / Topic 19 / p.270 `naturalChinese`：naturalChinese 为空
@@ -48,64 +43,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（225）
+## 内容错误（169）
 
-- `TITLE_INVALID` T336 / Topic 18 / p.249 `title`：标题不是完整中文场景标题：彼女と私は、分っ子園きで、彼女の家族…
-- `VOCAB_VALUE_EMPTY` T336 / Topic 18 / p.249 `vocab`：词汇 1710 的单词或释义为空
-- `TITLE_INVALID` T337 / Topic 18 / p.250 `title`：标题不是完整中文场景标题：貯金を金部はたいて、蕎壊が無れていた…
-- `VOCAB_VALUE_EMPTY` T337 / Topic 18 / p.250 `vocab`：词汇 1722 的单词或释义为空
-- `TITLE_INVALID` T338 / Topic 18 / p.250 `title`：标题不是完整中文场景标题：マスコミ関連企業でカメラマンとして働…
-- `CHINESE_GARBLED` T339 / Topic 18 / p.251 `naturalChinese`：中文含乱码、越南语字符或异常英文：動1目 double， repeat a year
-- `CHINESE_GARBLED` T339 / Topic 18 / p.251 `originalChinese`：中文含乱码、越南语字符或异常英文：動1目 double， repeat a year
-- `TITLE_INVALID` T339 / Topic 18 / p.251 `title`：标题不是完整中文场景标题：推薦で大学に入学したものの、
-- `VOCAB_MEANING_GARBLED` T339 / Topic 18 / p.251 `vocab`：词义异常：動1目 double， repeat a year
-- `TITLE_INVALID` T340 / Topic 18 / p.252 `title`：标题不是完整中文场景标题：このままではもしかすると卒業できない…
-- `VOCAB_VALUE_EMPTY` T340 / Topic 18 / p.252 `vocab`：词汇 1736 的单词或释义为空
-- `CHINESE_GARBLED` T341 / Topic 18 / p.252 `naturalChinese`：中文含乱码、越南语字符或异常英文：動1自 be granted， be realized
-- `CHINESE_GARBLED` T341 / Topic 18 / p.252 `originalChinese`：中文含乱码、越南语字符或异常英文：動1自 be granted， be realized
-- `TITLE_INVALID` T341 / Topic 18 / p.252 `title`：标题不是完整中文场景标题：私は子どもの頃、親の繁境に飢えていた…
-- `VOCAB_MEANING_GARBLED` T341 / Topic 18 / p.252 `vocab`：词义异常：各動3他 retirement， resign from a job
-- `VOCAB_MEANING_GARBLED` T341 / Topic 18 / p.252 `vocab`：词义异常：動2他 fulfil， grant
-- `VOCAB_MEANING_GARBLED` T341 / Topic 18 / p.252 `vocab`：词义异常：動2他 fulfil， grant
-- `VOCAB_MEANING_GARBLED` T341 / Topic 18 / p.252 `vocab`：词义异常：動1自 be granted， be realized
-- `TITLE_INVALID` T342 / Topic 18 / p.253 `title`：标题不是完整中文场景标题：私は結類想手に決める条件が多い。心か…
-- `VOCAB_MEANING_GARBLED` T342 / Topic 18 / p.253 `vocab`：词义异常：工作経ly lich lam viec
-- `VOCAB_VALUE_EMPTY` T342 / Topic 18 / p.253 `vocab`：词汇 1751 的单词或释义为空
-- `TITLE_INVALID` T343 / Topic 18 / p.254 `title`：标题不是完整中文场景标题：頭親はかたい職業に就き、紫した身念を…
-- `TITLE_INVALID` T344 / Topic 18 / p.254 `title`：标题不是完整中文场景标题：塾の講師として働いている。
-- `VOCAB_VALUE_EMPTY` T344 / Topic 18 / p.254 `vocab`：词汇 1759 的单词或释义为空
-- `TITLE_INVALID` T345 / Topic 18 / p.255 `title`：标题不是完整中文场景标题：インターンシップに参加したいと思って…
-- `VOCAB_VALUE_EMPTY` T345 / Topic 18 / p.255 `vocab`：词汇 1764 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T345 / Topic 18 / p.255 `vocab`：词义异常：名 application form
-- `VOCAB_MEANING_GARBLED` T345 / Topic 18 / p.255 `vocab`：词义异常：各動3自 entry， enter
-- `TITLE_INVALID` T346 / Topic 18 / p.256 `title`：标题不是完整中文场景标题：●2年生から蒸系コース・理系コースに…
-- `TITLE_INVALID` T347 / Topic 18 / p.257 `title`：标题不是完整中文场景标题：いつもふざけている彼から、真剣な声で…
-- `VOCAB_VALUE_EMPTY` T347 / Topic 18 / p.257 `vocab`：词汇 1785 的单词或释义为空
-- `TITLE_INVALID` T348 / Topic 18 / p.258 `title`：标题不是完整中文场景标题：ほとんどの人が漁師の小さな町で生まれ…
-- `VOCAB_MEANING_GARBLED` T348 / Topic 18 / p.258 `vocab`：词义异常：動3目 moving to Tokyo， go to Tokyo
-- `VOCAB_MEANING_GARBLED` T348 / Topic 18 / p.258 `vocab`：词义异常：名 job, career
-- `VOCAB_MEANING_GARBLED` T348 / Topic 18 / p.258 `vocab`：词义异常：生活的意Xlle song
-- `VOCAB_MEANING_GARBLED` T348 / Topic 18 / p.258 `vocab`：词义异常：3自 acceptance， convince， persuade
-- `VOCAB_MEANING_GARBLED` T348 / Topic 18 / p.258 `vocab`：词义异常：動2目 tire of
-- `TITLE_INVALID` T349 / Topic 18 / p.258 `title`：标题不是完整中文场景标题：社意に住んでいたが、素が手を娠したタ…
-- `CHINESE_GARBLED` T350 / Topic 18 / p.259 `naturalChinese`：中文含乱码、越南语字符或异常英文：NGO， 世就是非政府組的駅気的作用
-- `CHINESE_GARBLED` T350 / Topic 18 / p.259 `originalChinese`：中文含乱码、越南语字符或异常英文：NGO， 世就是非政府組的駅気的作用
-- `TITLE_INVALID` T350 / Topic 18 / p.259 `title`：标题不是完整中文场景标题：NE9、つまりま府織の職長の袋目は、
-- `VOCAB_MEANING_GARBLED` T350 / Topic 18 / p.259 `vocab`：词义异常：名 role
-- `TITLE_INVALID` T351 / Topic 18 / p.260 `title`：标题不是完整中文场景标题：私は、子どもの食駅問題の現状を目の当…
-- `CHINESE_GARBLED` T352 / Topic 18 / p.260 `naturalChinese`：中文含乱码、越南语字符或异常英文：各動3自 response， take action
-- `CHINESE_GARBLED` T352 / Topic 18 / p.260 `originalChinese`：中文含乱码、越南语字符或异常英文：各動3自 response， take action
-- `TITLE_INVALID` T352 / Topic 18 / p.260 `title`：标题不是完整中文场景标题：合同企業説明会で商社の採用担当者に、
-- `VOCAB_MEANING_GARBLED` T352 / Topic 18 / p.260 `vocab`：词义异常：各動3他consideration， consider
-- `VOCAB_MEANING_GARBLED` T352 / Topic 18 / p.260 `vocab`：词义异常：各動3自 response， take action
-- `TITLE_INVALID` T353 / Topic 18 / p.261 `title`：标题不是完整中文场景标题：其やかされて育ったせいか、大ざっぱな…
-- `VOCAB_MEANING_GARBLED` T353 / Topic 18 / p.261 `vocab`：词义异常：没汁 ban ve
-- `VOCAB_VALUE_EMPTY` T353 / Topic 18 / p.261 `vocab`：词汇 1823 的单词或释义为空
-- `TITLE_INVALID` T354 / Topic 18 / p.262 `title`：标题不是完整中文场景标题：車の会社での地位に納得できず、もっと…
-- `CHINESE_GARBLED` T355 / Topic 18 / p.262 `naturalChinese`：中文含乱码、越南语字符或异常英文：大（企，公司） 1on， hang dau
-- `CHINESE_GARBLED` T355 / Topic 18 / p.262 `originalChinese`：中文含乱码、越南语字符或异常英文：大（企，公司） 1on， hang dau
-- `TITLE_INVALID` T355 / Topic 18 / p.262 `title`：标题不是完整中文场景标题：有魚本学を卒業した後は、手舎業に社し…
-- `VOCAB_MEANING_GARBLED` T355 / Topic 18 / p.262 `vocab`：词义异常：大（企，公司） 1on， hang dau
 - `TITLE_INVALID` T356 / Topic 19 / p.264 `title`：标题不是完整中文场景标题：この前血圧を測定したら、ちょっと高か…
 - `VOCAB_VALUE_EMPTY` T356 / Topic 19 / p.264 `vocab`：词汇 1840 的单词或释义为空
 - `TITLE_INVALID` T357 / Topic 19 / p.265 `title`：标题不是完整中文场景标题：装思、事故に遭った客達のお見舞いに行…
@@ -317,6 +256,6 @@
 
 - 无
 
-## 可选优化（1）
+## 可选优化（0）
 
-- `VOCAB_MEANING_MULTIPLE` T350 / Topic 18 / p.259 `vocab`：词义含多个释义：彩票／笠
+- 无
