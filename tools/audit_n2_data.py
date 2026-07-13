@@ -55,9 +55,12 @@ def suspicious_chinese(text: str) -> bool:
     if VIETNAMESE_RE.search(text) or "�" in text:
         return True
     scrubbed = re.sub(r"\b[A-Z]\b", "", text)
-    for name in ("KAKAKU.com", "KAIGAI MALL", "White Day", "Lookism", "Looks"):
+    for name in ("KAKAKU.com", "KAIGAI MALL", "White Day", "Lookism", "Looks", "Instagram", "Instagrammable"):
         scrubbed = scrubbed.replace(name, "")
+    for acronym in ("SNS", "WEB", "APP", "INS", "AI", "IT", "MB", "PC"):
+        scrubbed = scrubbed.replace(acronym, "")
     scrubbed = re.sub(r"\bism\b", "", scrubbed)
+    scrubbed = re.sub(r"\b(AI|SNS|WEB|IT|MB|APP|PC|C)\b", "", scrubbed)
     scrubbed = scrubbed.replace(".com", "")
     return bool(re.search(r"[A-Za-z]{3,}", scrubbed))
 
