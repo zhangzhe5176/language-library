@@ -1,18 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：278
-- 问题总数：461
+- 已校对：308
+- 问题总数：387
 
-## 阻断发布（64）
+## 阻断发布（57）
 
-- `NATURALCHINESE_EMPTY` T286 / Topic 16 / p.216 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T286 / Topic 16 / p.216 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T286 / Topic 16 / p.216 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T295 / Topic 16 / p.222 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T295 / Topic 16 / p.222 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T301 / Topic 16 / p.226 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T301 / Topic 16 / p.226 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T313 / Topic 17 / p.234 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T313 / Topic 17 / p.234 `originalChinese`：originalChinese 为空
 - `VOCAB_EMPTY` T313 / Topic 17 / p.234 `vocab`：结构化词汇为空
@@ -71,72 +64,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（346）
+## 内容错误（282）
 
-- `TITLE_INVALID` T279 / Topic 16 / p.212 `title`：标题不是完整中文场景标题：約い頃から会見知りでなかなか友達がで…
-- `VOCAB_MEANING_GARBLED` T279 / Topic 16 / p.212 `vocab`：词义异常：動 2自 be blessed with
-- `TITLE_INVALID` T280 / Topic 16 / p.213 `title`：标题不是完整中文场景标题：期末試験で、マークシートの欄を一つず…
-- `TITLE_INVALID` T281 / Topic 16 / p.213 `title`：标题不是完整中文场景标题：昨無度はやる気がなく、ずいぶんけてし…
-- `TITLE_INVALID` T282 / Topic 16 / p.214 `title`：标题不是完整中文场景标题：野業生とその保護者に繋に通い強めたき…
-- `VOCAB_VALUE_EMPTY` T282 / Topic 16 / p.214 `vocab`：词汇 1444 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T282 / Topic 16 / p.214 `vocab`：词汇 1445 的单词或释义为空
-- `CHINESE_GARBLED` T283 / Topic 16 / p.214 `naturalChinese`：中文含乱码、越南语字符或异常英文：名動3他 grafiti， scribble on
-- `CHINESE_GARBLED` T283 / Topic 16 / p.214 `originalChinese`：中文含乱码、越南语字符或异常英文：名動3他 grafiti， scribble on
-- `TITLE_INVALID` T283 / Topic 16 / p.214 `title`：标题不是完整中文场景标题：小業集の頃、業務の壁に蒸費きしたり、…
-- `VOCAB_MEANING_GARBLED` T283 / Topic 16 / p.214 `vocab`：词义异常：名動3他 grafiti， scribble on
-- `TITLE_INVALID` T284 / Topic 16 / p.215 `title`：标题不是完整中文场景标题：私が無業する本気は、薄然の化の紙等に…
-- `VOCAB_MEANING_GARBLED` T284 / Topic 16 / p.215 `vocab`：词义异常：名 schoolyard
-- `VOCAB_MEANING_GARBLED` T284 / Topic 16 / p.215 `vocab`：词义异常：動 3他 completion, graduate
-- `TITLE_INVALID` T285 / Topic 16 / p.216 `title`：标题不是完整中文场景标题：本家の仕馬お席校である本修では、特魚…
-- `TITLE_INVALID` T286 / Topic 16 / p.216 `title`：标题不是完整中文场景标题：この茶は賞場合物が集き生きと惹かれて…
-- `TITLE_INVALID` T287 / Topic 16 / p.217 `title`：标题不是完整中文场景标题：暴力事件や校舎の窓が割られることがよ…
-- `VOCAB_VALUE_EMPTY` T287 / Topic 16 / p.217 `vocab`：词汇 1473 的单词或释义为空
-- `TITLE_INVALID` T288 / Topic 16 / p.218 `title`：标题不是完整中文场景标题：昨晩友達とお酒を飲みすぎて、大事な試…
-- `CHINESE_GARBLED` T289 / Topic 16 / p.218 `naturalChinese`：中文含乱码、越南语字符或异常英文：3自 collision， clash
-- `CHINESE_GARBLED` T289 / Topic 16 / p.218 `originalChinese`：中文含乱码、越南语字符或异常英文：3自 collision， clash
-- `TITLE_INVALID` T289 / Topic 16 / p.218 `title`：标题不是完整中文场景标题：両親への反抗のピークは高校生のときだ…
-- `VOCAB_MEANING_GARBLED` T289 / Topic 16 / p.218 `vocab`：词义异常：3自 collision， clash
-- `VOCAB_MEANING_GARBLED` T289 / Topic 16 / p.218 `vocab`：词义异常：動3自 runaway， run away firom home
-- `TITLE_INVALID` T290 / Topic 16 / p.219 `title`：标题不是完整中文场景标题：今からペアで活動します。まず、出感量…
-- `TITLE_INVALID` T291 / Topic 16 / p.220 `title`：标题不是完整中文场景标题：数分無のみなさんは間に集まってくださ…
-- `VOCAB_VALUE_EMPTY` T291 / Topic 16 / p.220 `vocab`：词汇 1491 的单词或释义为空
-- `TITLE_INVALID` T292 / Topic 16 / p.220 `title`：标题不是完整中文场景标题：母は看護師になるため、私を産んでから…
-- `TITLE_INVALID` T293 / Topic 16 / p.221 `title`：标题不是完整中文场景标题：思い年のを達とで黒と
-- `VOCAB_MEANING_GARBLED` T293 / Topic 16 / p.221 `vocab`：词义异常：各 oni （Japanese Ogre）
-- `TITLE_INVALID` T294 / Topic 16 / p.222 `title`：标题不是完整中文场景标题：小賞校の頃、金髪のない夜の学校に行く…
-- `VOCAB_MEANING_GARBLED` T294 / Topic 16 / p.222 `vocab`：词义异常：名 shadow
-- `TITLE_INVALID` T295 / Topic 16 / p.222 `title`：标题不是完整中文场景标题：壱調の願書は黒後目が提出締め切りだ。…
-- `TITLE_INVALID` T296 / Topic 16 / p.223 `title`：标题不是完整中文场景标题：最近Cさんを見ないね。
-- `VOCAB_MEANING_GARBLED` T296 / Topic 16 / p.223 `vocab`：词义异常：名 after, since
-- `TITLE_INVALID` T297 / Topic 16 / p.224 `title`：标题不是完整中文场景标题：小業生の頃は絵が得意で、コンテストに…
-- `VOCAB_VALUE_EMPTY` T297 / Topic 16 / p.224 `vocab`：词汇 1522 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T297 / Topic 16 / p.224 `vocab`：词义异常：springboard 励力
-- `CHINESE_GARBLED` T298 / Topic 16 / p.224 `naturalChinese`：中文含乱码、越南语字符或异常英文：動1自 get stuck, get caught
-- `CHINESE_GARBLED` T298 / Topic 16 / p.224 `originalChinese`：中文含乱码、越南语字符或异常英文：動1自 get stuck, get caught
-- `TITLE_INVALID` T298 / Topic 16 / p.224 `title`：标题不是完整中文场景标题：あ！さっきの試験、答案に名前を書くの…
-- `VOCAB_MEANING_GARBLED` T298 / Topic 16 / p.224 `vocab`：词义异常：助 how~， what~ （exclamation）
-- `VOCAB_MEANING_GARBLED` T298 / Topic 16 / p.224 `vocab`：词义异常：動1自 get stuck, get caught
-- `VOCAB_MEANING_GARBLED` T298 / Topic 16 / p.224 `vocab`：词义异常：動2他 catch, hook
-- `TITLE_INVALID` T299 / Topic 16 / p.225 `title`：标题不是完整中文场景标题：私がいた野菜部は、意は強かったが、私…
-- `TITLE_INVALID` T300 / Topic 16 / p.226 `title`：标题不是完整中文场景标题：私のクラスは学級対物の細跳び太会で優…
-- `VOCAB_MEANING_GARBLED` T300 / Topic 16 / p.226 `vocab`：词义异常：動3自 opposition, oppose
-- `VOCAB_MEANING_GARBLED` T300 / Topic 16 / p.226 `vocab`：词义异常：各 jump rope
-- `TITLE_INVALID` T301 / Topic 16 / p.226 `title`：标题不是完整中文场景标题：初食の、台詞を死にえて目を迎えたが、…
-- `TITLE_INVALID` T302 / Topic 16 / p.227 `title`：标题不是完整中文场景标题：学校の理科室には、一般的には見られな…
-- `TITLE_INVALID` T303 / Topic 16 / p.228 `title`：标题不是完整中文场景标题：子どもは悪いと思わず、「不潔だ」など…
-- `VOCAB_VALUE_EMPTY` T303 / Topic 16 / p.228 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T303 / Topic 16 / p.228 `vocab`：词汇 1551 的单词或释义为空
-- `CHINESE_GARBLED` T304 / Topic 16 / p.228 `naturalChinese`：中文含乱码、越南语字符或异常英文：動2他 apply, ft in
-- `CHINESE_GARBLED` T304 / Topic 16 / p.228 `originalChinese`：中文含乱码、越南语字符或异常英文：動2他 apply, ft in
-- `TITLE_INVALID` T304 / Topic 16 / p.228 `title`：标题不是完整中文场景标题：この課の筆記試験はどのような問題が出…
-- `VOCAB_VALUE_EMPTY` T304 / Topic 16 / p.228 `vocab`：词汇 1553 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T304 / Topic 16 / p.228 `vocab`：词义异常：名 writing implements
-- `VOCAB_MEANING_GARBLED` T304 / Topic 16 / p.228 `vocab`：词义异常：2他 transcribe， take dictation
-- `VOCAB_MEANING_GARBLED` T304 / Topic 16 / p.228 `vocab`：词义异常：動2他 apply, ft in
-- `TITLE_INVALID` T305 / Topic 16 / p.229 `title`：标题不是完整中文场景标题：学校で行っている募金活動の規模を広げ…
-- `TITLE_INVALID` T306 / Topic 16 / p.230 `title`：标题不是完整中文场景标题：今でも憶に残る先生の自分に保健害の装…
-- `TITLE_INVALID` T307 / Topic 16 / p.230 `title`：标题不是完整中文场景标题：学校で掃除の片付けをしていたとき、は…
-- `TITLE_INVALID` T308 / Topic 16 / p.231 `title`：标题不是完整中文场景标题：歴史を学ぶ際、ただ出来事を暗記するだ…
 - `CHINESE_GARBLED` T309 / Topic 17 / p.232 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 safe
 - `CHINESE_GARBLED` T309 / Topic 17 / p.232 `originalChinese`：中文含乱码、越南语字符或异常英文：名 safe
 - `TITLE_INVALID` T309 / Topic 17 / p.232 `title`：标题不是完整中文场景标题：感事に驚備していたにもかかわらずにふ…
@@ -420,11 +349,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（50）
+## 字段异常（47）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T296 / Topic 16 / p.223 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T298 / Topic 16 / p.224 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T304 / Topic 16 / p.228 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T312 / Topic 17 / p.234 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T314 / Topic 17 / p.235 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T316 / Topic 17 / p.236 `japanese`：对话人物标记不完整
