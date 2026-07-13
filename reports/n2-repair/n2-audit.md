@@ -1,15 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：161
-- 问题总数：767
+- 已校对：184
+- 问题总数：697
 
-## 阻断发布（96）
+## 阻断发布（92）
 
-- `NATURALCHINESE_EMPTY` T170 / Topic 10 / p.138 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T170 / Topic 10 / p.138 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T178 / Topic 10 / p.143 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T178 / Topic 10 / p.143 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T189 / Topic 11 / p.150 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T189 / Topic 11 / p.150 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T199 / Topic 11 / p.156 `naturalChinese`：naturalChinese 为空
@@ -103,66 +99,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（589）
+## 内容错误（531）
 
-- `TITLE_INVALID` T162 / Topic 10 / p.133 `title`：标题不是完整中文场景标题：2022無空村平氏が県で引退すること…
-- `VOCAB_VALUE_EMPTY` T162 / Topic 10 / p.133 `vocab`：词汇 805 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T162 / Topic 10 / p.133 `vocab`：词义异常：名 Olympic Games
-- `VOCAB_VALUE_EMPTY` T162 / Topic 10 / p.133 `vocab`：词汇 810 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T162 / Topic 10 / p.133 `vocab`：词汇 2022 的单词或释义为空
-- `TITLE_INVALID` T163 / Topic 10 / p.134 `title`：标题不是完整中文场景标题：最近息子がスイミングスクールに通い始…
-- `CHINESE_GARBLED` T164 / Topic 10 / p.134 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 Paralympic Games
-- `CHINESE_GARBLED` T164 / Topic 10 / p.134 `originalChinese`：中文含乱码、越南语字符或异常英文：名 Paralympic Games
-- `TITLE_INVALID` T164 / Topic 10 / p.134 `title`：标题不是完整中文场景标题：パラリンピックに出る人のなかには、も…
-- `VOCAB_MEANING_GARBLED` T164 / Topic 10 / p.134 `vocab`：词义异常：名 Paralympic Games
-- `TITLE_INVALID` T165 / Topic 10 / p.135 `title`：标题不是完整中文场景标题：スポーツ中継は、分からない用語があっ…
-- `TITLE_INVALID` T166 / Topic 10 / p.136 `title`：标题不是完整中文场景标题：その野球髪質は、委下でのピッチング練…
-- `TITLE_INVALID` T167 / Topic 10 / p.136 `title`：标题不是完整中文场景标题：分析を深めていくと、相手への攻撃の狙…
-- `TITLE_INVALID` T168 / Topic 10 / p.137 `title`：标题不是完整中文场景标题：東京吾論では、ジェンダー平等の原から…
-- `TITLE_INVALID` T169 / Topic 10 / p.138 `title`：标题不是完整中文场景标题：アマチュアテニスでは、左利きは有力な…
-- `VOCAB_VALUE_EMPTY` T169 / Topic 10 / p.138 `vocab`：词汇 847 的单词或释义为空
-- `TITLE_INVALID` T170 / Topic 10 / p.138 `title`：标题不是完整中文场景标题：ダンス大会、楽しみだね。
-- `VOCAB_VALUE_EMPTY` T170 / Topic 10 / p.138 `vocab`：词汇 855 的单词或释义为空
-- `TITLE_INVALID` T171 / Topic 10 / p.139 `title`：标题不是完整中文场景标题：今日は一日中休まず練習してたんだ。
-- `TITLE_INVALID` T172 / Topic 10 / p.140 `title`：标题不是完整中文场景标题：最初は、努めたレースを展用して相手チ…
-- `VOCAB_MEANING_GARBLED` T172 / Topic 10 / p.140 `vocab`：词义异常：輸了 1bi thua, bi danh bai
-- `CHINESE_GARBLED` T173 / Topic 10 / p.140 `naturalChinese`：中文含乱码、越南语字符或异常英文：名 audience seats, spectator stand
-- `CHINESE_GARBLED` T173 / Topic 10 / p.140 `originalChinese`：中文含乱码、越南语字符或异常英文：名 audience seats, spectator stand
-- `TITLE_INVALID` T173 / Topic 10 / p.140 `title`：标题不是完整中文场景标题：昨日のサッカーの試合、盛り上がりまし…
-- `VOCAB_MEANING_GARBLED` T173 / Topic 10 / p.140 `vocab`：词义异常：名 audience seats, spectator stand
-- `VOCAB_MEANING_GARBLED` T173 / Topic 10 / p.140 `vocab`：词义异常：名動3他 sports watching， watch sports
-- `VOCAB_MEANING_GARBLED` T173 / Topic 10 / p.140 `vocab`：词义异常：名 singular, sole （something）
-- `TITLE_INVALID` T174 / Topic 10 / p.141 `title`：标题不是完整中文场景标题：4供合い、おめでとうございます！
-- `VOCAB_VALUE_EMPTY` T174 / Topic 10 / p.141 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T174 / Topic 10 / p.141 `vocab`：词汇 4 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T174 / Topic 10 / p.141 `vocab`：词汇 874 的单词或释义为空
-- `VOCAB_MEANING_GARBLED` T174 / Topic 10 / p.141 `vocab`：词义异常：各 condition
-- `TITLE_INVALID` T175 / Topic 10 / p.142 `title`：标题不是完整中文场景标题：スキージャンプでは、スキー板の魚度を…
-- `TITLE_INVALID` T176 / Topic 10 / p.142 `title`：标题不是完整中文场景标题：初心者の頃、何も分からないままラケッ…
-- `VOCAB_MEANING_GARBLED` T176 / Topic 10 / p.142 `vocab`：词义异常：副 ashard
-- `VOCAB_VALUE_EMPTY` T176 / Topic 10 / p.142 `vocab`：词汇 889 的单词或释义为空
-- `TITLE_INVALID` T177 / Topic 10 / p.143 `title`：标题不是完整中文场景标题：素導では、夢の魚で強さが分かる。はや…
-- `TITLE_INVALID` T178 / Topic 10 / p.143 `title`：标题不是完整中文场景标题：1野敷を振ってみたら引き分けとまたの…
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 1 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 31 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 895 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 897 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 898 的单词或释义为空
-- `VOCAB_VALUE_EMPTY` T178 / Topic 10 / p.143 `vocab`：词汇 899 的单词或释义为空
-- `TITLE_INVALID` T179 / Topic 10 / p.144 `title`：标题不是完整中文场景标题：あの日の無制が悪しかったのかはともか…
-- `VOCAB_VALUE_EMPTY` T179 / Topic 10 / p.144 `vocab`：词汇 902 的单词或释义为空
-- `TITLE_INVALID` T180 / Topic 10 / p.144 `title`：标题不是完整中文场景标题：重量挙げは、男女別、体重別に競うこと…
-- `TITLE_INVALID` T181 / Topic 10 / p.145 `title`：标题不是完整中文场景标题：今日は、リーグの順をれ替えるための本…
-- `TITLE_INVALID` T182 / Topic 10 / p.146 `title`：标题不是完整中文场景标题：スポーツにおいて、費が無いことは一種…
-- `VOCAB_MEANING_GARBLED` T182 / Topic 10 / p.146 `vocab`：词义异常：名 kind of, type of
-- `VOCAB_MEANING_GARBLED` T182 / Topic 10 / p.146 `vocab`：词义异常：動3目 heredity， run in the family
-- `CHINESE_GARBLED` T183 / Topic 10 / p.146 `naturalChinese`：中文含乱码、越南语字符或异常英文：各動3自 entry， join
-- `CHINESE_GARBLED` T183 / Topic 10 / p.146 `originalChinese`：中文含乱码、越南语字符或异常英文：各動3自 entry， join
-- `TITLE_INVALID` T183 / Topic 10 / p.146 `title`：标题不是完整中文场景标题：今年は、春から新ょう先が繊と加してく…
-- `VOCAB_MEANING_GARBLED` T183 / Topic 10 / p.146 `vocab`：词义异常：名 momentum
-- `VOCAB_MEANING_GARBLED` T183 / Topic 10 / p.146 `vocab`：词义异常：各動3自 entry， join
-- `VOCAB_MEANING_GARBLED` T183 / Topic 10 / p.146 `vocab`：词义异常：副 actually
-- `TITLE_INVALID` T184 / Topic 10 / p.147 `title`：标题不是完整中文场景标题：パラリンピックが開幕したけど、Bさん…
 - `TITLE_INVALID` T185 / Topic 11 / p.148 `title`：标题不是完整中文场景标题：見て、かわいいカエルがいる！捕まえよ…
 - `VOCAB_MEANING_GARBLED` T185 / Topic 11 / p.148 `vocab`：词义异常：名 poison, venom
 - `CHINESE_GARBLED` T186 / Topic 11 / p.149 `naturalChinese`：中文含乱码、越南语字符或异常英文：羽毛long, canh
@@ -695,16 +633,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（80）
+## 字段异常（72）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T163 / Topic 10 / p.134 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T169 / Topic 10 / p.138 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T170 / Topic 10 / p.138 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T171 / Topic 10 / p.139 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T173 / Topic 10 / p.140 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T174 / Topic 10 / p.141 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T179 / Topic 10 / p.144 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T184 / Topic 10 / p.147 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T185 / Topic 11 / p.148 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T186 / Topic 11 / p.149 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T196 / Topic 11 / p.154 `japanese`：对话人物标记不完整
