@@ -87,13 +87,17 @@ class ProductionSiteTests(unittest.TestCase):
             self.assertIn("规划中", text)
             self.assertIn('href="../../index.html"', text)
             self.assertIn('href="../../favicon.svg"', text)
+            self.assertIn('href="../../favicon.ico"', text)
             for stale in ("本地版", "旧样张", "测试版", "开发说明", "english-outline.js"):
                 self.assertNotIn(stale, text)
 
     def test_all_formal_pages_reference_the_local_favicon(self):
         favicon = ROOT / "favicon.svg"
+        fallback = ROOT / "favicon.ico"
         self.assertTrue(favicon.is_file())
+        self.assertTrue(fallback.is_file())
         ET.parse(favicon)
+        self.assertTrue(fallback.read_bytes().startswith(b"\x00\x00\x01\x00"))
         pages = [
             (ROOT / "index.html", "./favicon.svg"),
             (ROOT / "levels" / "japanese" / "index.html", "../../favicon.svg"),
@@ -109,6 +113,8 @@ class ProductionSiteTests(unittest.TestCase):
         for page, href in pages:
             text = page.read_text(encoding="utf-8")
             self.assertIn(f'<link rel="icon" href="{href}" type="image/svg+xml" />', text, str(page))
+            fallback_href = href.removesuffix("favicon.svg") + "favicon.ico"
+            self.assertIn(f'<link rel="alternate icon" href="{fallback_href}" type="image/x-icon" />', text, str(page))
 
     def test_removed_topic_url_helper_has_no_calls(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
@@ -149,15 +155,27 @@ class ProductionSiteTests(unittest.TestCase):
         self.assertIn('`${normalizedLevel}Starred`', state)
         self.assertNotIn("removeItem", state)
 
-    def test_lesson_requirements_are_present(self):
+    def test_lesson_requirements_are_present_without_source_image_ui(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         for marker in (
             "data-audio-element", "data-audio-toggle", "data-section=\"chinese\"",
-            "data-section=\"vocab\"", "data-image-modal", "data-image-close",
-            "data-learn-toggle", "data-favorite-toggle", "data-story-nav",
-            'event.key === "Escape"', "beforeunload",
+            "data-section=\"vocab\"", "data-learn-toggle", "data-favorite-toggle",
+            "data-story-nav", "beforeunload",
         ):
             self.assertIn(marker, app)
+        for marker in (
+            "sourceMarkup", "story.images", "imageModalMarkup", "bindImageModal", "modalImage", "data-source-image",
+            "data-image-modal", "data-image-close", "data-modal-image", "modalOpen",
+            "原书图片", "查看原图",
+        ):
+            self.assertNotIn(marker, app)
+
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        for selector in (
+            ".sourceGrid", ".sourcePreview", ".imageModal", ".modalBackdrop",
+            ".modalPanel", ".modalClose", ".modalOpen",
+        ):
+            self.assertNotIn(selector, css)
 
     def test_mobile_layout_uses_safe_area_without_horizontal_masking(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")

@@ -642,13 +642,14 @@ def level_page_html(book: Book, page: str, title: str, topic_id: int | None = No
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../../styles.css?v=20260714-3" />
+    <link rel="alternate icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../styles.css?v=20260714-4" />
   </head>
   <body data-page="{page}" data-level="{book.level}" data-base="../.."{topic_attr}>
     <main id="app"></main>
     <script src="../../data/{book.level}-data.js"></script>
-    <script src="../../state.js?v=20260714-3"></script>
-    <script src="../../app.js?v=20260714-3"></script>
+    <script src="../../state.js?v=20260714-4"></script>
+    <script src="../../app.js?v=20260714-4"></script>
   </body>
 </html>
 '''

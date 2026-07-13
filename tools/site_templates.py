@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LEVELS = ("n1", "n2", "n3", "n4", "n5")
-ASSET_VERSION = "20260714-3"
+ASSET_VERSION = "20260714-4"
 
 
 def load_level_data(level: str) -> dict:
@@ -32,6 +32,7 @@ def level_page_html(level: str, page: str, title: str, topic_id: int | None = No
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="../../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../styles.css?v={ASSET_VERSION}" />
   </head>
   <body data-page="{page}" data-level="{level}" data-base="../.."{topic_attr}>

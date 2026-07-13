@@ -522,13 +522,14 @@ def page_html(page: str, base: str, title: str, topic_id: int | None = None) -> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="{base}/styles.css?v=20260714-3" />
+    <link rel="alternate icon" href="{base}/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{base}/styles.css?v=20260714-4" />
   </head>
   <body data-page="{page}" data-level="n3" data-base="{base}"{topic_attr}>
     <main id="app"></main>
     <script src="{base}/data/n3-data.js"></script>
-    <script src="{base}/state.js?v=20260714-3"></script>
-    <script src="{base}/app.js?v=20260714-3"></script>
+    <script src="{base}/state.js?v=20260714-4"></script>
+    <script src="{base}/app.js?v=20260714-4"></script>
   </body>
 </html>
 """
