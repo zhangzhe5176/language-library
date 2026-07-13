@@ -642,20 +642,13 @@ def level_page_html(book: Book, page: str, title: str, topic_id: int | None = No
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../styles.css?v=20260714-3" />
   </head>
-  <body data-page="{page}"{topic_attr} data-level="{book.level}" data-base="../..">
-    <header class="siteHeader">
-      <a class="brand" href="../../index.html"><span>日本语学习站</span><strong>JLPT Library</strong></a>
-      <nav class="topNav" aria-label="主导航">
-        <a href="../../index.html">等级</a>
-        <a href="../../levels/{book.level}/index.html">{book.level.upper()}</a>
-        <a href="../../levels/{book.level}/topics.html">目录</a>
-      </nav>
-    </header>
+  <body data-page="{page}" data-level="{book.level}" data-base="../.."{topic_attr}>
     <main id="app"></main>
     <script src="../../data/{book.level}-data.js"></script>
-    <script src="../../app.js?v=20260711-2"></script>
+    <script src="../../state.js?v=20260714-3"></script>
+    <script src="../../app.js?v=20260714-3"></script>
   </body>
 </html>
 '''
@@ -675,6 +668,9 @@ def write_site(book: Book) -> None:
     )
     (level_dir / "topics.html").write_text(
         level_page_html(book, "topics", f"{book.level.upper()} 目录 - 日本语学习站"), encoding="utf-8"
+    )
+    (level_dir / "topic.html").write_text(
+        level_page_html(book, "topic", f"{book.level.upper()} 学习内容 - 日本语学习站"), encoding="utf-8"
     )
     for topic in book.topics:
         (level_dir / f"topic-{topic.id:02d}.html").write_text(

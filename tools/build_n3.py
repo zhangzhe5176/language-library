@@ -504,46 +504,11 @@ def write_file(path: Path, text: str) -> None:
 def write_site_files(data: dict) -> None:
     write_file(DATA_DIR / "n3-data.js", "window.N3_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
 
-    write_file(ROOT / "index.html", """<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>日本语学习站</title>
-    <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body data-page="levels" data-base=".">
-    <header class="siteHeader">
-      <a class="brand" href="./index.html"><span>日本语学习站</span><strong>JLPT Library</strong></a>
-      <nav class="topNav" aria-label="主导航">
-        <a aria-current="page" href="./index.html">等级</a>
-        <a href="./levels/n3/index.html">N3</a>
-        <a href="./levels/n3/topics.html">目录</a>
-      </nav>
-    </header>
-    <main class="siteShell">
-      <section class="heroPanel">
-        <p class="eyebrow">Local Personal Edition</p>
-        <h1>外语学习门户本地版</h1>
-        <p class="lead">当前已接入日语 N3 个人学习内容。N5、N4、N2、N1 和其他语言课程作为后续入口预留。</p>
-      </section>
-      <section class="levelGrid" aria-label="等级入口">
-        <a class="levelCard locked" href="#" aria-disabled="true"><span>N5</span><strong>预留</strong><em>后续添加</em></a>
-        <a class="levelCard locked" href="#" aria-disabled="true"><span>N4</span><strong>预留</strong><em>后续添加</em></a>
-        <a class="levelCard active" href="./levels/n3/index.html"><span>N3</span><strong>371 段</strong><em>个人本地学习版</em></a>
-        <a class="levelCard locked" href="#" aria-disabled="true"><span>N2</span><strong>预留</strong><em>后续添加</em></a>
-        <a class="levelCard locked" href="#" aria-disabled="true"><span>N1</span><strong>预留</strong><em>后续添加</em></a>
-      </section>
-    </main>
-    <script src="./data/n3-data.js"></script>
-    <script src="./app.js"></script>
-  </body>
-</html>
-""")
-
-    write_file(LEVEL_DIR / "index.html", page_html("n3-home", "../..", "N3 首页 - 日本语学习站"))
+    # The root language portal is maintained independently. Rebuilding N3 must
+    # never replace it with the historical N3-only entry page.
+    write_file(LEVEL_DIR / "index.html", page_html("level-home", "../..", "N3 首页 - 日本语学习站"))
     write_file(LEVEL_DIR / "topics.html", page_html("topics", "../..", "N3 目录 - 日本语学习站"))
+    write_file(LEVEL_DIR / "topic.html", page_html("topic", "../..", "N3 学习内容 - 日本语学习站"))
     for topic in TOPICS:
         write_file(LEVEL_DIR / f"topic-{topic['id']:02d}.html", page_html("topic", "../..", f"Topic {topic['id']} {topic['title']} - N3", topic["id"]))
 
@@ -557,20 +522,13 @@ def page_html(page: str, base: str, title: str, topic_id: int | None = None) -> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="{base}/styles.css" />
+    <link rel="stylesheet" href="{base}/styles.css?v=20260714-3" />
   </head>
-  <body data-page="{page}"{topic_attr} data-base="{base}">
-    <header class="siteHeader">
-      <a class="brand" href="{base}/index.html"><span>日本语学习站</span><strong>JLPT Library</strong></a>
-      <nav class="topNav" aria-label="主导航">
-        <a href="{base}/index.html">等级</a>
-        <a href="{base}/levels/n3/index.html">N3</a>
-        <a href="{base}/levels/n3/topics.html">目录</a>
-      </nav>
-    </header>
+  <body data-page="{page}" data-level="n3" data-base="{base}"{topic_attr}>
     <main id="app"></main>
     <script src="{base}/data/n3-data.js"></script>
-    <script src="{base}/app.js"></script>
+    <script src="{base}/state.js?v=20260714-3"></script>
+    <script src="{base}/app.js?v=20260714-3"></script>
   </body>
 </html>
 """

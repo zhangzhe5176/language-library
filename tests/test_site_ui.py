@@ -1,0 +1,137 @@
+import json
+import re
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+LEVELS = ("n1", "n2", "n3", "n4", "n5")
+EXPECTED = {
+    "n1": (27, 494, 2571),
+    "n2": (23, 452, 2360),
+    "n3": (18, 371, 2014),
+    "n4": (13, 262, 1035),
+    "n5": (24, 373, 1136),
+}
+
+
+def load_level(level: str) -> dict:
+    text = (ROOT / "data" / f"{level}-data.js").read_text(encoding="utf-8")
+    wrapper = "N3_DATA" if level == "n3" else "LEVEL_DATA"
+    match = re.fullmatch(rf"window\.{wrapper}\s*=\s*(\{{.*\}});\s*", text, re.DOTALL)
+    if not match:
+        raise AssertionError(f"unexpected wrapper for {level}")
+    return json.loads(match.group(1))
+
+
+class ProductionSiteTests(unittest.TestCase):
+    def test_real_statistics_match_contract(self):
+        totals = [0, 0, 0]
+        for level, expected in EXPECTED.items():
+            data = load_level(level)
+            actual = (
+                len(data["topics"]),
+                len(data["stories"]),
+                sum(len(story.get("vocab", [])) for story in data["stories"]),
+            )
+            self.assertEqual(actual, expected)
+            totals = [left + right for left, right in zip(totals, actual)]
+        self.assertEqual(tuple(totals), (105, 1952, 9116))
+
+    def test_production_information_architecture_exists(self):
+        self.assertTrue((ROOT / "index.html").is_file())
+        self.assertTrue((ROOT / "levels" / "japanese" / "index.html").is_file())
+        for level in LEVELS:
+            level_dir = ROOT / "levels" / level
+            for name in ("index.html", "topics.html", "topic.html"):
+                self.assertTrue((level_dir / name).is_file(), f"missing {level}/{name}")
+            self.assertIn('data-page="level-home"', (level_dir / "index.html").read_text(encoding="utf-8"))
+            self.assertIn('data-page="topics"', (level_dir / "topics.html").read_text(encoding="utf-8"))
+            self.assertIn('data-page="topic"', (level_dir / "topic.html").read_text(encoding="utf-8"))
+
+    def test_all_level_shells_use_shared_runtime_and_level_attribute(self):
+        for level in LEVELS:
+            data = load_level(level)
+            names = ["index.html", "topics.html", "topic.html"]
+            names.extend(f"topic-{topic['id']:02d}.html" for topic in data["topics"])
+            for name in names:
+                text = (ROOT / "levels" / level / name).read_text(encoding="utf-8")
+                self.assertIn(f'data-level="{level}"', text)
+                self.assertIn("../../state.js", text)
+                self.assertIn("../../app.js", text)
+                self.assertIn(f"../../data/{level}-data.js", text)
+                self.assertNotIn('href="/', text)
+                self.assertNotIn('src="/', text)
+
+    def test_n3_is_migrated_and_keeps_historical_assets(self):
+        index = (ROOT / "levels" / "n3" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-page="level-home"', index)
+        self.assertIn('data-level="n3"', index)
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn('level === "n3" ? "assets/audio"', app)
+        data = load_level("n3")
+        self.assertTrue(all(image.startswith("assets/entries/") for story in data["stories"] for image in story["images"]))
+
+    def test_all_audio_and_image_resources_exist(self):
+        for level in LEVELS:
+            data = load_level(level)
+            audio_base = data.get("audioBase") or ("assets/audio" if level == "n3" else f"assets/{level}/audio")
+            for story in data["stories"]:
+                self.assertTrue((ROOT / audio_base / story["audio"]).is_file())
+                self.assertTrue(story["images"])
+                for image in story["images"]:
+                    self.assertTrue((ROOT / image).is_file())
+
+    def test_portal_and_japanese_gateway_do_not_hardcode_statistics(self):
+        portal = (ROOT / "index.html").read_text(encoding="utf-8")
+        japanese = (ROOT / "levels" / "japanese" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('data-page="portal"', portal)
+        self.assertIn('data-page="japanese"', japanese)
+        for number in ("494", "452", "371", "262", "373", "9116"):
+            self.assertNotIn(number, japanese)
+        self.assertNotIn("levels/n3/index.html", portal)
+
+    def test_formal_runtime_has_no_prototype_or_development_copy(self):
+        text = "\n".join([
+            (ROOT / "index.html").read_text(encoding="utf-8"),
+            (ROOT / "levels" / "japanese" / "index.html").read_text(encoding="utf-8"),
+            (ROOT / "app.js").read_text(encoding="utf-8"),
+        ])
+        for phrase in ("新版入口原型", "正式改版时", "原型以 N1 展示", "本原型只模拟状态", "GitHub Pages 静态可用"):
+            self.assertNotIn(phrase, text)
+
+    def test_state_keys_include_level_and_keep_legacy_keys(self):
+        state = (ROOT / "state.js").read_text(encoding="utf-8")
+        self.assertIn('`${PREFIX}:${String(level).toLowerCase()}:${name}`', state)
+        self.assertIn('`${normalizedLevel}Learned`', state)
+        self.assertIn('`${normalizedLevel}Starred`', state)
+        self.assertNotIn("removeItem", state)
+
+    def test_lesson_requirements_are_present(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        for marker in (
+            "data-audio-element", "data-audio-toggle", "data-section=\"chinese\"",
+            "data-section=\"vocab\"", "data-image-modal", "data-image-close",
+            "data-learn-toggle", "data-favorite-toggle", "data-story-nav",
+            'event.key === "Escape"', "beforeunload",
+        ):
+            self.assertIn(marker, app)
+
+    def test_mobile_layout_uses_safe_area_without_horizontal_masking(self):
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("env(safe-area-inset-bottom)", css)
+        self.assertIn(".page.hasBottomBar", css)
+        self.assertIn("grid-template-columns: repeat(5, minmax(0, 1fr))", css)
+        self.assertNotIn("overflow-x: hidden", css)
+
+    def test_builders_preserve_unified_pages(self):
+        levels_builder = (ROOT / "tools" / "build_levels.py").read_text(encoding="utf-8")
+        n3_builder = (ROOT / "tools" / "build_n3.py").read_text(encoding="utf-8")
+        self.assertIn('level_page_html(book, "topic"', levels_builder)
+        self.assertIn('page_html("level-home"', n3_builder)
+        self.assertIn('LEVEL_DIR / "topic.html"', n3_builder)
+        self.assertNotIn('write_file(ROOT / "index.html"', n3_builder)
+
+
+if __name__ == "__main__":
+    unittest.main()

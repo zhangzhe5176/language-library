@@ -60,11 +60,13 @@ class N5SampleTests(unittest.TestCase):
         for relative_path in [
             "levels/n5/index.html",
             "levels/n5/topics.html",
+            "levels/n5/topic.html",
             "levels/n5/topic-01.html",
         ]:
             text = (ROOT / relative_path).read_text(encoding="utf-8")
             self.assertIn('data-level="n5"', text)
             self.assertIn("../../data/n5-data.js", text)
+            self.assertIn("../../state.js", text)
             self.assertIn("../../app.js", text)
             self.assertIn('rel="icon" href="data:,"', text)
 
@@ -94,27 +96,31 @@ class N5SampleTests(unittest.TestCase):
         for relative_path in ["levels/n1/index.html", "levels/n1/topics.html", "levels/n1/topic-27.html"]:
             self.assertTrue((ROOT / relative_path).is_file())
 
-    def test_portal_links_to_n5(self):
+    def test_portal_only_links_to_japanese_gateway(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn("./levels/n1/index.html", text)
-        self.assertIn("./levels/n2/index.html", text)
-        self.assertIn("./levels/n5/index.html", text)
-        self.assertIn("./levels/n4/index.html", text)
+        self.assertIn('data-page="portal"', text)
+        self.assertNotIn("./levels/n3/index.html", text)
+        self.assertNotIn("./levels/n5/index.html", text)
+        self.assertIn("./app.js", text)
 
     def test_app_uses_level_specific_paths_and_storage(self):
         text = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn('document.body.dataset.level || "n3"', text)
-        self.assertIn('`${level}Learned`', text)
-        self.assertIn('`${basePath}/levels/${level}/topic-', text)
+        state_text = (ROOT / "state.js").read_text(encoding="utf-8")
+        self.assertIn("document.body.dataset.level", text)
+        self.assertIn('levelUrl(level, "topic.html")', text)
+        self.assertIn('`${PREFIX}:${String(level).toLowerCase()}:${name}`', state_text)
+        self.assertIn('`${normalizedLevel}Learned`', state_text)
+        self.assertIn('`${normalizedLevel}Starred`', state_text)
 
     def test_final_tablet_media_rule_collapses_study_layout(self):
         text = (ROOT / "styles.css").read_text(encoding="utf-8")
-        final_tablet_rule = text.rsplit("@media (max-width: 980px)", 1)[1]
-        self.assertIn(".studyShell { grid-template-columns: 1fr; }", final_tablet_rule)
+        tablet_rule = text.rsplit("@media (max-width: 1040px)", 1)[1]
+        self.assertRegex(tablet_rule, r"\.lessonLayout\s*\{\s*grid-template-columns:\s*1fr;")
 
     def test_theme_has_one_editable_token_block(self):
         text = (ROOT / "styles.css").read_text(encoding="utf-8")
-        self.assertEqual(text.count(":root {"), 1)
+        self.assertEqual(text.count(":root {"), 2)
+        self.assertIn("@media (prefers-color-scheme: dark)", text)
         self.assertIn("--font-sans:", text)
 
 
