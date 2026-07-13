@@ -1,18 +1,11 @@
 # N2 全量内容审计
 
 - 故事数：452
-- 已校对：355
-- 问题总数：239
+- 已校对：371
+- 问题总数：198
 
-## 阻断发布（36）
+## 阻断发布（29）
 
-- `NATURALCHINESE_EMPTY` T362 / Topic 19 / p.268 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T362 / Topic 19 / p.268 `originalChinese`：originalChinese 为空
-- `NATURALCHINESE_EMPTY` T365 / Topic 19 / p.270 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T365 / Topic 19 / p.270 `originalChinese`：originalChinese 为空
-- `VOCAB_EMPTY` T365 / Topic 19 / p.270 `vocab`：结构化词汇为空
-- `NATURALCHINESE_EMPTY` T368 / Topic 19 / p.273 `naturalChinese`：naturalChinese 为空
-- `ORIGINALCHINESE_EMPTY` T368 / Topic 19 / p.273 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T374 / Topic 20 / p.278 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T374 / Topic 20 / p.278 `originalChinese`：originalChinese 为空
 - `NATURALCHINESE_EMPTY` T378 / Topic 20 / p.280 `naturalChinese`：naturalChinese 为空
@@ -43,36 +36,8 @@
 - `NATURALCHINESE_EMPTY` T449 / Topic 23 / p.329 `naturalChinese`：naturalChinese 为空
 - `ORIGINALCHINESE_EMPTY` T449 / Topic 23 / p.329 `originalChinese`：originalChinese 为空
 
-## 内容错误（169）
+## 内容错误（141）
 
-- `TITLE_INVALID` T356 / Topic 19 / p.264 `title`：标题不是完整中文场景标题：この前血圧を測定したら、ちょっと高か…
-- `VOCAB_VALUE_EMPTY` T356 / Topic 19 / p.264 `vocab`：词汇 1840 的单词或释义为空
-- `TITLE_INVALID` T357 / Topic 19 / p.265 `title`：标题不是完整中文场景标题：装思、事故に遭った客達のお見舞いに行…
-- `TITLE_INVALID` T358 / Topic 19 / p.266 `title`：标题不是完整中文场景标题：健康診獣で胸のレントゲンを撮ったら、…
-- `CHINESE_GARBLED` T359 / Topic 19 / p.266 `naturalChinese`：中文含乱码、越南语字符或异常英文：下田Icamn
-- `CHINESE_GARBLED` T359 / Topic 19 / p.266 `originalChinese`：中文含乱码、越南语字符或异常英文：下田Icamn
-- `TITLE_INVALID` T359 / Topic 19 / p.266 `title`：标题不是完整中文场景标题：頭痛がひどくても頭痛薬を飲みたくない…
-- `VOCAB_MEANING_GARBLED` T359 / Topic 19 / p.266 `vocab`：词义异常：下田Icamn
-- `VOCAB_VALUE_EMPTY` T359 / Topic 19 / p.266 `vocab`：词汇 1863 的单词或释义为空
-- `JAPANESE_HAS_CHINESE` T360 / Topic 19 / p.267 `japanese`：日文区域疑似混入中文：我很頻繁的換气，然后会使用效力有正明的除菌嗷露。逐有，如果冷、感党有点感冒
-- `TITLE_INVALID` T360 / Topic 19 / p.267 `title`：标题不是完整中文场景标题：原邪をひかないように、何か気をつけて…
-- `TITLE_INVALID` T361 / Topic 19 / p.268 `title`：标题不是完整中文场景标题：最新、疲れがたまってて・・。
-- `TITLE_INVALID` T362 / Topic 19 / p.268 `title`：标题不是完整中文场景标题：また交通事故のニュースだね。
-- `TITLE_INVALID` T363 / Topic 19 / p.269 `title`：标题不是完整中文场景标题：鰹副業の観点から、脳と腸は悪いに影響…
-- `TITLE_INVALID` T364 / Topic 19 / p.270 `title`：标题不是完整中文场景标题：2020無強ねな感染を持つ気器療が世…
-- `VOCAB_VALUE_EMPTY` T364 / Topic 19 / p.270 `vocab`：词汇 2020 的单词或释义为空
-- `TITLE_INVALID` T365 / Topic 19 / p.270 `title`：标题不是完整中文场景标题：子どもがでけがをしたら、まずは当典の…
-- `TITLE_INVALID` T366 / Topic 19 / p.271 `title`：标题不是完整中文场景标题：最近お気に入りの人浴剤を入れて、お風…
-- `VOCAB_MEANING_GARBLED` T366 / Topic 19 / p.271 `vocab`：词义异常：名 capsule
-- `TITLE_INVALID` T367 / Topic 19 / p.272 `title`：标题不是完整中文场景标题：最近疲れやすくて、金のため病院で検査…
-- `TITLE_INVALID` T368 / Topic 19 / p.273 `title`：标题不是完整中文场景标题：最近いびきうるさいよ。顔色もよくない…
-- `TITLE_INVALID` T369 / Topic 19 / p.274 `title`：标题不是完整中文场景标题：翌日は生まれつき身体が弱く、小さい頃…
-- `CHINESE_GARBLED` T370 / Topic 19 / p.274 `naturalChinese`：中文含乱码、越南语字符或异常英文：副 steadily
-- `CHINESE_GARBLED` T370 / Topic 19 / p.274 `originalChinese`：中文含乱码、越南语字符或异常英文：副 steadily
-- `TITLE_INVALID` T370 / Topic 19 / p.274 `title`：标题不是完整中文场景标题：娘の誕生をきっかけに、
-- `VOCAB_MEANING_GARBLED` T370 / Topic 19 / p.274 `vocab`：词义异常：副 steadily
-- `TITLE_INVALID` T371 / Topic 19 / p.275 `title`：标题不是完整中文场景标题：腰の痛みを訴えて、医療機関を常診する…
-- `VOCAB_VALUE_EMPTY` T371 / Topic 19 / p.275 `vocab`：词汇 1924 的单词或释义为空
 - `CHINESE_GARBLED` T372 / Topic 20 / p.276 `naturalChinese`：中文含乱码、越南语字符或异常英文：各 complaint
 - `CHINESE_GARBLED` T372 / Topic 20 / p.276 `originalChinese`：中文含乱码、越南语字符或异常英文：各 complaint
 - `TITLE_INVALID` T372 / Topic 20 / p.276 `title`：标题不是完整中文场景标题：求人情報には「年齢を問わない」と書い…
@@ -215,14 +180,8 @@
 - `TITLE_INVALID` T452 / Topic 23 / p.332 `title`：标题不是完整中文场景标题：また森製の食風が目に携してるって。添…
 - `VOCAB_MEANING_GARBLED` T452 / Topic 23 / p.332 `vocab`：词义异常：動3自 approach, draw near
 
-## 字段异常（34）
+## 字段异常（28）
 
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T356 / Topic 19 / p.264 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T360 / Topic 19 / p.267 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T361 / Topic 19 / p.268 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T362 / Topic 19 / p.268 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T367 / Topic 19 / p.272 `japanese`：对话人物标记不完整
-- `DIALOGUE_SPEAKERS_INCOMPLETE` T368 / Topic 19 / p.273 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T373 / Topic 20 / p.277 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T375 / Topic 20 / p.278 `japanese`：对话人物标记不完整
 - `DIALOGUE_SPEAKERS_INCOMPLETE` T378 / Topic 20 / p.280 `japanese`：对话人物标记不完整
