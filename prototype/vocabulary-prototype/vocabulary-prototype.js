@@ -50,19 +50,22 @@
       for (const row of Array.isArray(story.vocab) ? story.vocab : []) {
         const sourceWord = String(row?.[1] || "").trim();
         const sourceKana = String(row?.[2] || "").trim();
-        const kana = sourceKana || sourceWord;
-        const normalizedSource = normalize(sourceWord || kana);
-        const normalizedKana = normalize(sourceKana || kana);
+        const reading = resolveReading(sourceWord, sourceKana, story);
         const sourceVocabNo = String(row?.[0] || "").trim();
         const id = `${level}:t${topicId}:s${String(story.id)}:v${sourceVocabNo}`;
-        const statusKey = `${level}:word:${normalizedSource}|${normalizedKana}`;
+        const statusKey = `${level}:word:${normalize(sourceWord || reading.value)}`;
         rawWords.push({
           id,
           level,
           topicId,
           storyId: Number(story.id),
           sourceVocabNo,
-          kana,
+          sourceWord,
+          kana: reading.value,
+          readingSource: reading.source,
+          readingReview: reading.review,
+          readingReviewReason: reading.reason,
+          canScan: Boolean(reading.value && !reading.review),
           kanji: /\p{Script=Han}/u.test(sourceWord) ? sourceWord : "",
           pos: String(row?.[3] || "").trim(),
           meaning: String(row?.[4] || "").trim(),
@@ -72,15 +75,12 @@
     }
 
     const topicWords = new Map(topicIds.map((topicId) => [topicId, []]));
-    const topicSeen = new Map(topicIds.map((topicId) => [topicId, new Set()]));
     for (const word of rawWords) {
       if (!topicWords.has(word.topicId)) continue;
-      if (topicSeen.get(word.topicId).has(word.statusKey)) continue;
-      topicSeen.get(word.topicId).add(word.statusKey);
       topicWords.get(word.topicId).push(word);
     }
 
-    const words = topicIds.flatMap((topicId) => topicWords.get(topicId));
+    const words = rawWords.filter((word) => topicWords.has(word.topicId));
     return {
       level,
       data,
@@ -91,6 +91,7 @@
       topicWords,
       wordById: new Map(rawWords.map((word) => [word.id, word])),
       validStatusKeys: new Set(words.map((word) => word.statusKey)),
+      scannableStatusKeys: new Set(words.filter((word) => word.canScan).map((word) => word.statusKey)),
     };
   }
 
@@ -122,7 +123,7 @@
         if (model.topicIds.includes(topicId)) restored.levels[level].currentTopicId = topicId;
         if (saved.statuses && typeof saved.statuses === "object") {
           for (const [statusKey, value] of Object.entries(saved.statuses)) {
-            if (model.validStatusKeys.has(statusKey) && Object.hasOwn(STATUS_LABELS, value)) restored.levels[level].statuses[statusKey] = value;
+            if (model.scannableStatusKeys.has(statusKey) && Object.hasOwn(STATUS_LABELS, value)) restored.levels[level].statuses[statusKey] = value;
           }
         }
       }
@@ -172,13 +173,15 @@
       if (status) counts[status] += 1;
     }
     const screened = counts.know + counts.fuzzy + counts.unknown;
-    return { total: list.length, screened, unscanned: list.length - screened, ...counts, ratio: list.length ? Math.round((screened / list.length) * 100) : 0 };
+    const readingReview = list.filter((word) => word.readingReview).length;
+    return { total: list.length, screened, unscanned: list.length - screened, readingReview, ...counts, ratio: list.length ? Math.round((screened / list.length) * 100) : 0 };
   }
 
   function topicStatus(level, topicId) {
     const current = stats(level, topicId);
     let tone = "muted";
     let label = `仍有 ${current.unscanned} 个未筛查`;
+    if (current.readingReview) label += ` · ${current.readingReview} 个读音待核对`;
     if (!current.unscanned && current.unknown) { tone = "red"; label = `${current.unknown} 个不会`; }
     else if (!current.unscanned && current.fuzzy) { tone = "yellow"; label = `${current.fuzzy} 个模糊`; }
     else if (!current.unscanned && current.know === current.total) { tone = "green"; label = "已掌握"; }
@@ -196,7 +199,7 @@
   function matches(word) {
     const needle = normalize(query).toLocaleLowerCase();
     if (!needle) return true;
-    return [word.kanji, word.kana, word.meaning].join(" ").toLocaleLowerCase().includes(needle);
+    return [word.sourceWord, word.kanji, word.kana, word.meaning].join(" ").toLocaleLowerCase().includes(needle);
   }
 
   function passesFilter(word) {
@@ -263,7 +266,7 @@
       </section>
 
       <section class="vv-panel vv-current-topic" aria-labelledby="vv-current-topic-title">
-        <div class="vv-topic-nav"><button class="vv-topic-nav-btn" type="button" data-topic-prev ${currentTopicIndex() === 0 ? "disabled" : ""}>← 上一个 Topic</button><div class="vv-current-topic-heading"><p class="vv-kicker">当前等级：${currentLevel.toUpperCase()} · ${currentTopicIndex() + 1} / ${model.topicIds.length}</p><h2 id="vv-current-topic-title">${topicLabel(currentTopicId())} · ${escapeHtml(topic?.title || "")}</h2><p>${escapeHtml(topic?.english || "")} · ${currentStats.total} 个目标生词</p></div><button class="vv-topic-nav-btn" type="button" data-topic-next ${currentTopicIndex() === model.topicIds.length - 1 ? "disabled" : ""}>下一个 Topic →</button></div>
+        <div class="vv-topic-nav"><button class="vv-topic-nav-btn" type="button" data-topic-prev ${currentTopicIndex() === 0 ? "disabled" : ""}>← 上一个 Topic</button><div class="vv-current-topic-heading"><p class="vv-kicker">当前等级：${currentLevel.toUpperCase()} · ${currentTopicIndex() + 1} / ${model.topicIds.length}</p><h2 id="vv-current-topic-title">${topicLabel(currentTopicId())} · ${escapeHtml(topic?.title || "")}</h2><p>${escapeHtml(topic?.english || "")} · ${currentStats.total} 个目标生词${currentStats.readingReview ? ` · ${currentStats.readingReview} 个读音待核对` : ""}</p></div><button class="vv-topic-nav-btn" type="button" data-topic-next ${currentTopicIndex() === model.topicIds.length - 1 ? "disabled" : ""}>下一个 Topic →</button></div>
         <div class="vv-stats">${statCard("总词数", currentStats.total)}${statCard("已筛查", currentStats.screened)}${statCard("未筛查", currentStats.unscanned)}${statCard("会", currentStats.know, "green")}${statCard("模糊", currentStats.fuzzy, "yellow")}${statCard("不会", currentStats.unknown, "red")}${statCard("完成比例", `${currentStats.ratio}%`)}</div>
       </section>
 
@@ -296,8 +299,11 @@
 
   function wordCard(word) {
     const selected = statusOf(word);
-    const answer = selected ? `<div class="vv-word-answer" aria-live="polite">${word.kanji ? `<span class="vv-word-answer-kanji">${escapeHtml(word.kanji)}</span>` : ""}<span class="vv-word-answer-meaning">${escapeHtml(word.meaning)}</span></div>` : "";
-    return `<article class="vv-word-card" data-word-id="${escapeAttr(word.id)}" data-selected="${selected}"><div class="vv-word-card-content"><div class="vv-word-kana">${escapeHtml(word.kana)}</div>${answer}</div><div class="vv-status-group" role="group" aria-label="${escapeAttr(word.kana)}的筛查状态">${Object.entries(STATUS_LABELS).map(([id, label]) => `<button class="vv-status" type="button" data-status="${id}" aria-pressed="${selected === id}" title="${label}：${selected === id ? "已选择，再次点击取消" : "选择此状态"}" aria-label="${escapeAttr(word.kana)}：${label}${selected === id ? "，已选择，再次点击取消" : ""}">${label}</button>`).join("")}</div></article>`;
+    const answerWord = word.sourceWord && !isKanaReading(stripSourceMarkers(word.sourceWord)) ? `<span class="vv-word-answer-kanji">${escapeHtml(word.sourceWord)}</span>` : "";
+    const answer = selected ? `<div class="vv-word-answer" aria-live="polite">${answerWord}<span class="vv-word-answer-meaning">${escapeHtml(word.meaning)}</span></div>` : "";
+    const readingLabel = word.readingReview ? `<div class="vv-word-kana vv-reading-review" title="${escapeAttr(word.readingReviewReason)}">读音待核对</div>` : `<div class="vv-word-kana">${escapeHtml(word.kana)}</div>`;
+    const accessibleWord = word.readingReview ? `${word.sourceWord}（读音待核对）` : word.kana;
+    return `<article class="vv-word-card" data-word-id="${escapeAttr(word.id)}" data-selected="${selected}" data-reading-review="${word.readingReview}"><div class="vv-word-card-content">${readingLabel}${answer}</div><div class="vv-status-group" role="group" aria-label="${escapeAttr(accessibleWord)}的筛查状态">${Object.entries(STATUS_LABELS).map(([id, label]) => `<button class="vv-status" type="button" data-status="${id}" aria-pressed="${selected === id}" ${word.canScan ? "" : "disabled"} title="${word.canScan ? `${label}：${selected === id ? "已选择，再次点击取消" : "选择此状态"}` : "读音待核对，暂不能选择状态"}" aria-label="${escapeAttr(accessibleWord)}：${word.canScan ? label : "读音待核对，暂不能选择"}${selected === id ? "，已选择，再次点击取消" : ""}">${label}</button>`).join("")}</div></article>`;
   }
 
   function exportButton(type, label, count) { return `<button class="vv-export-btn" type="button" data-export="${type}"><strong>${label}</strong><small>${count} 个符合条件</small></button>`; }
@@ -312,7 +318,7 @@
     app.querySelectorAll("[data-status]").forEach((button) => button.addEventListener("click", () => {
       const card = button.closest("[data-word-id]");
       const word = card && levelModel().wordById.get(card.dataset.wordId);
-      if (!word) return;
+      if (!word || !word.canScan) return;
       const next = button.dataset.status;
       const statuses = levelState(word.level).statuses;
       if (statuses[word.statusKey] === next) delete statuses[word.statusKey];
@@ -361,16 +367,53 @@
     const label = type === "fuzzy" ? "模糊词汇" : type === "unknown" ? "不会词汇" : "模糊不会词汇";
     if (!rows.length) { showToast(`${topicLabel(currentTopicId())}当前没有符合条件的${label}，未生成文件。`); return; }
     const filename = `${currentLevel.toUpperCase()}_${topicLabel(currentTopicId())}_${label}_${localDate()}.xlsx`;
-    const exportRows = rows.map((word) => [word.kana, word.kanji, word.pos, word.meaning]);
+    const reviewCount = rows.filter((word) => word.readingReview).length;
+    const exportRows = rows.map((word) => [word.readingReview ? "" : word.kana, word.kanji, word.pos, word.meaning]);
     const blob = createXlsxBlob([["假名", "日语汉字", "词性", "唯一中文释义"], ...exportRows]);
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a"); anchor.href = url; anchor.download = filename; anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    showToast(`已生成 ${filename}，共 ${rows.length} 个词。`);
+    showToast(`已生成 ${filename}，共 ${rows.length} 个词${reviewCount ? `，其中 ${reviewCount} 条读音待核对，假名栏留空` : ""}。`);
   }
 
   function localDate() { const now = new Date(); return [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-"); }
   function normalize(value) { return String(value ?? "").normalize("NFKC").replace(/\s+/g, "").trim(); }
+
+  function resolveReading(sourceWord, sourceKana, story) {
+    if (sourceKana) return { value: sourceKana, source: "vocab[2]", review: false, reason: "" };
+    const sourceReading = stripSourceMarkers(sourceWord);
+    if (isKanaReading(sourceReading)) return { value: sourceReading, source: "sourceWord", review: false, reason: "" };
+    const rawReading = recoverReadingFromRaw(sourceWord, story);
+    if (rawReading) return { value: rawReading.value, source: rawReading.source, review: false, reason: "" };
+    return {
+      value: "",
+      source: "",
+      review: true,
+      reason: `vocab[2] 为空；已检查 vocabRaw、ocrText 和 Story 其他字段，未找到可唯一确认的完整读音。原始词形：${sourceWord}`,
+    };
+  }
+
+  function stripSourceMarkers(value) {
+    return String(value ?? "").normalize("NFKC").replace(/[+＋=＝→←↑↓~〜～①②③④⑤⑥⑦⑧⑨⑩0-9?？（）()\[\]［］]/gu, "").trim();
+  }
+
+  function isKanaReading(value) { return /^[ぁ-ゖァ-ヺー・／/、\s]+$/u.test(String(value || "")); }
+
+  function recoverReadingFromRaw(sourceWord, story) {
+    if (!sourceWord || !/\p{Script=Han}/u.test(sourceWord)) return null;
+    const sources = Array.isArray(story.vocabRaw) ? story.vocabRaw.map((value) => ({ source: "vocabRaw", text: String(value || "") })) : [];
+    for (const item of sources) {
+      const compact = item.text.replace(/\s+/gu, "").trim();
+      const index = compact.indexOf(sourceWord);
+      if (index < 0) continue;
+      const prefix = compact.slice(0, index).match(/[ぁ-ゖァ-ヺー]{2,}$/u)?.[0] || "";
+      const suffix = compact.slice(index + sourceWord.length).match(/^[ぁ-ゖァ-ヺー]{2,}$/u)?.[0] || "";
+      const candidate = prefix || suffix;
+      const exactPair = candidate && (compact === `${candidate}${sourceWord}` || compact === `${sourceWord}${candidate}`);
+      if (exactPair && candidate.length >= Math.max(2, sourceWord.length - 1) && isKanaReading(candidate)) return { value: candidate, source: item.source };
+    }
+    return null;
+  }
 
   function createXlsxBlob(rows) {
     const sheetName = `${currentLevel.toUpperCase()}词汇`;

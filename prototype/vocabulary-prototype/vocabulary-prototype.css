@@ -481,9 +481,12 @@ button { cursor: pointer; }
 .vv-word-card[data-selected="unknown"] { border-color: rgba(180, 65, 54, 0.34); background: rgba(255, 239, 236, 0.42); }
 .vv-word-card-content { min-width: 0; }
 .vv-word-card .vv-word-kana { min-height: 1.6em; font-size: 1.2rem; }
+.vv-word-card .vv-reading-review { color: var(--vv-yellow); font-size: 1rem; }
+.vv-word-card[data-reading-review="true"] { border-style: dashed; }
 .vv-word-card .vv-word-answer { margin-top: 10px; padding-top: 9px; }
 .vv-word-card .vv-status-group { margin-top: auto; padding-top: 18px; }
 .vv-word-card .vv-status { min-height: 44px; height: 44px; }
+.vv-word-card .vv-status:disabled { cursor: not-allowed; opacity: 0.48; }
 
 @media (max-width: 900px) {
   .vv-level-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
