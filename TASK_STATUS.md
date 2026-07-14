@@ -6,12 +6,13 @@
 - 原型路径：`prototype/vocabulary-prototype/vocabulary-prototype.html`
 - 范围：仅 N5，3 个真实 Topic、24 个目标生词；不接入正式首页、导航或共用运行文件。
 - 已完成：单词状态筛查、localStorage、搜索、状态筛选、统计、目标生词单元提示、重置确认和标准 `.xlsx` 导出。
-- 已完成验证：本地 Chrome 交互回归、5 种视口无横向溢出、正式首页/音频本地回归、Excel 结构检查。
-- 待完成：项目自动测试、Git 边界检查、提交功能分支并保持本地预览服务运行，等待用户体验反馈。
+- 已完成验证：本地 Chrome 交互回归、5 种视口无横向溢出、正式首页/音频本地回归、Excel 结构检查、项目自动测试和发布边界检查。
+- 原型功能提交：`eb5d44b`；未推送、未合并、未发布。
+- 当前下一步：保持本地预览服务运行，等待用户体验反馈。
 
 ## 项目状态
 
-- 当前分支：`main`
+- 当前分支：`feature/vocabulary-prototype`
 - 正式站：已上线并通过线上验收
 - QA 结论：`Go`
 - 正式地址：<https://zhangzhe5176.github.io/language-library/>
