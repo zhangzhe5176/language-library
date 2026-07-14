@@ -10,6 +10,16 @@
 - 原型功能提交：`eb5d44b`；未推送、未合并、未发布。
 - 当前下一步：保持本地预览服务运行，等待用户体验反馈。
 
+## V1.2 词卡界面第二版（2026-07-14）
+
+- 范围：仅调整独立原型的单词筛查列表视觉结构和交互显示，不扩展功能范围。
+- 词卡：桌面端两列紧凑网格，`720px` 以下单列；未筛查只显示假名和三个状态方块。
+- 答案：选择任意状态后在假名下显示日语汉字和唯一中文释义；取消状态或刷新规则保持正确；无汉字词不显示占位文字。
+- 页面隐藏：词性、Topic 编号、单元名称和其他辅助字段不再显示在词卡中；导出仍从原始词汇数据读取四列字段。
+- 修改文件：`prototype/vocabulary-prototype/vocabulary-prototype.css`、`prototype/vocabulary-prototype/vocabulary-prototype.js`。
+- 验证：本地浏览器交互、5 种视口、搜索、6 种筛选、统计、单元提示、重置、`.xlsx` 下载、37 项自动测试、`site-state`、构建检查和 `git diff --check` 均通过。
+- 预览：`http://127.0.0.1:4173/prototype/vocabulary-prototype/vocabulary-prototype.html`；未发布、未合并、未修改正式首页、导航、共用文件、`main` 或 `gh-pages`。
+
 ## 项目状态
 
 - 当前分支：`feature/vocabulary-prototype`

@@ -234,10 +234,9 @@
 
   function wordRow(word) {
     const selected = statusOf(word);
-    return `<article class="vv-word-row" data-word-id="${word.id}">
-      <div class="vv-word-main"><div class="vv-word-kana">${escapeHtml(word.kana)}</div><div class="vv-word-kanji">${word.kanji ? escapeHtml(word.kanji) : "无对应汉字"}</div><div class="vv-word-unit">${escapeHtml(word.unitLabel)}</div></div>
-      <div class="vv-word-meaning">${escapeHtml(word.meaning)}</div>
-      <div class="vv-word-pos">${escapeHtml(word.pos)}</div>
+    const answer = selected ? `<div class="vv-word-answer" aria-live="polite">${word.kanji ? `<span class="vv-word-answer-kanji">${escapeHtml(word.kanji)}</span>` : ""}<span class="vv-word-answer-meaning">${escapeHtml(word.meaning)}</span></div>` : "";
+    return `<article class="vv-word-row" data-word-id="${word.id}" data-selected="${selected}">
+      <div class="vv-word-main"><div class="vv-word-kana">${escapeHtml(word.kana)}</div>${answer}</div>
       <div class="vv-status-group" role="group" aria-label="${escapeAttr(word.kana)}的筛查状态">${Object.entries(STATUS_LABELS).map(([id, label]) => `<button class="vv-status" type="button" data-status="${id}" aria-pressed="${selected === id}" title="${label}：${selected === id ? "已选择，再次点击取消" : "选择此状态"}" aria-label="${escapeAttr(word.kana)}：${label}${selected === id ? "，已选择，再次点击取消" : ""}">${label}</button>`).join("")}</div>
     </article>`;
   }

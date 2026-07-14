@@ -207,27 +207,36 @@ button { cursor: pointer; }
 .vv-unit-status[data-tone="green"] { color: var(--vv-green); }
 .vv-unit-status[data-tone="muted"] { color: var(--vv-muted); font-weight: 600; }
 
-.vv-word-list { display: grid; gap: 10px; }
+.vv-word-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 860px;
+}
 
 .vv-word-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr) minmax(0, 0.75fr) minmax(0, 1.2fr) auto;
-  align-items: center;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
   min-width: 0;
-  padding: 13px 14px;
+  min-height: 78px;
+  padding: 14px;
   border: 1px solid var(--vv-line);
   border-radius: 14px;
   background: #fffefa;
 }
 
-.vv-word-main, .vv-word-meaning { min-width: 0; }
-.vv-word-kana, .vv-word-kanji { overflow-wrap: anywhere; }
+.vv-word-row[data-selected="know"] { border-color: rgba(42, 127, 91, 0.34); background: rgba(234, 248, 240, 0.42); }
+.vv-word-row[data-selected="fuzzy"] { border-color: rgba(184, 130, 21, 0.34); background: rgba(255, 248, 224, 0.42); }
+.vv-word-row[data-selected="unknown"] { border-color: rgba(180, 65, 54, 0.34); background: rgba(255, 239, 236, 0.42); }
+
+.vv-word-main { min-width: 0; }
+.vv-word-kana { overflow-wrap: anywhere; }
 .vv-word-kana { font-size: 1.03rem; font-weight: 700; }
-.vv-word-kanji { margin-top: 4px; color: var(--vv-muted); font-family: Georgia, "Yu Mincho", serif; font-size: 0.88rem; }
-.vv-word-meaning { overflow-wrap: anywhere; }
-.vv-word-pos { color: var(--vv-muted); font-size: 0.84rem; }
-.vv-word-unit { margin-top: 5px; color: var(--vv-muted); font-size: 0.72rem; }
+.vv-word-answer { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 7px; padding-top: 7px; border-top: 1px solid rgba(91, 75, 63, 0.16); line-height: 1.45; }
+.vv-word-answer-kanji { overflow-wrap: anywhere; color: var(--vv-muted); font-family: Georgia, "Yu Mincho", serif; font-size: 0.9rem; }
+.vv-word-answer-meaning { overflow-wrap: anywhere; color: var(--vv-ink); font-size: 0.88rem; }
 
 .vv-status-group {
   display: grid;
@@ -315,12 +324,9 @@ button { cursor: pointer; }
 @media (max-width: 900px) {
   .vv-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .vv-unit-grid { grid-template-columns: 1fr; }
-  .vv-word-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.7fr) auto; }
-  .vv-word-meaning { grid-column: 1 / 4; }
-  .vv-status-group { grid-column: 4; grid-row: 1 / span 2; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .vv-shell { padding: 18px 14px 44px; }
   .vv-hero { display: block; }
   .vv-badge { display: inline-block; margin-top: 16px; }
@@ -330,11 +336,10 @@ button { cursor: pointer; }
   .vv-search { min-width: 0; margin-top: 14px; }
   .vv-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .vv-stat:last-child { grid-column: 1 / -1; }
-  .vv-word-row { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
-  .vv-word-main, .vv-word-pos, .vv-word-meaning { grid-column: 1; }
-  .vv-word-pos { grid-row: 2; }
-  .vv-word-meaning { grid-row: 3; }
-  .vv-status-group { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+  .vv-word-list { grid-template-columns: 1fr; }
+  .vv-word-row { gap: 10px; }
+  .vv-word-main { grid-column: 1; }
+  .vv-status-group { grid-column: 2; grid-row: 1; align-self: start; }
   .vv-export-grid { grid-template-columns: 1fr; }
   .vv-reset-btn { margin-top: 14px; }
   .vv-toast { right: 14px; bottom: 14px; }
