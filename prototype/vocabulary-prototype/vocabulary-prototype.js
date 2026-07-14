@@ -51,6 +51,7 @@
   const wordById = new Map(words.map((word) => [word.id, word]));
   const unitIds = [...new Set(words.map((word) => word.topicId))];
   let state = loadState();
+  let currentTopicId = unitIds[0];
   let filter = "all";
   let query = "";
 
@@ -103,14 +104,15 @@
 
   function statusOf(word) { return state.statuses[word.id] || ""; }
 
-  function stats() {
+  function stats(topicId = currentTopicId) {
+    const list = words.filter((word) => word.topicId === topicId);
     const counts = { know: 0, fuzzy: 0, unknown: 0 };
-    for (const word of words) {
+    for (const word of list) {
       const status = statusOf(word);
       if (status) counts[status] += 1;
     }
     const screened = counts.know + counts.fuzzy + counts.unknown;
-    return { total: words.length, screened, unscanned: words.length - screened, ...counts, ratio: words.length ? Math.round((screened / words.length) * 100) : 0 };
+    return { total: list.length, screened, unscanned: list.length - screened, ...counts, ratio: list.length ? Math.round((screened / list.length) * 100) : 0 };
   }
 
   function unitStats(topicId) {
@@ -143,17 +145,33 @@
     return status === filter;
   }
 
-  function visibleWords() { return words.filter((word) => matches(word) && passesFilter(word)); }
+  function visibleWords() { return words.filter((word) => word.topicId === currentTopicId && matches(word) && passesFilter(word)); }
+
+  function currentTopic() { return topicById.get(currentTopicId); }
+
+  function currentTopicIndex() { return unitIds.indexOf(currentTopicId); }
+
+  function topicLabel(topicId) { return `Topic${String(topicId).padStart(2, "0")}`; }
+
+  function setCurrentTopic(topicId) {
+    if (!unitIds.includes(topicId) || topicId === currentTopicId) return;
+    currentTopicId = topicId;
+    query = "";
+    filter = "all";
+    render();
+    document.querySelector("[data-word-section]")?.scrollIntoView({ behavior: "instant", block: "start" });
+  }
 
   function render() {
-    const currentStats = stats();
+    const topic = currentTopic();
+    const currentStats = stats(currentTopicId);
     const visible = visibleWords();
     app.innerHTML = `
       <header class="vv-hero">
         <div>
           <p class="vv-kicker">Language Library · V1.2 本地隔离原型</p>
           <h1>N5 单词筛查与薄弱单元提示</h1>
-          <p>只展示 3 个真实 N5 Topic 的目标生词，共 ${words.length} 个；用于体验筛查、提示和导出流程。</p>
+          <p>只展示 3 个真实 N5 Topic 的目标生词，共 ${words.length} 个；每次只测试一个 Topic。</p>
         </div>
         <span class="vv-badge">未接入正式网站</span>
       </header>
@@ -161,17 +179,31 @@
       <details class="vv-panel vv-howto" open>
         <summary>怎么玩？</summary>
         <ul>
+          <li>每次只测试一个 Topic 的目标生词，先只看假名判断。</li>
+          <li>选择会、模糊、不会后，显示日语汉字和中文释义。</li>
           <li>绿色代表会，黄色代表模糊，红色代表不会。</li>
-          <li>三个方块均为空代表未筛查。</li>
-          <li>每个单词只能选择一个状态，再次点击当前状态可取消。</li>
+          <li>未选择代表未筛查；一个 Topic 全部筛查完成后显示掌握状态。</li>
           <li>学习记录保存在当前浏览器，不上传云端。</li>
           <li>更换设备、清理浏览器数据或使用无痕模式后，记录可能丢失。</li>
-          <li>可以随时重置学习记录，重新进行检测。</li>
+          <li>可以重置当前 Topic 或当前等级重新检测。</li>
         </ul>
       </details>
 
-      <section class="vv-panel" aria-labelledby="vv-stats-title">
-        <div class="vv-section-head"><div><p class="vv-kicker">Progress</p><h2 id="vv-stats-title">筛查进度</h2></div><p>状态变化后即时更新</p></div>
+      <section class="vv-panel vv-topic-overview" aria-labelledby="vv-overview-title">
+        <div class="vv-section-head"><div><p class="vv-kicker">Topic overview</p><h2 id="vv-overview-title">Topic 总览</h2></div><p>点击 Topic 开始单独测试</p></div>
+        <div class="vv-topic-overview-list" data-topic-overview>${unitIds.map(topicCard).join("")}</div>
+      </section>
+
+      <section class="vv-panel vv-current-topic" aria-labelledby="vv-current-topic-title">
+        <div class="vv-topic-nav">
+          <button class="vv-topic-nav-btn" type="button" data-topic-prev ${currentTopicIndex() === 0 ? "disabled" : ""}>← 上一个 Topic</button>
+          <div class="vv-current-topic-heading">
+            <p class="vv-kicker">当前等级：N5 · ${currentTopicIndex() + 1} / ${unitIds.length}</p>
+            <h2 id="vv-current-topic-title">${topicLabel(currentTopicId)} · ${escapeHtml(topic?.title || "")}</h2>
+            <p>${escapeHtml(topic?.english || "")} · ${currentStats.total} 个目标生词</p>
+          </div>
+          <button class="vv-topic-nav-btn" type="button" data-topic-next ${currentTopicIndex() === unitIds.length - 1 ? "disabled" : ""}>下一个 Topic →</button>
+        </div>
         <div class="vv-stats">
           ${statCard("总词数", currentStats.total)}
           ${statCard("已筛查", currentStats.screened)}
@@ -183,23 +215,19 @@
         </div>
       </section>
 
-      <section class="vv-panel" aria-labelledby="vv-unit-title">
-        <div class="vv-section-head"><div><p class="vv-kicker">Target words only</p><h2 id="vv-unit-title">单元薄弱提示</h2></div><p>只按各 Topic 自己的目标生词计算</p></div>
-        <div class="vv-unit-grid">${unitIds.map(unitCard).join("")}</div>
-      </section>
-
-      <section class="vv-panel" aria-labelledby="vv-list-title">
+      <section class="vv-panel vv-word-section" data-word-section aria-labelledby="vv-list-title">
         <div class="vv-toolbar-head">
-          <div><p class="vv-kicker">N5 vocabulary</p><h2 id="vv-list-title">目标生词表</h2></div>
+          <div><p class="vv-kicker">${topicLabel(currentTopicId)} vocabulary</p><h2 id="vv-list-title">目标生词卡</h2></div>
           <label class="vv-search"><span aria-hidden="true">⌕</span><span class="vv-sr-only">搜索日语汉字、假名或中文释义</span><input type="search" value="${escapeAttr(query)}" placeholder="搜索汉字、假名或中文释义" data-search autocomplete="off" /></label>
         </div>
         <div class="vv-filter-row" role="group" aria-label="状态筛选">${Object.entries(FILTER_LABELS).map(([id, label]) => `<button class="vv-filter" type="button" data-filter="${id}" aria-pressed="${filter === id}">${label}</button>`).join("")}</div>
-        <p class="vv-count-note" data-result-count>当前显示 ${visible.length} / ${words.length} 个词</p>
+        <p class="vv-count-note" data-result-count>当前显示 ${visible.length} / ${currentStats.total} 个词</p>
         <div class="vv-word-list" data-word-list>${visible.length ? visible.map(wordRow).join("") : '<div class="vv-empty">没有符合当前搜索和筛选条件的词。请尝试清空搜索词或切换筛选。</div>'}</div>
+        ${completionCard(currentStats)}
       </section>
 
       <section class="vv-panel" aria-labelledby="vv-export-title">
-        <div class="vv-section-head"><div><p class="vv-kicker">Offline workbook</p><h2 id="vv-export-title">导出学习清单</h2></div><p>导出范围不受当前搜索和筛选影响</p></div>
+        <div class="vv-section-head"><div><p class="vv-kicker">Offline workbook</p><h2 id="vv-export-title">导出当前 Topic</h2></div><p>不受当前搜索和筛选影响</p></div>
         <div class="vv-export-grid">
           ${exportButton("fuzzy", "导出模糊词汇", currentStats.fuzzy)}
           ${exportButton("unknown", "导出不会词汇", currentStats.unknown)}
@@ -208,14 +236,14 @@
       </section>
 
       <section class="vv-panel vv-data-management" aria-labelledby="vv-data-title">
-        <div><p class="vv-kicker">Data management</p><h2 id="vv-data-title">数据管理</h2><p>这里只重置当前 N5 原型的筛查记录，不删除词汇、故事、音频或其他等级数据。</p></div>
-        <button class="vv-reset-btn" type="button" data-reset>重置当前 N5 学习记录</button>
+        <div><p class="vv-kicker">Data management</p><h2 id="vv-data-title">数据管理</h2><p>重置只影响筛查状态，不删除词汇、故事、音频或其他网站内容。</p></div>
+        <div class="vv-reset-actions"><button class="vv-reset-btn" type="button" data-reset-topic>重置当前 Topic</button><button class="vv-reset-btn" type="button" data-reset-level>重置当前 N5 等级</button></div>
       </section>
 
       <dialog class="vv-modal" data-reset-dialog>
         <div class="vv-modal-body">
-          <h2>确认重置 N5 筛查记录？</h2>
-          <p>这会清空当前原型中全部「会、模糊、不会」状态，恢复为未筛查。此操作无法直接撤销。</p>
+          <h2 data-reset-title>确认重置筛查记录？</h2>
+          <p data-reset-description>此操作无法直接撤销。</p>
           <div class="vv-modal-actions"><button class="vv-modal-btn" type="button" data-action="cancel">取消</button><button class="vv-modal-btn" type="button" data-action="confirm">确认重置</button></div>
         </div>
       </dialog>
@@ -226,10 +254,16 @@
 
   function statCard(label, value, tone = "") { return `<div class="vv-stat" data-tone="${tone}"><strong>${value}</strong><span>${label}</span></div>`; }
 
-  function unitCard(topicId) {
+  function topicCard(topicId) {
     const topic = topicById.get(topicId);
     const current = unitStats(topicId);
-    return `<article class="vv-unit" data-status="${current.tone}"><div class="vv-unit-head"><div><h3>Topic ${String(topicId).padStart(2, "0")} · ${escapeHtml(topic?.title || "")}</h3><p>${escapeHtml(topic?.english || "")}</p></div><span class="vv-kicker">${current.total} 个目标词</span></div><div class="vv-unit-meta">已筛查 ${current.total - current.unscanned} / ${current.total}</div><div class="vv-unit-status" data-tone="${current.tone}">${current.label}</div></article>`;
+    return `<button class="vv-topic-card" type="button" data-topic-id="${topicId}" aria-pressed="${topicId === currentTopicId}" data-current="${topicId === currentTopicId}"><span class="vv-topic-card-title">${topicLabel(topicId)} · ${escapeHtml(topic?.title || "")}</span><span class="vv-topic-card-meta">${current.total} 个目标词 · 已筛查 ${current.total - current.unscanned} / ${current.total}</span><span class="vv-topic-card-status" data-tone="${current.tone}">${current.label}</span></button>`;
+  }
+
+  function completionCard(currentStats) {
+    if (currentStats.unscanned) return "";
+    const nextAvailable = currentTopicIndex() < unitIds.length - 1;
+    return `<div class="vv-completion" data-completion data-tone="${currentStats.unknown ? "red" : currentStats.fuzzy ? "yellow" : "green"}"><div><p class="vv-kicker">Topic complete</p><h3>本 Topic 筛查完成</h3><p>会：${currentStats.know} · 模糊：${currentStats.fuzzy} · 不会：${currentStats.unknown}</p></div><div class="vv-completion-actions"><button class="vv-secondary-btn" type="button" data-review-topic>复习本 Topic 短文（后续实现）</button>${nextAvailable ? '<button class="vv-primary-btn" type="button" data-topic-next>进入下一个 Topic</button>' : ""}</div></div>`;
   }
 
   function wordRow(word) {
@@ -246,6 +280,9 @@
   function bindEvents() {
     app.querySelector("[data-search]").addEventListener("input", (event) => { query = event.target.value; render(); focusSearch(); });
     app.querySelectorAll("[data-filter]").forEach((button) => button.addEventListener("click", () => { filter = button.dataset.filter; render(); }));
+    app.querySelectorAll("[data-topic-id]").forEach((button) => button.addEventListener("click", () => setCurrentTopic(Number(button.dataset.topicId))));
+    app.querySelectorAll("[data-topic-prev]").forEach((button) => button.addEventListener("click", () => moveTopic(-1)));
+    app.querySelectorAll("[data-topic-next]").forEach((button) => button.addEventListener("click", () => moveTopic(1)));
     app.querySelectorAll("[data-status]").forEach((button) => button.addEventListener("click", () => {
       const row = button.closest("[data-word-id]");
       const id = row?.dataset.wordId;
@@ -257,26 +294,45 @@
       render();
     }));
     app.querySelectorAll("[data-export]").forEach((button) => button.addEventListener("click", () => exportWords(button.dataset.export)));
-    app.querySelector("[data-reset]").addEventListener("click", () => app.querySelector("[data-reset-dialog]").showModal());
+    app.querySelector("[data-reset-topic]").addEventListener("click", () => openResetDialog("topic"));
+    app.querySelector("[data-reset-level]").addEventListener("click", () => openResetDialog("level"));
+    app.querySelectorAll("[data-review-topic]").forEach((button) => button.addEventListener("click", () => showToast("复习本 Topic 短文跳转：后续实现。")));
     app.querySelector("[data-action=cancel]").addEventListener("click", () => app.querySelector("[data-reset-dialog]").close());
     app.querySelector("[data-action=confirm]").addEventListener("click", () => {
-      state = emptyState();
+      const scope = resetScope;
+      for (const word of words) {
+        if (scope === "level" || word.topicId === currentTopicId) delete state.statuses[word.id];
+      }
       saveState();
       app.querySelector("[data-reset-dialog]").close();
       render();
-      showToast("N5 学习记录已重置，所有词恢复为未筛查。");
+      showToast(scope === "level" ? "当前 N5 等级学习记录已重置。" : `${topicLabel(currentTopicId)} 学习记录已重置。`);
     });
   }
 
   function focusSearch() { const input = app.querySelector("[data-search]"); if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } }
 
+  function moveTopic(offset) {
+    const nextIndex = currentTopicIndex() + offset;
+    if (nextIndex < 0 || nextIndex >= unitIds.length) return;
+    setCurrentTopic(unitIds[nextIndex]);
+  }
+
+  function openResetDialog(scope) {
+    resetScope = scope;
+    const dialog = app.querySelector("[data-reset-dialog]");
+    app.querySelector("[data-reset-title]").textContent = scope === "level" ? "确认重置当前 N5 等级？" : `确认重置${topicLabel(currentTopicId)}？`;
+    app.querySelector("[data-reset-description]").textContent = scope === "level" ? "这会清空当前 N5 原型中全部 Topic 的状态，恢复为未筛查。此操作无法直接撤销。" : `这会清空${topicLabel(currentTopicId)}的全部状态，其他 Topic 不受影响。此操作无法直接撤销。`;
+    dialog.showModal();
+  }
+
   function exportWords(type) {
     const wanted = type === "fuzzyUnknown" ? ["fuzzy", "unknown"] : [type];
-    const rows = words.filter((word) => wanted.includes(statusOf(word)));
-    if (!rows.length) { showToast(`当前没有符合条件的${type === "fuzzy" ? "模糊" : type === "unknown" ? "不会" : "模糊＋不会"}词汇，未生成文件。`); return; }
+    const rows = words.filter((word) => word.topicId === currentTopicId && wanted.includes(statusOf(word)));
+    if (!rows.length) { showToast(`${topicLabel(currentTopicId)}当前没有符合条件的${type === "fuzzy" ? "模糊" : type === "unknown" ? "不会" : "模糊＋不会"}词汇，未生成文件。`); return; }
     const label = type === "fuzzy" ? "模糊词汇" : type === "unknown" ? "不会词汇" : "模糊不会词汇";
     const date = localDate();
-    const filename = `N5_${label}_${date}.xlsx`;
+    const filename = `N5_${topicLabel(currentTopicId)}_${label}_${date}.xlsx`;
     const exportRows = rows.map((word) => [word.kana, word.kanji, word.pos, word.meaning]);
     const blob = createXlsxBlob([["假名", "日语汉字", "词性", "唯一中文释义"], ...exportRows]);
     const url = URL.createObjectURL(blob);
@@ -323,6 +379,7 @@
   let toastTimer;
   function showToast(message) { const toast = app.querySelector("[data-toast]"); if (!toast) return; toast.textContent = message; toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 3200); }
 
-  window.__vocabularyPrototype = { STORAGE_KEY, words, stats, unitStats, getState: () => JSON.parse(JSON.stringify(state)), createXlsxBlob };
+  let resetScope = "topic";
+  window.__vocabularyPrototype = { STORAGE_KEY, words, stats, unitStats, getCurrentTopicId: () => currentTopicId, setCurrentTopic, getState: () => JSON.parse(JSON.stringify(state)), createXlsxBlob };
   render();
 })();
