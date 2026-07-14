@@ -1,5 +1,19 @@
 # TASK_STATUS
 
+## V1.2 单词筛查正式接入候选版（2026-07-14）
+
+- 当前工作分支：`feature/vocabulary-prototype`。
+- 本轮开始前 HEAD：`42e1cf44f75c690231b82d7d10d7b2adcf2d9604`。
+- 正式页面：根路径 `vocabulary.html`；正式入口不再使用 prototype 页面路径。
+- 导航：共用导航加入“单词筛查”；语言门户和日语首页增加入口。
+- 数据：N5～N1 共 105 个 Topic、9,116 条目标生词；逐 Topic 词卡对账差异全部为 0；20 条人工读音修正继续生效。
+- 兼容：正式页面沿用 `languageLibrary:vocabularyPrototype:all:v2` 和旧 N5 v1 迁移逻辑，原型已有记录可继续读取。
+- 导出：正式页面保留当前 Topic/当前等级累计范围、三种薄弱词类型和六列 XLSX。
+- 构建：正式 `dist/` 已按白名单更新为 2,090 个文件、531,869,830 bytes（507.23 MiB）；音频 1,952 个全部命中缓存；`--check-only` 通过。
+- 验证：正式页面和临时 dist 页面、入口导航、前进后退、音频引用、五等级数据、响应式、导出、37 项自动测试、`site-state`、JavaScript 语法和 `git diff --check` 均通过。
+- 发布边界：未修改 `gh-pages`，未发布，未合并 `main`；等待用户进行线上验收后再决定发布。
+- 发布前报告：`reports/deployment/vocabulary-feature-release-report.md`。
+
 ## V1.2 N5～N1 完整功能候选版（2026-07-14）
 
 - 当前工作分支：`feature/vocabulary-prototype`。

@@ -42,6 +42,10 @@
     return rootUrl("levels/japanese/index.html");
   }
 
+  function vocabularyUrl() {
+    return rootUrl("vocabulary.html");
+  }
+
   function levelUrl(level, name = "index.html") {
     return rootUrl(`levels/${level}/${name}`);
   }
@@ -166,7 +170,10 @@
 
   function navMarkup(active, level = "", data = null, store = null) {
     const links = [{ id: "portal", label: "语言", href: portalUrl() }];
-    if (active !== "portal") links.push({ id: "japanese", label: "日语", href: japaneseUrl() });
+    if (active !== "portal") {
+      links.push({ id: "japanese", label: "日语", href: japaneseUrl() });
+      links.push({ id: "vocabulary", label: "单词筛查", href: vocabularyUrl() });
+    }
     if (level) {
       const currentStory = data && store ? continueStory(data, store) : null;
       links.push(
@@ -229,7 +236,7 @@
           <span class="eyebrow">多语言学习入口</span>
           <h1>从语言开始，建立持续学习的节奏。</h1>
           <p class="lead">选择一门语言，在阅读、听力和词汇之间反复练习，让每次学习都能自然衔接上一次进度。</p>
-          <div class="actions"><a class="btn primary" href="${japaneseUrl()}">进入日语学习</a></div>
+          <div class="actions"><a class="btn primary" href="${japaneseUrl()}">进入日语学习</a><a class="btn" href="${vocabularyUrl()}">单词筛查</a></div>
         </div>
         <aside class="panel heroPanel">
           <div class="jpLine heroJapanese">今日も、<br />一つずつ深く読む。</div>
@@ -309,6 +316,7 @@
           <div class="actions">
             <a class="btn primary" href="${storyUrl(continueData.level, recentStory)}">${mostRecent ? `继续学习 ${levelLabel(continueData.level)}` : "从 N1 第一篇开始"}</a>
             <a class="btn" href="${levelUrl("n1")}">查看等级内容</a>
+            <a class="btn" href="${vocabularyUrl()}">单词筛查</a>
           </div>
         </div>
         <aside class="panel heroPanel">

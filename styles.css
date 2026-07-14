@@ -912,7 +912,9 @@ p {
 
   .nav-1 { grid-template-columns: 1fr; }
   .nav-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nav-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .nav-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .nav-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .nav a {
     padding: 8px 4px;

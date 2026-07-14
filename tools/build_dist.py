@@ -27,11 +27,17 @@ AUDIO_CACHE_OBJECTS = AUDIO_CACHE / "objects"
 LEVELS = ("n1", "n2", "n3", "n4", "n5")
 ROOT_FILES = (
     PurePosixPath("index.html"),
+    PurePosixPath("vocabulary.html"),
     PurePosixPath("favicon.svg"),
     PurePosixPath("favicon.ico"),
     PurePosixPath("styles.css"),
     PurePosixPath("state.js"),
     PurePosixPath("app.js"),
+)
+VOCABULARY_FILES = (
+    PurePosixPath("prototype/vocabulary-prototype/vocabulary-prototype.css"),
+    PurePosixPath("prototype/vocabulary-prototype/vocabulary-data-loader.js"),
+    PurePosixPath("prototype/vocabulary-prototype/vocabulary-prototype.js"),
 )
 PLANNING_FILES = (
     PurePosixPath("levels/english/index.html"),
@@ -561,7 +567,7 @@ def audio_paths(level: str, data: dict[str, Any]) -> set[PurePosixPath]:
 def expected_manifest(
     data_by_level: dict[str, dict[str, Any]]
 ) -> tuple[set[PurePosixPath], dict[str, set[PurePosixPath]]]:
-    manifest = set(ROOT_FILES) | set(PLANNING_FILES) | set(DATA_FILES.values())
+    manifest = set(ROOT_FILES) | set(VOCABULARY_FILES) | set(PLANNING_FILES) | set(DATA_FILES.values())
     audio_by_level: dict[str, set[PurePosixPath]] = {}
     for level in LEVELS:
         data = data_by_level[level]
