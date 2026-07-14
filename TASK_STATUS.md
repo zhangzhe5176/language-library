@@ -1,5 +1,17 @@
 # TASK_STATUS
 
+## V1.2 N5～N1 完整功能候选版（2026-07-14）
+
+- 当前工作分支：`feature/vocabulary-prototype`。
+- 开始前 HEAD：`dfae000a2919159aeb9af701c536266e289fbae4`；`main` / `origin/main`：`d28ebe8d7c2e491f28679ab60a3eacd3d76f7856`；`gh-pages` / `origin/gh-pages`：`53fc20061b1e283a5004d05e65d6534cc88f05d9`。
+- 范围：独立原型扩展至 N5、N4、N3、N2、N1 全部 105 个 Topic；页面只渲染当前等级的当前 Topic。
+- 数据：从现有 `data/n5-data.js`、`data/n4-data.js`、`data/n3-data.js`、`data/n2-data.js`、`data/n1-data.js` 动态加载；原始目标词条 9,116 条，Topic 内去重后进入词表 9,001 条。
+- 已完成：等级切换、Topic 总览折叠、Topic 前后切换、当前等级/Topic 统计、三列/两列/单列词卡、当前 Topic 重置、当前等级重置、当前 Topic 范围 Excel 导出、N5 v1 localStorage 迁移。
+- 数据审计：`reports/vocabulary/vocabulary-full-data-audit.md`。
+- 验证：五等级加载、105 Topic 遍历、五等级搜索与六种筛选、状态和答案显示、红黄绿 Topic 状态、重置确认、五等级导出、响应式、旧 N5 迁移、损坏记录容错、正式首页/导航/音频资源回归、37 项 Python 自动测试、`site-state`、JavaScript 语法和 `git diff --check` 已完成；浏览器 headless 的主动音频播放调用曾超时，正式音频资源 HTTP 加载和音频元素引用正常，未修改正式音频。
+- 体积：原型源码从 39,466 bytes 增至 48,300 bytes，增加 8,834 bytes；正式 `dist/` 未重建，当前 2,086 文件、531,811,209 bytes。
+- 当前下一步：提交本分支，保持本地预览服务运行，等待用户进行 N5～N1 完整验收；不合并、不发布、不修改 `gh-pages`。
+
 ## V1.2 单词筛查原型（2026-07-14）
 
 - 当前工作分支：`feature/vocabulary-prototype`
