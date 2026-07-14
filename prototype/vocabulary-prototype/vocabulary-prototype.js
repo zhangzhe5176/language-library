@@ -43,6 +43,7 @@
   let currentLevel = "n5";
   let filter = "all";
   let query = "";
+  let exportScope = "topic";
   let resetScope = "topic";
   let toastTimer;
   let loadNotice = "";
@@ -66,14 +67,17 @@
     const topicById = new Map(data.topics.map((topic) => [Number(topic.id), topic]));
     const topicIds = data.topics.map((topic) => Number(topic.id));
     const rawWords = [];
+    const storySequenceByTopic = new Map();
 
     for (const story of data.stories) {
       const topicId = Number(story.topicId);
+      const storyNumberInTopic = (storySequenceByTopic.get(topicId) || 0) + 1;
+      storySequenceByTopic.set(topicId, storyNumberInTopic);
       for (const row of Array.isArray(story.vocab) ? story.vocab : []) {
         const sourceWord = String(row?.[1] || "").trim();
         const sourceKana = String(row?.[2] || "").trim();
         const sourceVocabNo = String(row?.[0] || "").trim();
-        const id = `${level}:t${topicId}:s${String(story.id)}:v${sourceVocabNo}`;
+        const id = recordId(level, topicId, story.id, sourceVocabNo);
         const manual = MANUAL_VOCAB_OVERRIDES[id] || null;
         const reading = resolveReading(sourceWord, sourceKana, story, manual);
         const displayWord = manual?.displayWord ?? sourceWord;
@@ -83,6 +87,7 @@
           level,
           topicId,
           storyId: Number(story.id),
+          storyNumberInTopic,
           sourceVocabNo,
           sourceWord,
           displayWord,
@@ -190,6 +195,34 @@
   function statusOf(word) { return levelState(word.level).statuses[word.statusKey] || ""; }
   function wordsForTopic(level, topicId) { return models[level].topicWords.get(topicId) || []; }
 
+  function recordId(level, topicId, storyId, sourceVocabNo) { return `${level}:t${topicId}:s${String(storyId)}:v${String(sourceVocabNo)}`; }
+
+  function wordsForExportScope(scope = exportScope) {
+    const model = levelModel();
+    const topicIds = scope === "level" ? model.topicIds : [currentTopicId()];
+    const result = [];
+    for (const topicId of topicIds) {
+      for (const story of model.data.stories) {
+        if (Number(story.topicId) !== topicId) continue;
+        for (const row of Array.isArray(story.vocab) ? story.vocab : []) {
+          const sourceVocabNo = String(row?.[0] || "").trim();
+          const word = model.wordById.get(recordId(currentLevel, topicId, story.id, sourceVocabNo));
+          if (word) result.push(word);
+        }
+      }
+    }
+    return result;
+  }
+
+  function exportStats(scope = exportScope) {
+    const counts = { know: 0, fuzzy: 0, unknown: 0 };
+    for (const word of wordsForExportScope(scope)) {
+      const status = statusOf(word);
+      if (status) counts[status] += 1;
+    }
+    return counts;
+  }
+
   function stats(level = currentLevel, topicId = currentTopicId()) {
     const list = wordsForTopic(level, topicId);
     const counts = { know: 0, fuzzy: 0, unknown: 0 };
@@ -272,6 +305,7 @@
     const currentStats = stats();
     const visible = visibleWords();
     const overall = levelStats();
+    const currentExportStats = exportStats();
     app.innerHTML = `
       <header class="vv-hero">
         <div><p class="vv-kicker">Language Library · V1.2 本地隔离候选版</p><h1>N5～N1 单词筛查与薄弱 Topic 提示</h1><p>每次只测试一个等级的一个 Topic；数据来自项目现有 N5～N1 词汇文件。</p></div>
@@ -297,7 +331,7 @@
 
       <section class="vv-panel vv-word-section" data-word-section aria-labelledby="vv-list-title"><div class="vv-toolbar-head"><div><p class="vv-kicker">${currentLevel.toUpperCase()} · ${topicLabel(currentTopicId())}</p><h2 id="vv-list-title">目标生词卡</h2></div><label class="vv-search"><span aria-hidden="true">⌕</span><span class="vv-sr-only">搜索日语汉字、假名或中文释义</span><input type="search" value="${escapeAttr(query)}" placeholder="搜索汉字、假名或中文释义" data-search autocomplete="off" /></label></div><div class="vv-filter-row" role="group" aria-label="状态筛选">${Object.entries(FILTER_LABELS).map(([id, label]) => `<button class="vv-filter" type="button" data-filter="${id}" aria-pressed="${filter === id}">${label}</button>`).join("")}</div><p class="vv-count-note" data-result-count>当前显示 ${visible.length} / ${currentStats.total} 个词</p><div class="vv-word-list" data-word-list>${visible.length ? visible.map(wordCard).join("") : '<div class="vv-empty">没有符合当前搜索和筛选条件的词。请尝试清空搜索词或切换筛选。</div>'}</div>${completionCard(currentStats)}</section>
 
-      <section class="vv-panel" aria-labelledby="vv-export-title"><div class="vv-section-head"><div><p class="vv-kicker">Offline workbook</p><h2 id="vv-export-title">导出当前 Topic</h2></div><p>不受当前搜索和筛选影响</p></div><div class="vv-export-grid">${exportButton("fuzzy", "导出模糊词汇", currentStats.fuzzy)}${exportButton("unknown", "导出不会词汇", currentStats.unknown)}${exportButton("fuzzyUnknown", "导出模糊＋不会词汇", currentStats.fuzzy + currentStats.unknown)}</div></section>
+      <section class="vv-panel" aria-labelledby="vv-export-title"><div class="vv-section-head"><div><p class="vv-kicker">Offline workbook</p><h2 id="vv-export-title">导出词汇</h2></div><p>不受当前搜索和筛选影响</p></div><div class="vv-export-scope" role="group" aria-label="导出范围"><span class="vv-export-scope-label">导出范围</span>${exportScopeButton("topic", "当前 Topic")}${exportScopeButton("level", "当前等级累计")}</div><p class="vv-export-note">当前范围：${exportScope === "topic" ? `${topicLabel(currentTopicId())} · ${escapeHtml(topic?.title || "")}` : `${currentLevel.toUpperCase()} 全部 Topic`}；导出保留原始重复记录和顺序。</p><div class="vv-export-grid">${exportButton("fuzzy", "导出模糊词汇", currentExportStats.fuzzy)}${exportButton("unknown", "导出不会词汇", currentExportStats.unknown)}${exportButton("fuzzyUnknown", "导出模糊＋不会词汇", currentExportStats.fuzzy + currentExportStats.unknown)}</div></section>
 
       <section class="vv-panel vv-data-management" aria-labelledby="vv-data-title"><div><p class="vv-kicker">Data management</p><h2 id="vv-data-title">数据管理</h2><p>重置只影响当前等级筛查状态，不删除词汇、故事、音频或其他网站内容。</p></div><div class="vv-reset-actions"><button class="vv-reset-btn" type="button" data-reset-topic>重置当前 Topic</button><button class="vv-reset-btn" type="button" data-reset-level>重置当前 ${currentLevel.toUpperCase()} 等级</button></div></section>
 
@@ -332,6 +366,7 @@
   }
 
   function exportButton(type, label, count) { return `<button class="vv-export-btn" type="button" data-export="${type}"><strong>${label}</strong><small>${count} 个符合条件</small></button>`; }
+  function exportScopeButton(scope, label) { return `<button class="vv-export-scope-btn" type="button" data-export-scope="${scope}" aria-pressed="${exportScope === scope}">${label}</button>`; }
 
   function bindEvents() {
     app.querySelector("[data-search]").addEventListener("input", (event) => { query = event.target.value; render(); focusSearch(); });
@@ -340,6 +375,7 @@
     app.querySelectorAll("[data-topic-id]").forEach((button) => button.addEventListener("click", () => setCurrentTopic(Number(button.dataset.topicId))));
     app.querySelectorAll("[data-topic-prev]").forEach((button) => button.addEventListener("click", () => moveTopic(-1)));
     app.querySelectorAll("[data-topic-next]").forEach((button) => button.addEventListener("click", () => moveTopic(1)));
+    app.querySelectorAll("[data-export-scope]").forEach((button) => button.addEventListener("click", () => { exportScope = button.dataset.exportScope; render(); }));
     app.querySelectorAll("[data-status]").forEach((button) => button.addEventListener("click", () => {
       const card = button.closest("[data-word-id]");
       const word = card && levelModel().wordById.get(card.dataset.wordId);
@@ -351,7 +387,7 @@
       saveState();
       render();
     }));
-    app.querySelectorAll("[data-export]").forEach((button) => button.addEventListener("click", () => exportWords(button.dataset.export)));
+    app.querySelectorAll("[data-export]").forEach((button) => button.addEventListener("click", () => exportWords(button.dataset.export, exportScope)));
     app.querySelector("[data-reset-topic]").addEventListener("click", () => openResetDialog("topic"));
     app.querySelector("[data-reset-level]").addEventListener("click", () => openResetDialog("level"));
     app.querySelectorAll("[data-review-topic]").forEach((button) => button.addEventListener("click", () => showToast("复习本 Topic 短文跳转：后续实现。")));
@@ -386,15 +422,19 @@
     void model;
   }
 
-  function exportWords(type) {
+  function exportWords(type, scope = exportScope) {
     const wanted = type === "fuzzyUnknown" ? ["fuzzy", "unknown"] : [type];
-    const rows = wordsForTopic(currentLevel, currentTopicId()).filter((word) => wanted.includes(statusOf(word)));
+    const rows = wordsForExportScope(scope).filter((word) => wanted.includes(statusOf(word)));
     const label = type === "fuzzy" ? "模糊词汇" : type === "unknown" ? "不会词汇" : "模糊不会词汇";
-    if (!rows.length) { showToast(`${topicLabel(currentTopicId())}当前没有符合条件的${label}，未生成文件。`); return; }
-    const filename = `${currentLevel.toUpperCase()}_${topicLabel(currentTopicId())}_${label}_${localDate()}.xlsx`;
+    const scopeLabel = scope === "topic" ? topicLabel(currentTopicId()) : `${currentLevel.toUpperCase()}当前等级累计`;
+    if (!rows.length) { showToast(`${scopeLabel}当前没有符合条件的${label}，未生成文件。`); return; }
+    const filename = scope === "topic" ? `${currentLevel.toUpperCase()}_${topicLabel(currentTopicId())}_${label}_${localDate()}.xlsx` : `${currentLevel.toUpperCase()}_累计_${label}_${localDate()}.xlsx`;
     const reviewCount = rows.filter((word) => word.readingReview).length;
-    const exportRows = rows.map((word) => [word.readingReview ? "" : word.kana, word.kanji, word.pos, word.meaning]);
-    const blob = createXlsxBlob([["假名", "日语汉字", "词性", "唯一中文释义"], ...exportRows]);
+    const exportRows = rows.map((word) => {
+      const topic = levelModel().topicById.get(word.topicId);
+      return [`Topic ${word.topicId} ${topic?.title || ""}`.trim(), `第 ${word.storyNumberInTopic} 篇`, word.readingReview ? "" : word.kana, word.kanji, word.pos, word.meaning];
+    });
+    const blob = createXlsxBlob([["Topic", "短文", "假名", "日语汉字", "词性", "唯一中文释义"], ...exportRows]);
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a"); anchor.href = url; anchor.download = filename; anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
