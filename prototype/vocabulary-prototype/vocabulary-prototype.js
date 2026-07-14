@@ -14,6 +14,28 @@
     unknown: "不会",
     fuzzyUnknown: "模糊＋不会",
   };
+  const MANUAL_VOCAB_OVERRIDES = Object.freeze({
+    "n5:t7:s60:v204": { reading: "エーティーエム", displayWord: "ATM", meaning: "自动取款机" },
+    "n5:t20:s261:v757": { reading: "ティーシャツ", displayWord: "Tシャツ" },
+    "n5:t20:s265:v757": { reading: "ティーシャツ", displayWord: "Tシャツ" },
+    "n4:t10:s189:v755": { reading: "ティーシャツ", displayWord: "Tシャツ" },
+    "n3:t12:s227:v1204": { reading: "じさ", displayWord: "時差", meaning: "时差" },
+    "n3:t13:s256:v1359": { reading: "ひゃっかじてん", displayWord: "百科事典", meaning: "百科全书" },
+    "n3:t13:s277:v1469": { reading: "かくれる", displayWord: "隠れる", pos: "动词·自动词" },
+    "n3:t14:s283:v1501": { reading: "〜い", displayWord: "〜位", meaning: "第～名" },
+    "n3:t14:s288:v1526": { reading: "ふく〜", displayWord: "副〜", meaning: "副～" },
+    "n3:t14:s293:v1553": { reading: "むく", displayWord: "向く", meaning: "适合", pos: "动词·自动词" },
+    "n3:t15:s305:v1605": { reading: "ふあんな", displayWord: "不安な", meaning: "不安的" },
+    "n3:t15:s312:v1656": { reading: "つく", displayWord: "付く", pos: "动词·自动词" },
+    "n3:t15:s314:v1669": { reading: "ふる", displayWord: "振る", pos: "动词·他动词" },
+    "n3:t15:s317:v1689": { reading: "さます", displayWord: "覚ます", pos: "动词·他动词" },
+    "n3:t15:s320:v1709": { reading: "〜しょう", displayWord: "〜証", meaning: "～证" },
+    "n3:t16:s332:v1771": { reading: "ききめ", displayWord: "効き目" },
+    "n3:t17:s348:v1848": { reading: "あき", displayWord: "空き", meaning: "空位" },
+    "n3:t17:s350:v1864": { reading: "ささる", displayWord: "刺さる", meaning: "刺入", pos: "动词·自动词" },
+    "n3:t18:s356:v1905": { reading: "ゆるやかな", displayWord: "緩やかな", meaning: "缓慢" },
+    "n3:t18:s369:v2002": { reading: "へる", displayWord: "減る", meaning: "减少", pos: "动词·自动词" },
+  });
   const app = document.querySelector("#vocabularyPrototypeApp");
 
   let models;
@@ -50,9 +72,11 @@
       for (const row of Array.isArray(story.vocab) ? story.vocab : []) {
         const sourceWord = String(row?.[1] || "").trim();
         const sourceKana = String(row?.[2] || "").trim();
-        const reading = resolveReading(sourceWord, sourceKana, story);
         const sourceVocabNo = String(row?.[0] || "").trim();
         const id = `${level}:t${topicId}:s${String(story.id)}:v${sourceVocabNo}`;
+        const manual = MANUAL_VOCAB_OVERRIDES[id] || null;
+        const reading = resolveReading(sourceWord, sourceKana, story, manual);
+        const displayWord = manual?.displayWord ?? sourceWord;
         const statusKey = `${level}:word:${normalize(sourceWord || reading.value)}`;
         rawWords.push({
           id,
@@ -61,14 +85,15 @@
           storyId: Number(story.id),
           sourceVocabNo,
           sourceWord,
+          displayWord,
           kana: reading.value,
           readingSource: reading.source,
           readingReview: reading.review,
           readingReviewReason: reading.reason,
           canScan: Boolean(reading.value && !reading.review),
-          kanji: /\p{Script=Han}/u.test(sourceWord) ? sourceWord : "",
-          pos: String(row?.[3] || "").trim(),
-          meaning: String(row?.[4] || "").trim(),
+          kanji: /\p{Script=Han}/u.test(displayWord) ? displayWord : "",
+          pos: manual?.pos ?? String(row?.[3] || "").trim(),
+          meaning: manual?.meaning ?? String(row?.[4] || "").trim(),
           statusKey,
         });
       }
@@ -199,7 +224,7 @@
   function matches(word) {
     const needle = normalize(query).toLocaleLowerCase();
     if (!needle) return true;
-    return [word.sourceWord, word.kanji, word.kana, word.meaning].join(" ").toLocaleLowerCase().includes(needle);
+    return [word.sourceWord, word.displayWord, word.kanji, word.kana, word.meaning].join(" ").toLocaleLowerCase().includes(needle);
   }
 
   function passesFilter(word) {
@@ -299,10 +324,10 @@
 
   function wordCard(word) {
     const selected = statusOf(word);
-    const answerWord = word.sourceWord && !isKanaReading(stripSourceMarkers(word.sourceWord)) ? `<span class="vv-word-answer-kanji">${escapeHtml(word.sourceWord)}</span>` : "";
+    const answerWord = word.displayWord && !isKanaReading(stripSourceMarkers(word.displayWord)) ? `<span class="vv-word-answer-kanji">${escapeHtml(word.displayWord)}</span>` : "";
     const answer = selected ? `<div class="vv-word-answer" aria-live="polite">${answerWord}<span class="vv-word-answer-meaning">${escapeHtml(word.meaning)}</span></div>` : "";
-    const readingLabel = word.readingReview ? `<div class="vv-word-kana vv-reading-review" title="${escapeAttr(word.readingReviewReason)}">读音待核对</div>` : `<div class="vv-word-kana">${escapeHtml(word.kana)}</div>`;
-    const accessibleWord = word.readingReview ? `${word.sourceWord}（读音待核对）` : word.kana;
+    const readingLabel = `<div class="vv-word-kana">${escapeHtml(word.kana)}</div>`;
+    const accessibleWord = word.kana;
     return `<article class="vv-word-card" data-word-id="${escapeAttr(word.id)}" data-selected="${selected}" data-reading-review="${word.readingReview}"><div class="vv-word-card-content">${readingLabel}${answer}</div><div class="vv-status-group" role="group" aria-label="${escapeAttr(accessibleWord)}的筛查状态">${Object.entries(STATUS_LABELS).map(([id, label]) => `<button class="vv-status" type="button" data-status="${id}" aria-pressed="${selected === id}" ${word.canScan ? "" : "disabled"} title="${word.canScan ? `${label}：${selected === id ? "已选择，再次点击取消" : "选择此状态"}` : "读音待核对，暂不能选择状态"}" aria-label="${escapeAttr(accessibleWord)}：${word.canScan ? label : "读音待核对，暂不能选择"}${selected === id ? "，已选择，再次点击取消" : ""}">${label}</button>`).join("")}</div></article>`;
   }
 
@@ -379,7 +404,8 @@
   function localDate() { const now = new Date(); return [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-"); }
   function normalize(value) { return String(value ?? "").normalize("NFKC").replace(/\s+/g, "").trim(); }
 
-  function resolveReading(sourceWord, sourceKana, story) {
+  function resolveReading(sourceWord, sourceKana, story, manual) {
+    if (manual?.reading) return { value: manual.reading, source: "manual-confirmation", review: false, reason: "" };
     if (sourceKana) return { value: sourceKana, source: "vocab[2]", review: false, reason: "" };
     const sourceReading = stripSourceMarkers(sourceWord);
     if (isKanaReading(sourceReading)) return { value: sourceReading, source: "sourceWord", review: false, reason: "" };
