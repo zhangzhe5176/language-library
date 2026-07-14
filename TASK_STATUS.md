@@ -7,8 +7,8 @@
 - QA 结论：`Go`
 - 正式地址：<https://zhangzhe5176.github.io/language-library/>
 - Pages 发布源：`gh-pages` 分支根目录 `/`
-- `main` 源码上线基线：`227a37b0e75c92e242c2847776c523f535793ffb`
-- `gh-pages` 发布提交：`5dc1d9eb14f8a62b8378891c45a4898201ef3677`
+- `main` V1.1 音频压缩源码已 fast-forward 合并；最终正式记录提交见本次发布记录
+- `gh-pages` 发布提交：`53fc20061b1e283a5004d05e65d6534cc88f05d9`
 - 上线记录：由提交 `docs(project): record production launch` 保存
 - 上线时间：2026-07-14 03:28 JST
 - `feature/n5-sample`：保留，未删除
@@ -27,7 +27,8 @@
 
 - 源码、审计资料和原书图片保留在 `main`。
 - 正式站只发布 `dist/` 白名单产物。
-- `dist/` 共 2086 个文件、838486609 bytes（799.64 MiB）。
+- `dist/` 共 2086 个文件、531811209 bytes（507.17 MiB）。
+- 发布音频共 1952 个、525520476 bytes（501.18 MiB），统一为 64 kbps mono MP3。
 - 正式站不包含原书图片，也不提供“查看原图”功能。
 - 源码中的原书图片及数据追溯字段保持完整，未删除、未压缩。
 
@@ -49,6 +50,20 @@
 - QA-07：测试脚本中的成功提示 `console.log`，不进入正式运行页面。
 - QA-09：`.build/` 本地缓存保持不变，未清理。
 - GitHub Pages 托管工作流显示 GitHub 管理的 Node.js 20 弃用提示；本次构建成功，不影响正式站。
+
+## V1.1 发布音频压缩（2026-07-14）
+
+- feature 分支：`feature/audio-compression`
+- feature 提交：`ddc07314d1aed4c2be52a964287c15499785281f`
+- `gh-pages` 发布提交：`53fc20061b1e283a5004d05e65d6534cc88f05d9`
+- 发布参数：MP3、64 kbps、mono；参数为 `-vn -ac 1 -b:a 64k -map_metadata -1`。
+- 原始音频：1952 个文件的路径、大小和 SHA-256 聚合清单均与基线一致，未修改、未删除、未覆盖。
+- 体积：`dist/` 从 838486609 bytes（799.64 MiB）降至 531811209 bytes（507.17 MiB）；音频从 832195876 bytes（793.64 MiB）降至 525520476 bytes（501.18 MiB），总节省 306675400 bytes（36.57%）。
+- 全量验证：1952/1952 可由 `ffprobe` 解析，均为 mono、64000 bps，源/发布时长最大差异 0.000122 秒。
+- 缓存：首次 0 命中、1952 新转码；复建 1952 命中、0 新转码；`.build/audio-cache/` 不入 Git。
+- 本地浏览器回归、100 条抽样播放和自动测试全部通过。
+- Pages API 为 `built`；线上 N1–N5 各 5 条、共 25 条音频真实播放通过，覆盖前/中/后段；无 404、控制台错误或警告。
+- 正式结论：`Go`。Pages 发布源保持 `gh-pages` 根目录，未发布原书图片。
 
 ## 下一步
 

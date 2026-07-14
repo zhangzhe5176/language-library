@@ -13,6 +13,7 @@
 ## 2. 分支与实现
 
 - 功能分支：`feature/audio-compression`
+- feature 提交：`ddc07314d1aed4c2be52a964287c15499785281f`
 - 修改文件：`tools/build_dist.py`
 - 发布报告：本文件
 - 原始音频继续保存在 `assets/`，构建流程不写入源文件。
@@ -114,6 +115,7 @@ ffmpeg -i INPUT -vn -ac 1 -b:a 64k -map_metadata -1 OUTPUT
 - `tools/build_dist.py --check-only`：通过。
 - 全量 `ffprobe`：通过。
 - `git diff --check`：通过。
+- 全部 Python 测试、状态迁移测试、JavaScript 语法检查和发布引用检查均通过。
 
 ## 11. 本地浏览器回归
 
@@ -137,6 +139,16 @@ ffmpeg -i INPUT -vn -ac 1 -b:a 64k -map_metadata -1 OUTPUT
 7. 在线检查根门户、N1–N5 各至少 5 条音频，覆盖前/中/后，并检查播放进度、404 和控制台。
 8. 线上通过后，`main` 使用 `git merge --ff-only feature/audio-compression`，再提交发布记录。
 
+本次实际发布记录：
+
+- `gh-pages` 提交：`53fc20061b1e283a5004d05e65d6534cc88f05d9`
+- Pages API：`status=built`，发布源仍为 `gh-pages:/`。
+- 线上首页 HTTP：`200`。
+- 线上 N1–N5：每级 5 条，共 25 条，覆盖前、中、后段。
+- 线上音频响应：全部成功，浏览器实际播放时间前进，音频请求为 `206` Range 响应。
+- 线上 `404`：0；控制台 error/warning：0；音频播放失败：0。
+- 线上抽查音频均从压缩后的发布路径加载，未请求原书图片。
+
 ## 13. 回滚方案
 
 - 线上出现 Critical 问题时立即停止，不合并 `main`。
@@ -146,6 +158,5 @@ ffmpeg -i INPUT -vn -ac 1 -b:a 64k -map_metadata -1 OUTPUT
 
 ## 14. 当前结论
 
-- 分支验收结论：**Go**。
-- 允许进入 feature 提交、推送和 gh-pages 发布阶段。
-- 线上最终结论需在真实 Pages 地址完成音频播放验收后确定。
+- 分支、`gh-pages`、Pages 部署和线上真实播放验收结论：**Go**。
+- 已完成 feature 推送、`gh-pages` 发布和线上验收，可以完成 `main` 的 fast-forward 合并及正式记录更新。
