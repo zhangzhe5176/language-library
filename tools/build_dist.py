@@ -8,7 +8,10 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
 import sys
+import tempfile
+import time
 from collections import defaultdict
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
@@ -18,6 +21,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
+AUDIO_CACHE = ROOT / ".build" / "audio-cache"
+AUDIO_CACHE_OBJECTS = AUDIO_CACHE / "objects"
 
 LEVELS = ("n1", "n2", "n3", "n4", "n5")
 ROOT_FILES = (
@@ -56,6 +61,11 @@ TEXT_SUFFIXES = {".html", ".css", ".js", ".svg"}
 TARGET_BYTES = 800 * 1024 * 1024
 PAGES_LIMIT_BYTES = 1_000_000_000
 GIB_BYTES = 1024 * 1024 * 1024
+AUDIO_OUTPUT_FORMAT = "mp3"
+AUDIO_TRANSCODE_ARGUMENTS = ("-vn", "-ac", "1", "-b:a", "64k", "-map_metadata", "-1")
+AUDIO_MIN_BITRATE = 64000
+AUDIO_DURATION_TOLERANCE_SECONDS = 0.5
+AUDIO_DURATION_TOLERANCE_RATIO = 0.02
 
 JS_ASSIGNMENT_RE = re.compile(
     r"\A\s*window\.([A-Za-z_$][\w$]*)\s*=\s*(.*)\s*;?\s*\Z",
@@ -83,6 +93,245 @@ RUNTIME_PATH_RE = re.compile(
 
 class BuildError(RuntimeError):
     """A production artifact invariant was violated."""
+
+
+def executable_path(name: str) -> str:
+    executable = shutil.which(name)
+    if not executable:
+        raise BuildError(f"缺少必需工具：{name}")
+    return executable
+
+
+def tool_version(name: str) -> str:
+    executable = executable_path(name)
+    result = subprocess.run(
+        [executable, "-version"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise BuildError(f"无法读取 {name} 版本：{result.stderr.strip()}")
+    first_line = (result.stdout or result.stderr).splitlines()
+    if not first_line:
+        raise BuildError(f"{name} 未返回版本信息")
+    return first_line[0].strip()
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        while chunk := handle.read(1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def probe_audio(path: Path) -> dict[str, Any]:
+    ffprobe = executable_path("ffprobe")
+    result = subprocess.run(
+        [
+            ffprobe,
+            "-v",
+            "error",
+            "-select_streams",
+            "a:0",
+            "-show_entries",
+            "stream=codec_name,codec_type,channels,bit_rate,sample_rate,duration:format=duration",
+            "-of",
+            "json",
+            str(path),
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        detail = result.stderr.strip() or "无 ffprobe 错误信息"
+        raise BuildError(f"ffprobe 无法解析 {display_path(path)}：{detail}")
+    try:
+        payload = json.loads(result.stdout)
+    except json.JSONDecodeError as error:
+        raise BuildError(f"ffprobe 输出无效：{display_path(path)}") from error
+    streams = payload.get("streams")
+    if not isinstance(streams, list) or not streams or not isinstance(streams[0], dict):
+        raise BuildError(f"音频流缺失：{display_path(path)}")
+    stream = streams[0]
+    duration_value = stream.get("duration")
+    if duration_value is None:
+        duration_value = payload.get("format", {}).get("duration")
+    try:
+        duration = float(duration_value)
+    except (TypeError, ValueError) as error:
+        raise BuildError(f"音频时长无效：{display_path(path)}") from error
+    try:
+        channels = int(stream.get("channels"))
+    except (TypeError, ValueError) as error:
+        raise BuildError(f"音频声道数无效：{display_path(path)}") from error
+    bitrate_value = stream.get("bit_rate")
+    try:
+        bitrate = float(bitrate_value) if bitrate_value is not None else 0.0
+    except (TypeError, ValueError) as error:
+        raise BuildError(f"音频码率无效：{display_path(path)}") from error
+    return {
+        "codec_name": stream.get("codec_name"),
+        "codec_type": stream.get("codec_type"),
+        "channels": channels,
+        "bitrate": bitrate,
+        "sample_rate": stream.get("sample_rate"),
+        "duration": duration,
+    }
+
+
+def validate_release_audio(path: Path) -> dict[str, Any]:
+    if not path.is_file() or path.stat().st_size <= 0:
+        raise BuildError(f"发布音频不存在或为空：{display_path(path)}")
+    if path.suffix.lower() != ".mp3":
+        raise BuildError(f"发布音频不是 MP3：{display_path(path)}")
+    probe = probe_audio(path)
+    if probe["codec_type"] != "audio" or probe["codec_name"] != "mp3":
+        raise BuildError(f"发布音频编码格式错误：{display_path(path)}：{probe}")
+    if probe["channels"] != 1:
+        raise BuildError(f"发布音频不是 mono：{display_path(path)}：{probe['channels']} 声道")
+    if probe["duration"] <= 0:
+        raise BuildError(f"发布音频时长无效：{display_path(path)}")
+    if probe["bitrate"] < AUDIO_MIN_BITRATE:
+        raise BuildError(
+            f"发布音频码率低于 64 kbps：{display_path(path)}：{probe['bitrate']:.0f} bps"
+        )
+    return probe
+
+
+def audio_cache_key(
+    source_hash: str, ffmpeg_version: str, relative: PurePosixPath
+) -> str:
+    payload = {
+        "source_sha256": source_hash,
+        "transcode_arguments": list(AUDIO_TRANSCODE_ARGUMENTS),
+        "ffmpeg_version": ffmpeg_version,
+        "output_format": AUDIO_OUTPUT_FORMAT,
+        "relative_path": relative.as_posix(),
+    }
+    encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def cache_paths(cache_key: str) -> tuple[Path, Path]:
+    return (
+        AUDIO_CACHE_OBJECTS / f"{cache_key}.mp3",
+        AUDIO_CACHE_OBJECTS / f"{cache_key}.json",
+    )
+
+
+def load_valid_audio_cache(
+    cache_key: str,
+    source_hash: str,
+    ffmpeg_version: str,
+    relative: PurePosixPath,
+) -> Path | None:
+    cache_audio, cache_meta = cache_paths(cache_key)
+    if not cache_audio.is_file() or not cache_meta.is_file():
+        return None
+    try:
+        metadata = json.loads(cache_meta.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    expected = {
+        "cache_key": cache_key,
+        "source_sha256": source_hash,
+        "transcode_arguments": list(AUDIO_TRANSCODE_ARGUMENTS),
+        "ffmpeg_version": ffmpeg_version,
+        "output_format": AUDIO_OUTPUT_FORMAT,
+        "relative_path": relative.as_posix(),
+    }
+    if any(metadata.get(key) != value for key, value in expected.items()):
+        return None
+    if metadata.get("output_sha256") != sha256_file(cache_audio):
+        return None
+    if metadata.get("output_bytes") != cache_audio.stat().st_size:
+        return None
+    try:
+        validate_release_audio(cache_audio)
+    except BuildError:
+        return None
+    return cache_audio
+
+
+def transcode_audio(
+    relative: PurePosixPath,
+    ffmpeg_version: str,
+    stats: dict[str, int],
+) -> None:
+    source = require_project_file(relative)
+    if source.suffix.lower() != ".mp3":
+        raise BuildError(f"当前正式音频必须为 MP3 源文件：{relative.as_posix()}")
+    source_hash = sha256_file(source)
+    cache_key = audio_cache_key(source_hash, ffmpeg_version, relative)
+    cached = load_valid_audio_cache(cache_key, source_hash, ffmpeg_version, relative)
+    target = destination_path(relative)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if cached is not None:
+        shutil.copyfile(cached, target)
+        stats["cache_hits"] += 1
+        return
+
+    AUDIO_CACHE_OBJECTS.mkdir(parents=True, exist_ok=True)
+    cache_audio, cache_meta = cache_paths(cache_key)
+    temp_audio_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            prefix=f"{cache_key}-", suffix=".tmp.mp3", dir=AUDIO_CACHE_OBJECTS, delete=False
+        ) as handle:
+            temp_audio_path = Path(handle.name)
+        ffmpeg = executable_path("ffmpeg")
+        result = subprocess.run(
+            [
+                ffmpeg,
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-nostdin",
+                "-y",
+                "-i",
+                str(source),
+                *AUDIO_TRANSCODE_ARGUMENTS,
+                str(temp_audio_path),
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            detail = result.stderr.strip() or "无 ffmpeg 错误信息"
+            raise BuildError(f"ffmpeg 转码失败：{relative.as_posix()}：{detail}")
+        validate_release_audio(temp_audio_path)
+        output_hash = sha256_file(temp_audio_path)
+        output_bytes = temp_audio_path.stat().st_size
+        temp_audio_path.replace(cache_audio)
+        metadata = {
+            "cache_key": cache_key,
+            "source_sha256": source_hash,
+            "transcode_arguments": list(AUDIO_TRANSCODE_ARGUMENTS),
+            "ffmpeg_version": ffmpeg_version,
+            "output_format": AUDIO_OUTPUT_FORMAT,
+            "relative_path": relative.as_posix(),
+            "output_sha256": output_hash,
+            "output_bytes": output_bytes,
+        }
+        cache_meta.write_text(
+            json.dumps(metadata, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        shutil.copyfile(cache_audio, target)
+        stats["transcoded"] += 1
+    except Exception:
+        stats["failed"] += 1
+        raise
+    finally:
+        if temp_audio_path is not None and temp_audio_path.exists():
+            temp_audio_path.unlink()
 
 
 class HtmlReferenceParser(HTMLParser):
@@ -488,6 +737,32 @@ def validate_exact_manifest(expected: set[PurePosixPath]) -> None:
         raise BuildError("dist 白名单不一致；" + "；".join(details))
 
 
+def validate_dist_audio(audio_by_level: dict[str, set[PurePosixPath]]) -> None:
+    total = 0
+    for level in LEVELS:
+        for relative in sorted(audio_by_level[level], key=str):
+            target = destination_path(relative)
+            source = ROOT.joinpath(*relative.parts)
+            target_probe = validate_release_audio(target)
+            source_probe = probe_audio(source)
+            source_duration = source_probe["duration"]
+            duration_difference = abs(target_probe["duration"] - source_duration)
+            tolerance = max(
+                AUDIO_DURATION_TOLERANCE_SECONDS,
+                source_duration * AUDIO_DURATION_TOLERANCE_RATIO,
+            )
+            if duration_difference > tolerance:
+                raise BuildError(
+                    "音频时长差异超出容许范围："
+                    f"{relative.as_posix()}：源 {source_duration:.3f}s，"
+                    f"发布 {target_probe['duration']:.3f}s，"
+                    f"差异 {duration_difference:.3f}s > {tolerance:.3f}s"
+                )
+            total += 1
+    if total != 1952:
+        raise BuildError(f"发布音频总数异常：{total}，预期 1952")
+
+
 def validate_dist() -> tuple[dict[str, dict[str, Any]], dict[str, set[PurePosixPath]]]:
     if not DIST.is_dir() or DIST.is_symlink():
         raise BuildError("dist 不存在或不是安全目录")
@@ -497,6 +772,7 @@ def validate_dist() -> tuple[dict[str, dict[str, Any]], dict[str, set[PurePosixP
     validate_forbidden_content()
     validate_html_and_css_references()
     validate_javascript_references()
+    validate_dist_audio(audio_by_level)
     return data_by_level, audio_by_level
 
 
@@ -599,9 +875,22 @@ def build() -> None:
     page_files = manifest - set(ROOT_FILES) - set(DATA_FILES.values())
     for relative in sorted(page_files - set().union(*audio_by_level.values()), key=str):
         copy_required(relative)
-    for level in LEVELS:
-        for relative in sorted(audio_by_level[level], key=str):
-            copy_required(relative)
+    audio_stats = {"cache_hits": 0, "transcoded": 0, "failed": 0}
+    audio_started = time.monotonic()
+    ffmpeg_version = tool_version("ffmpeg")
+    try:
+        for level in LEVELS:
+            for relative in sorted(audio_by_level[level], key=str):
+                transcode_audio(relative, ffmpeg_version, audio_stats)
+    finally:
+        elapsed = time.monotonic() - audio_started
+        print(
+            "音频转码统计："
+            f"命中缓存 {audio_stats['cache_hits']}，"
+            f"新转码 {audio_stats['transcoded']}，"
+            f"失败 {audio_stats['failed']}，"
+            f"耗时 {elapsed:.2f}s"
+        )
 
     print(f"生产数据已清除原图路径：{removed_images} 条")
     print(f"生产数据已清除本机审计路径：{removed_local_paths} 条")
